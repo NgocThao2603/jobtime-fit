@@ -1,8 +1,9 @@
+require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
 const morgan = require("morgan");
 const sequelize = require("./config/dbConfig");
-require("dotenv").config();
+const calendarRoute = require("./src/routes/calendarRoute");
 
 const app = express();
 app.use(cors());
@@ -21,6 +22,8 @@ app.use((req, res, next) => {
   }
   next();
 });
+
+app.use("/api/v1/calendar", calendarRoute);
 
 sequelize
   .authenticate()
