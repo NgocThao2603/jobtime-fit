@@ -21,29 +21,24 @@ if (config.use_env_variable) {
   );
 }
 
-fs.readdirSync(__dirname)
-  .filter((file) => {
-    return (
-      file.indexOf(".") !== 0 &&
-      file !== basename &&
-      file.slice(-3) === ".js" &&
-      file.indexOf(".test.js") === -1
-    );
-  })
-  .forEach((file) => {
-    const model = require(path.join(__dirname, file))(
-      sequelize,
-      Sequelize.DataTypes
-    );
-    db[model.name] = model;
-  });
+// Load models
+const JobInfo = require('./job_info');
+const JobTime = require('./job_time');
 
-Object.keys(db).forEach((modelName) => {
-  if (db[modelName].associate) {
-    db[modelName].associate(db);
-  }
+// Define relationships
+JobInfo.hasMany(JobTime, {
+  foreignKey: 'job_info_id',
+  as: 'jobTimes'
 });
 
+JobTime.belongsTo(JobInfo, {
+  foreignKey: 'job_info_id',
+  as: 'jobInfo'
+});
+
+// Add models to db object
+db.JobInfo = JobInfo;
+db.JobTime = JobTime;
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 
