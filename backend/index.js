@@ -4,6 +4,7 @@ const cors = require("cors");
 const morgan = require("morgan");
 const sequelize = require("./config/dbConfig");
 const calendarRoute = require("./src/routes/calendarRoute");
+const jobRoute = require("./src/routes/jobRoute");
 
 const app = express();
 app.use(cors());
@@ -24,6 +25,7 @@ app.use((req, res, next) => {
 });
 
 app.use("/api/v1/calendar", calendarRoute);
+app.use("/api/v1/jobs", jobRoute);
 
 sequelize
   .authenticate()
@@ -34,7 +36,7 @@ sequelize
     console.error("Unable to connect to the database:", err);
   });
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 3001;
 
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);

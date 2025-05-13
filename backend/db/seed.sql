@@ -13,7 +13,9 @@ CREATE TABLE job_infos (
   title VARCHAR(255),
   salary VARCHAR(100),
   type ENUM('full_time', 'part_time', 'intern'),
+  job_status ENUM('active', 'inactive', 'completed'),
   location VARCHAR(255),
+  image_url VARCHAR(255),
   min_sessions_per_week INT,
   requires_experience BOOLEAN,
   holiday_off BOOLEAN,
@@ -34,6 +36,7 @@ CREATE TABLE job_times (
 );
 
 -- Thêm dữ liệu vào bảng job_infos
+
 INSERT INTO job_infos (id, title, salary, type, location, min_sessions_per_week, requires_experience, holiday_off) VALUES
   (UUID(), 'Gia sư học sinh lớp 5', '10–15 triệu', 'part_time', 'Đống Đa, Hà Nội', 3, TRUE, TRUE),
   (UUID(), 'Phục vụ quán cà phê', 'Thỏa thuận', 'part_time', 'Cầu Giấy, Hà Nội', 7, FALSE, FALSE),
