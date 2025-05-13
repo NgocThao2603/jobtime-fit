@@ -12,7 +12,9 @@ package-lock.json
 yarn.lock
 
 # IDE and editor files
-.idea
+.idea/
+.idea/*
+!.idea/.gitignore
 .vscode/
 *.swp
 *.swo
