@@ -12,7 +12,7 @@ module.exports = {
         type: Sequelize.CHAR(36),
         allowNull: false,
         references: {
-          model: 'job_infos',
+          model: 'job_infos',  // Tên bảng job_infos
           key: 'id'
         },
         onUpdate: 'CASCADE',
@@ -23,7 +23,7 @@ module.exports = {
         allowNull: false
       },
       shifts: {
-        type: Sequelize.JSON,
+        type: Sequelize.JSON,  // Lưu dưới dạng JSON để lưu thông tin ca làm việc
         allowNull: false
       },
       created_at: {

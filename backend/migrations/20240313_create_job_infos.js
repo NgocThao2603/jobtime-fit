@@ -40,11 +40,6 @@ module.exports = {
         type: Sequelize.STRING(255),
         allowNull: true
       },
-      status: {
-        type: Sequelize.ENUM('active', 'inactive', 'completed'),
-        defaultValue: 'active',
-        allowNull: false
-      },
       created_at: {
         type: Sequelize.DATE,
         allowNull: false,
@@ -54,7 +49,20 @@ module.exports = {
         type: Sequelize.DATE,
         allowNull: false,
         defaultValue: Sequelize.literal('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP')
+      },
+      job_agency: {
+        type: Sequelize.STRING(255),
+        allowNull: true
+      },
+      job_agency_image: {
+        type: Sequelize.STRING(255),
+        allowNull: true
+      },
+      job_status: {
+        type: Sequelize.BOOLEAN,
+        defaultValue: true
       }
+  
     });
   },
 
