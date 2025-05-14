@@ -1,72 +1,74 @@
-'use strict';
+"use strict";
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable('job_infos', {
+    await queryInterface.createTable("job_infos", {
       id: {
-        type: Sequelize.CHAR(36),
+        allowNull: false,
         primaryKey: true,
-        defaultValue: Sequelize.UUIDV4
+        unique: true,
+        type: Sequelize.STRING,
       },
       title: {
         type: Sequelize.STRING(255),
-        allowNull: false
+        allowNull: false,
       },
       salary: {
         type: Sequelize.STRING(100),
-        allowNull: false
+        allowNull: false,
       },
       type: {
-        type: Sequelize.ENUM('full_time', 'part_time', 'intern'),
-        allowNull: false
+        type: Sequelize.ENUM("full_time", "part_time", "intern"),
+        allowNull: false,
       },
       location: {
         type: Sequelize.STRING(255),
-        allowNull: false
+        allowNull: false,
       },
       min_sessions_per_week: {
         type: Sequelize.INTEGER,
-        allowNull: false
+        allowNull: false,
       },
       requires_experience: {
         type: Sequelize.BOOLEAN,
-        defaultValue: false
+        defaultValue: false,
       },
       holiday_off: {
         type: Sequelize.BOOLEAN,
-        defaultValue: false
+        defaultValue: false,
       },
       image_url: {
         type: Sequelize.STRING(255),
-        allowNull: true
+        allowNull: true,
       },
       created_at: {
         type: Sequelize.DATE,
         allowNull: false,
-        defaultValue: Sequelize.literal('CURRENT_TIMESTAMP')
+        defaultValue: Sequelize.literal("CURRENT_TIMESTAMP"),
       },
       updated_at: {
         type: Sequelize.DATE,
         allowNull: false,
-        defaultValue: Sequelize.literal('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP')
+        defaultValue: Sequelize.literal(
+          "CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP"
+        ),
       },
       job_agency: {
         type: Sequelize.STRING(255),
-        allowNull: true
+        allowNull: true,
       },
       job_agency_image: {
         type: Sequelize.STRING(255),
-        allowNull: true
+        allowNull: true,
       },
       job_status: {
         type: Sequelize.BOOLEAN,
-        defaultValue: true
-      }
-  
+        defaultValue: true,
+      },
     });
   },
 
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable('job_infos');
-  }
-}; 
+    await queryInterface.dropTable("job_infos");
+  },
+};
