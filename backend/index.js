@@ -17,7 +17,10 @@ app.use(morgan("dev"));
 // Simple CORS headers
 app.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept"
+  );
   next();
 });
 
@@ -31,7 +34,7 @@ app.use((err, req, res, next) => {
   res.status(500).json({
     success: false,
     message: "Internal Server Error",
-    error: err.message
+    error: err.message,
   });
 });
 
@@ -40,7 +43,7 @@ const startServer = async () => {
   try {
     await sequelize.authenticate();
     console.log("Database connection has been established successfully.");
-    
+
     const PORT = process.env.PORT;
     app.listen(PORT, () => {
       console.log(`Server is running on http://localhost:${PORT}`);
@@ -51,8 +54,10 @@ const startServer = async () => {
   }
 };
 
-const PORT = process.env.PORT;
+startServer();
 
-app.listen(PORT, () => {
-  console.log(`Server is running on http://localhost:${PORT}`);
-});
+// const PORT = process.env.PORT;
+
+// app.listen(PORT, () => {
+//   console.log(`Server is running on http://localhost:${PORT}`);
+// });
