@@ -1,76 +1,116 @@
 import * as React from "react";
+import { useState } from "react";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Stack from "@mui/material/Stack";
-import { CardHeader, Avatar, IconButton } from "@mui/material";
+import {
+  CardHeader,
+  Avatar,
+  IconButton,
+  Dialog,
+  DialogTitle,
+  DialogContent,
+} from "@mui/material";
 import Divider from "@mui/material/Divider";
 import Box from "@mui/material/Box";
 import { LocationOn } from "@mui/icons-material";
+import { Close } from "@mui/icons-material";
 import { Link } from "react-router-dom";
 
 import { List } from "antd";
+import FitCalendar from "../FitCalendar";
 
 function JobCard({ listJob = [] }) {
-    const datasource = listJob.map((job, index) => {
-      return (
-        <Card key={index} sx={{ width: "100%", height: "54vh" }}>
-          <Box sx={{ position: "relative" }}>
-            <CardMedia
-              component="img"
-              sx={{ height: 210 }}
-              image={job.images_url?.[0] || "https://via.placeholder.com/400x200?text=No+Image"}
-            />
+  const [open, setOpen] = useState(false);
+  const [selectedJob, setSelectedJob] = useState(null);
+
+  const handleOpenDialog = (job) => {
+    setSelectedJob(job);
+    setOpen(true);
+  };
+
+  const handleCloseDialog = () => {
+    setOpen(false);
+    setSelectedJob(null);
+  };
+
+  const datasource = listJob.map((job, index) => {
+    return (
+      <Card key={index} sx={{ width: "100%", height: "54vh" }}>
+        <Box sx={{ position: "relative" }}>
+          <CardMedia
+            component="img"
+            sx={{ height: 210 }}
+            image={
+              job.images_url?.[0] ||
+              "https://via.placeholder.com/400x200?text=No+Image"
+            }
+          />
+          <Button
+            variant="contained"
+            color="primary"
+            sx={{
+              position: "absolute",
+              top: 10,
+              right: 10,
+              backgroundColor: job.job_status ? "#4caf4f" : "#f44336",
+              color: "#fff",
+              borderRadius: "20px",
+            }}
+          >
+            {job.job_status ? "Đang tuyển" : "Không tuyển"}
+          </Button>
+        </Box>
+
+        <CardContent sx={{ height: "25%" }}>
+          <Box
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "space-between",
+            }}
+          >
+            <Typography sx={{ fontSize: "1rem", color: "#636364" }}>
+              {job.salary ? (
+                <>
+                  <Box
+                    component="span"
+                    sx={{ color: "#c62828", fontWeight: 500 }}
+                  >
+                    {job.salary}
+                  </Box>{" "}
+                  triệu/tháng
+                </>
+              ) : (
+                "Chưa có mức lương"
+              )}
+            </Typography>
             <Button
-              variant="contained"
-              color="primary"
               sx={{
-                position: "absolute",
-                top: 10,
-                right: 10,
-                backgroundColor: job.job_status ? "#4caf4f" : "#f44336",
+                backgroundColor: "#4CAF4F",
                 color: "#fff",
-                borderRadius: "20px",
+                borderRadius: "16px",
+                padding: "4px 12px",
+                display: "inline-block",
+                fontSize: "0.875rem",
+                fontWeight: 500,
               }}
+              onClick={() => handleOpenDialog(job)}
             >
-              {job.job_status ? "Đang tuyển" : "Không tuyển"}
+              Tương thích: 80%
             </Button>
           </Box>
-  
-          <CardContent sx={{ height: "25%" }}>
 
-              <Box sx={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-
-              <Typography sx={{ fontSize: "1rem", color: "#636364" }}>
-          {job.salary ? (
-         <>
-           <Box component="span" sx={{ color: "#c62828", fontWeight: 500 }}>
-            {job.salary}
-         </Box>{" "}
-          triệu/tháng
-    </>
-  ) : (
-    "Chưa có mức lương"
-  )}
-</Typography>
-<Typography
-  sx={{
-    backgroundColor: "#4CAF4F", 
-    color: "#fff",          
-    borderRadius: "16px",     
-    padding: "4px 12px",      
-    display: "inline-block",    
-    fontSize: "0.875rem",       
-    fontWeight: 500,            
-  }}
->
-  Tương thích: 80%
-</Typography>
-              </Box>
-  
-            <Box sx={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+          <Box
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "space-between",
+            }}
+          >
             <Typography
               gutterBottom
               variant="h5"
@@ -91,67 +131,92 @@ function JobCard({ listJob = [] }) {
               {job.title || "Không có tiêu đề"}
             </Typography>
             <Typography
-                  variant="body1"
-                  sx={{
-                    display: "-webkit-box",
-                    WebkitLineClamp: 1,
-                    WebkitBoxOrient: "vertical",
-                    overflow: "hidden",
-                    textOverflow: "ellipsis",
-                  }}
-                >
-                  {job.location || "Không có địa chỉ"}
-                </Typography>
-            </Box>
-            <Box sx={{ width: "100%", display: "flex" }}>
-                <Typography
-                  sx={{
-                    fontSize: "1rem",
-                    color: "#636364",
-                    width:"30%",
-                    borderRight: "1px solid #ddd", // Gạch dọc bên phải
-                    marginRight: "10px",
+              variant="body1"
+              sx={{
+                display: "-webkit-box",
+                WebkitLineClamp: 1,
+                WebkitBoxOrient: "vertical",
+                overflow: "hidden",
+                textOverflow: "ellipsis",
+              }}
+            >
+              {job.location || "Không có địa chỉ"}
+            </Typography>
+          </Box>
+          <Box sx={{ width: "100%", display: "flex" }}>
+            <Typography
+              sx={{
+                fontSize: "1rem",
+                color: "#636364",
+                width: "30%",
+                borderRight: "1px solid #ddd", // Gạch dọc bên phải
+                marginRight: "10px",
+              }}
+            >
+              {job.type || "PartTime"}
+            </Typography>
+            <Typography
+              sx={{
+                fontSize: "1rem",
+                color: "#636364",
+                width: "30%",
+                borderRight: "1px solid #ddd", // Gạch dọc bên phải
+                marginRight: "10px",
+              }}
+            >
+              {job.min_sessions_per_week || "2"} buổi/tuần
+            </Typography>
+            <Typography
+              sx={{
+                fontSize: "1rem",
+                color: "#636364",
+                width: "40%",
+              }}
+            >
+              {job.requires_experience
+                ? "Yêu cầu kinh nghiệm"
+                : "Không yêu cầu kinh nghiệm"}
+            </Typography>
+          </Box>
+        </CardContent>
 
-                  }}
-                >
-                  {job.type || "PartTime"}  
-                </Typography>
-                <Typography
-                  sx={{
-                    fontSize: "1rem",
-                    color: "#636364",
-                    width:"30%",
-                    borderRight: "1px solid #ddd", // Gạch dọc bên phải
-                    marginRight: "10px",
-                  }}
-                >
-                  {job.min_sessions_per_week || "2"} buổi/tuần
-                </Typography>
-                <Typography
-                  sx={{
-                    fontSize: "1rem",
-                    color: "#636364",
-                    width:"40%",
-                  }}
-                >
-                  {job.requires_experience ? "Yêu cầu kinh nghiệm" : "Không yêu cầu kinh nghiệm"}
-                </Typography>
-              </Box>
-  
-       </CardContent>
-  
-          <Divider sx={{ marginTop: "40px", marginBottom: "20px" }} />
-  
-          <CardHeader
-            sx={{ height: "8%", marginTop: "5px" }}
-            avatar={<Avatar sx={{ bgcolor: "red" }}>{job.job_agency_image}</Avatar>}
-            title={job.job_agency || "Không rõ người đăng"}
-          />
-        </Card>
-      );
-    });
-  
-    return (
+        <Divider sx={{ marginTop: "40px", marginBottom: "20px" }} />
+
+        <CardHeader
+          sx={{ height: "8%", marginTop: "5px" }}
+          avatar={
+            <Avatar sx={{ bgcolor: "red" }}>{job.job_agency_image}</Avatar>
+          }
+          title={job.job_agency || "Không rõ người đăng"}
+        />
+      </Card>
+    );
+  });
+
+  // Data user free time
+  const mockUserTimes = [
+    {
+      day: "Thứ Hai",
+      slots: [
+        { start: "08:00", end: "10:00" },
+        { start: "14:00", end: "16:00" },
+      ],
+    },
+    {
+      day: "Thứ Ba",
+      slots: [
+        { start: "08:00", end: "13:00" },
+        { start: "14:00", end: "16:00" },
+      ],
+    },
+    {
+      day: "Thứ Tư",
+      slots: [{ start: "13:00", end: "17:00" }],
+    },
+  ];
+
+  return (
+    <>
       <Stack spacing={3}>
         <List
           grid={{ gutter: 27, column: 3 }}
@@ -180,7 +245,34 @@ function JobCard({ listJob = [] }) {
           }}
         />
       </Stack>
-    );
-  }
-  
+
+      {/* Dialog hiện chi tiết tương thích */}
+      <Dialog open={open} onClose={handleCloseDialog} maxWidth="md" fullWidth>
+        <DialogTitle>
+          <h2 className="text-xl text-center mb-3 text-green-500">
+            Chi tiết mức độ tương thích
+          </h2>
+          <IconButton
+            aria-label="close"
+            onClick={handleCloseDialog}
+            sx={{ position: "absolute", right: 8, top: 8 }}
+          >
+            <Close />
+          </IconButton>
+        </DialogTitle>
+        <DialogContent>
+          {selectedJob ? (
+            <FitCalendar
+              jobTimes={selectedJob.job_times}
+              userTimes={mockUserTimes}
+            />
+          ) : (
+            <Typography>Không có dữ liệu để hiển thị.</Typography>
+          )}
+        </DialogContent>
+      </Dialog>
+    </>
+  );
+}
+
 export default JobCard;
