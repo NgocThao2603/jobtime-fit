@@ -1,0 +1,1887 @@
+[
+  {
+    "id": "job-id-1",
+    "title": "Gia sư Toán lớp 6",
+    "image_url": "https://haenglish.edu.vn/wp-content/uploads/2023/10/cq5dam.web_.1280.1280.png",
+    "salary": "10–15 triệu",
+    "type": "part_time",
+    "location": "Đống Đa, Hà Nội",
+    "min_sessions_per_week": 3,
+    "requires_experience": true,
+    "holiday_off": true,
+    "job_status": true,
+    "job_agency": "Trung tâm Gia sư Hà Nội",
+    "job_agency_image": "https://www.pace.edu.vn/uploads/news/2023/07/1-khai-niem-agency.jpg",
+    "job_times": [
+      {
+        "id": "jobtime-id-1-1",
+        "day": "Thứ Hai",
+        "shifts": [{ "start": "08:00", "end": "11:00" }]
+      },
+      {
+        "id": "jobtime-id-1-2",
+        "day": "Thứ Tư",
+        "shifts": [{ "start": "14:00", "end": "17:00" }]
+      },
+      {
+        "id": "jobtime-id-1-3",
+        "day": "Thứ Sáu",
+        "shifts": [{ "start": "09:00", "end": "12:00" }]
+      }
+    ]
+  },
+  {
+    "id": "job-id-2",
+    "title": "Phục vụ quán cà phê Highlands",
+    "image_url": "https://haenglish.edu.vn/wp-content/uploads/2023/10/cq5dam.web_.1280.1280.png",
+    "salary": "Thỏa thuận",
+    "type": "part_time",
+    "location": "Cầu Giấy, Hà Nội",
+    "min_sessions_per_week": 4,
+    "requires_experience": false,
+    "holiday_off": false,
+    "job_status": true,
+    "job_agency": "Highlands Coffee",
+    "job_agency_image": "https://www.pace.edu.vn/uploads/news/2023/07/1-khai-niem-agency.jpg",
+    "job_times": [
+      {
+        "id": "jobtime-id-2-1",
+        "day": "Thứ Ba",
+        "shifts": [{ "start": "10:00", "end": "14:00" }]
+      },
+      {
+        "id": "jobtime-id-2-2",
+        "day": "Thứ Tư",
+        "shifts": [{ "start": "15:00", "end": "19:00" }]
+      },
+      {
+        "id": "jobtime-id-2-3",
+        "day": "Thứ Năm",
+        "shifts": [{ "start": "08:00", "end": "12:00" }]
+      },
+      {
+        "id": "jobtime-id-2-4",
+        "day": "Thứ Sáu",
+        "shifts": [{ "start": "13:00", "end": "17:00" }]
+      }
+    ]
+  },
+  {
+    "id": "job-id-3",
+    "title": "Thực tập sinh Marketing Online",
+    "image_url": "https://haenglish.edu.vn/wp-content/uploads/2023/10/cq5dam.web_.1280.1280.png",
+    "salary": "3–5 triệu",
+    "type": "intern",
+    "location": "Hai Bà Trưng, Hà Nội",
+    "min_sessions_per_week": 2,
+    "requires_experience": false,
+    "holiday_off": true,
+    "job_status": false,
+    "job_agency": "Công ty Marketing 123",
+    "job_agency_image": "https://www.pace.edu.vn/uploads/news/2023/07/1-khai-niem-agency.jpg",
+    "job_times": [
+      {
+        "id": "jobtime-id-3-1",
+        "day": "Thứ Hai",
+        "shifts": [{ "start": "09:00", "end": "10:30" }]
+      },
+      {
+        "id": "jobtime-id-3-2",
+        "day": "Thứ Năm",
+        "shifts": [{ "start": "13:00", "end": "15:00" }]
+      }
+    ]
+  },
+  {
+    "id": "job-id-4",
+    "title": "Chăm sóc khách hàng Shopee",
+    "image_url": "https://haenglish.edu.vn/wp-content/uploads/2023/10/cq5dam.web_.1280.1280.png",
+    "salary": "8–12 triệu",
+    "type": "full_time",
+    "location": "Thanh Xuân, Hà Nội",
+    "min_sessions_per_week": 5,
+    "requires_experience": true,
+    "holiday_off": true,
+    "job_status": true,
+    "job_agency": "Shopee Việt Nam",
+    "job_agency_image": "https://www.pace.edu.vn/uploads/news/2023/07/1-khai-niem-agency.jpg",
+    "job_times": [
+      {
+        "id": "jobtime-id-4-1",
+        "day": "Thứ Hai",
+        "shifts": [{ "start": "08:00", "end": "12:00" }]
+      },
+      {
+        "id": "jobtime-id-4-2",
+        "day": "Thứ Ba",
+        "shifts": [{ "start": "13:00", "end": "17:00" }]
+      },
+      {
+        "id": "jobtime-id-4-3",
+        "day": "Thứ Tư",
+        "shifts": [{ "start": "09:00", "end": "12:00" }]
+      },
+      {
+        "id": "jobtime-id-4-4",
+        "day": "Thứ Năm",
+        "shifts": [{ "start": "14:00", "end": "18:00" }]
+      },
+      {
+        "id": "jobtime-id-4-5",
+        "day": "Thứ Sáu",
+        "shifts": [{ "start": "10:00", "end": "15:00" }]
+      }
+    ]
+  },
+  {
+    "id": "job-id-5",
+    "title": "Gia sư tiếng Anh giao tiếp",
+    "image_url": "https://haenglish.edu.vn/wp-content/uploads/2023/10/cq5dam.web_.1280.1280.png",
+    "salary": "12 triệu",
+    "type": "part_time",
+    "location": "Ba Đình, Hà Nội",
+    "min_sessions_per_week": 3,
+    "requires_experience": true,
+    "holiday_off": false,
+    "job_status": true,
+    "job_agency": "Trung tâm Ngoại ngữ DEF",
+    "job_agency_image": "https://www.pace.edu.vn/uploads/news/2023/07/1-khai-niem-agency.jpg",
+    "job_times": [
+      {
+        "id": "jobtime-id-5-1",
+        "day": "Thứ Ba",
+        "shifts": [{ "start": "09:00", "end": "11:00" }]
+      },
+      {
+        "id": "jobtime-id-5-2",
+        "day": "Thứ Năm",
+        "shifts": [{ "start": "14:00", "end": "17:00" }]
+      },
+      {
+        "id": "jobtime-id-5-3",
+        "day": "Thứ Bảy",
+        "shifts": [{ "start": "15:00", "end": "18:00" }]
+      }
+    ]
+  },
+  {
+    "id": "job-id-6",
+    "title": "Nhân viên bán hàng siêu thị Vinmart",
+    "image_url": "https://haenglish.edu.vn/wp-content/uploads/2023/10/cq5dam.web_.1280.1280.png",
+    "salary": "7–9 triệu",
+    "type": "full_time",
+    "location": "Long Biên, Hà Nội",
+    "min_sessions_per_week": 4,
+    "requires_experience": false,
+    "holiday_off": false,
+    "job_status": true,
+    "job_agency": "Vinmart",
+    "job_agency_image": "https://www.pace.edu.vn/uploads/news/2023/07/1-khai-niem-agency.jpg",
+    "job_times": [
+      {
+        "id": "jobtime-id-6-1",
+        "day": "Thứ Hai",
+        "shifts": [{ "start": "08:00", "end": "12:00" }]
+      },
+      {
+        "id": "jobtime-id-6-2",
+        "day": "Thứ Tư",
+        "shifts": [{ "start": "13:00", "end": "17:00" }]
+      },
+      {
+        "id": "jobtime-id-6-3",
+        "day": "Thứ Sáu",
+        "shifts": [{ "start": "09:00", "end": "13:00" }]
+      },
+      {
+        "id": "jobtime-id-6-4",
+        "day": "Chủ Nhật",
+        "shifts": [{ "start": "15:00", "end": "19:00" }]
+      }
+    ]
+  },
+  {
+    "id": "job-id-7",
+    "title": "Nhân viên giao hàng Giao Hàng Nhanh",
+    "image_url": "https://haenglish.edu.vn/wp-content/uploads/2023/10/cq5dam.web_.1280.1280.png",
+    "salary": "6–8 triệu",
+    "type": "part_time",
+    "location": "Tây Hồ, Hà Nội",
+    "min_sessions_per_week": 2,
+    "requires_experience": false,
+    "holiday_off": false,
+    "job_status": false,
+    "job_agency": "Giao Hàng Nhanh",
+    "job_agency_image": "https://www.pace.edu.vn/uploads/news/2023/07/1-khai-niem-agency.jpg",
+    "job_times": [
+      {
+        "id": "jobtime-id-7-1",
+        "day": "Thứ Tư",
+        "shifts": [{ "start": "13:00", "end": "17:00" }]
+      },
+      {
+        "id": "jobtime-id-7-2",
+        "day": "Thứ Sáu",
+        "shifts": [{ "start": "08:00", "end": "12:00" }]
+      }
+    ]
+  },
+  {
+    "id": "job-id-8",
+    "title": "Nhân viên thu ngân Circle K",
+    "image_url": "https://haenglish.edu.vn/wp-content/uploads/2023/10/cq5dam.web_.1280.1280.png",
+    "salary": "8 triệu",
+    "type": "full_time",
+    "location": "Hoàn Kiếm, Hà Nội",
+    "min_sessions_per_week": 3,
+    "requires_experience": true,
+    "holiday_off": true,
+    "job_status": true,
+    "job_agency": "Circle K",
+    "job_agency_image": "https://www.pace.edu.vn/uploads/news/2023/07/1-khai-niem-agency.jpg",
+    "job_times": [
+      {
+        "id": "jobtime-id-8-1",
+        "day": "Thứ Hai",
+        "shifts": [{ "start": "08:00", "end": "12:00" }]
+      },
+      {
+        "id": "jobtime-id-8-2",
+        "day": "Thứ Tư",
+        "shifts": [{ "start": "13:00", "end": "17:00" }]
+      },
+      {
+        "id": "jobtime-id-8-3",
+        "day": "Thứ Sáu",
+        "shifts": [{ "start": "09:00", "end": "13:00" }]
+      }
+    ]
+  },
+  {
+    "id": "job-id-9",
+    "title": "Nhân viên pha chế The Alley",
+    "image_url": "https://haenglish.edu.vn/wp-content/uploads/2023/10/cq5dam.web_.1280.1280.png",
+    "salary": "Thỏa thuận",
+    "type": "part_time",
+    "location": "Hai Bà Trưng, Hà Nội",
+    "min_sessions_per_week": 4,
+    "requires_experience": false,
+    "holiday_off": false,
+    "job_status": true,
+    "job_agency": "The Alley",
+    "job_agency_image": "https://www.pace.edu.vn/uploads/news/2023/07/1-khai-niem-agency.jpg",
+    "job_times": [
+      {
+        "id": "jobtime-id-9-1",
+        "day": "Thứ Ba",
+        "shifts": [{ "start": "10:00", "end": "14:00" }]
+      },
+      {
+        "id": "jobtime-id-9-2",
+        "day": "Thứ Năm",
+        "shifts": [{ "start": "15:00", "end": "19:00" }]
+      },
+      {
+        "id": "jobtime-id-9-3",
+        "day": "Thứ Bảy",
+        "shifts": [{ "start": "08:00", "end": "12:00" }]
+      },
+      {
+        "id": "jobtime-id-9-4",
+        "day": "Chủ Nhật",
+        "shifts": [{ "start": "13:00", "end": "17:00" }]
+      }
+    ]
+  },
+  {
+    "id": "job-id-10",
+    "title": "Nhân viên bảo vệ tòa nhà",
+    "image_url": "https://haenglish.edu.vn/wp-content/uploads/2023/08/Top-10-Highest-Paying-Jobs-in-India-03.jpg",
+    "salary": "6 triệu",
+    "type": "full_time",
+    "location": "Nam Từ Liêm, Hà Nội",
+    "min_sessions_per_week": 5,
+    "requires_experience": true,
+    "holiday_off": false,
+    "job_status": true,
+    "job_agency": "Công ty bảo vệ An Ninh",
+    "job_agency_image": "https://caodang.fpt.edu.vn/wp-content/uploads/agency-01-1080x675-1.jpg",
+    "job_times": [
+      {
+        "id": "jobtime-id-10-1",
+        "day": "Thứ Hai",
+        "shifts": [{ "start": "18:00", "end": "22:00" }]
+      },
+      {
+        "id": "jobtime-id-10-2",
+        "day": "Thứ Ba",
+        "shifts": [{ "start": "08:00", "end": "12:00" }]
+      },
+      {
+        "id": "jobtime-id-10-3",
+        "day": "Thứ Tư",
+        "shifts": [{ "start": "13:00", "end": "17:00" }]
+      },
+      {
+        "id": "jobtime-id-10-4",
+        "day": "Thứ Năm",
+        "shifts": [{ "start": "09:00", "end": "13:00" }]
+      },
+      {
+        "id": "jobtime-id-10-5",
+        "day": "Thứ Sáu",
+        "shifts": [{ "start": "15:00", "end": "19:00" }]
+      }
+    ]
+  },
+  {
+    "id": "job-id-11",
+    "title": "Nhân viên bán hàng thời vụ",
+    "image_url": "https://haenglish.edu.vn/wp-content/uploads/2023/08/Top-10-Highest-Paying-Jobs-in-India-03.jpg",
+    "salary": "7 triệu",
+    "type": "part_time",
+    "location": "Hoàng Mai, Hà Nội",
+    "min_sessions_per_week": 3,
+    "requires_experience": false,
+    "holiday_off": true,
+    "job_status": true,
+    "job_agency": "Siêu thị Big C",
+    "job_agency_image": "https://caodang.fpt.edu.vn/wp-content/uploads/agency-01-1080x675-1.jpg",
+    "job_times": [
+      {
+        "id": "jobtime-id-11-1",
+        "day": "Thứ Ba",
+        "shifts": [{ "start": "08:00", "end": "12:00" }]
+      },
+      {
+        "id": "jobtime-id-11-2",
+        "day": "Thứ Năm",
+        "shifts": [{ "start": "13:00", "end": "17:00" }]
+      },
+      {
+        "id": "jobtime-id-11-3",
+        "day": "Thứ Bảy",
+        "shifts": [{ "start": "09:00", "end": "13:00" }]
+      }
+    ]
+  },
+  {
+    "id": "job-id-12",
+    "title": "Nhân viên giao hàng Now",
+    "image_url": "https://haenglish.edu.vn/wp-content/uploads/2023/08/Top-10-Highest-Paying-Jobs-in-India-03.jpg",
+    "salary": "6–8 triệu",
+    "type": "part_time",
+    "location": "Tây Hồ, Hà Nội",
+    "min_sessions_per_week": 2,
+    "requires_experience": false,
+    "holiday_off": false,
+    "job_status": true,
+    "job_agency": "Now Delivery",
+    "job_agency_image": "https://caodang.fpt.edu.vn/wp-content/uploads/agency-01-1080x675-1.jpg",
+    "job_times": [
+      {
+        "id": "jobtime-id-12-1",
+        "day": "Thứ Hai",
+        "shifts": [{ "start": "10:00", "end": "14:00" }]
+      },
+      {
+        "id": "jobtime-id-12-2",
+        "day": "Thứ Sáu",
+        "shifts": [{ "start": "15:00", "end": "19:00" }]
+      }
+    ]
+  },
+  {
+    "id": "job-id-13",
+    "title": "Nhân viên thu ngân Lotte Mart",
+    "image_url": "https://haenglish.edu.vn/wp-content/uploads/2023/08/Top-10-Highest-Paying-Jobs-in-India-03.jpg",
+    "salary": "8 triệu",
+    "type": "full_time",
+    "location": "Ba Đình, Hà Nội",
+    "min_sessions_per_week": 4,
+    "requires_experience": true,
+    "holiday_off": true,
+    "job_status": true,
+    "job_agency": "Lotte Mart",
+    "job_agency_image": "https://caodang.fpt.edu.vn/wp-content/uploads/agency-01-1080x675-1.jpg",
+    "job_times": [
+      {
+        "id": "jobtime-id-13-1",
+        "day": "Thứ Ba",
+        "shifts": [{ "start": "08:00", "end": "12:00" }]
+      },
+      {
+        "id": "jobtime-id-13-2",
+        "day": "Thứ Tư",
+        "shifts": [{ "start": "13:00", "end": "17:00" }]
+      },
+      {
+        "id": "jobtime-id-13-3",
+        "day": "Thứ Sáu",
+        "shifts": [{ "start": "09:00", "end": "13:00" }]
+      },
+      {
+        "id": "jobtime-id-13-4",
+        "day": "Chủ Nhật",
+        "shifts": [{ "start": "15:00", "end": "19:00" }]
+      }
+    ]
+  },
+  {
+    "id": "job-id-14",
+    "title": "Nhân viên pha chế Gong Cha",
+    "image_url": "https://haenglish.edu.vn/wp-content/uploads/2023/08/Top-10-Highest-Paying-Jobs-in-India-03.jpg",
+    "salary": "Thỏa thuận",
+    "type": "part_time",
+    "location": "Hai Bà Trưng, Hà Nội",
+    "min_sessions_per_week": 3,
+    "requires_experience": false,
+    "holiday_off": false,
+    "job_status": true,
+    "job_agency": "Gong Cha",
+    "job_agency_image": "https://caodang.fpt.edu.vn/wp-content/uploads/agency-01-1080x675-1.jpg",
+    "job_times": [
+      {
+        "id": "jobtime-id-14-1",
+        "day": "Thứ Hai",
+        "shifts": [{ "start": "10:00", "end": "14:00" }]
+      },
+      {
+        "id": "jobtime-id-14-2",
+        "day": "Thứ Năm",
+        "shifts": [{ "start": "15:00", "end": "19:00" }]
+      },
+      {
+        "id": "jobtime-id-14-3",
+        "day": "Thứ Bảy",
+        "shifts": [{ "start": "08:00", "end": "12:00" }]
+      }
+    ]
+  },
+  {
+    "id": "job-id-15",
+    "title": "Nhân viên bảo vệ chung cư",
+    "image_url": "https://haenglish.edu.vn/wp-content/uploads/2023/08/Top-10-Highest-Paying-Jobs-in-India-03.jpg",
+    "salary": "6 triệu",
+    "type": "full_time",
+    "location": "Nam Từ Liêm, Hà Nội",
+    "min_sessions_per_week": 5,
+    "requires_experience": true,
+    "holiday_off": false,
+    "job_status": true,
+    "job_agency": "Công ty bảo vệ Hòa Bình",
+    "job_agency_image": "https://caodang.fpt.edu.vn/wp-content/uploads/agency-01-1080x675-1.jpg",
+    "job_times": [
+      {
+        "id": "jobtime-id-15-1",
+        "day": "Thứ Hai",
+        "shifts": [{ "start": "18:00", "end": "22:00" }]
+      },
+      {
+        "id": "jobtime-id-15-2",
+        "day": "Thứ Ba",
+        "shifts": [{ "start": "08:00", "end": "12:00" }]
+      },
+      {
+        "id": "jobtime-id-15-3",
+        "day": "Thứ Tư",
+        "shifts": [{ "start": "13:00", "end": "17:00" }]
+      },
+      {
+        "id": "jobtime-id-15-4",
+        "day": "Thứ Năm",
+        "shifts": [{ "start": "09:00", "end": "13:00" }]
+      },
+      {
+        "id": "jobtime-id-15-5",
+        "day": "Thứ Sáu",
+        "shifts": [{ "start": "15:00", "end": "19:00" }]
+      }
+    ]
+  },
+  {
+    "id": "job-id-16",
+    "title": "Nhân viên bán hàng thời trang",
+    "image_url": "https://haenglish.edu.vn/wp-content/uploads/2023/08/Top-10-Highest-Paying-Jobs-in-India-03.jpg",
+    "salary": "7–9 triệu",
+    "type": "part_time",
+    "location": "Hoàn Kiếm, Hà Nội",
+    "min_sessions_per_week": 3,
+    "requires_experience": false,
+    "holiday_off": true,
+    "job_status": true,
+    "job_agency": "Shop Thời Trang ABC",
+    "job_agency_image": "https://caodang.fpt.edu.vn/wp-content/uploads/agency-01-1080x675-1.jpg",
+    "job_times": [
+      {
+        "id": "jobtime-id-16-1",
+        "day": "Thứ Ba",
+        "shifts": [{ "start": "08:00", "end": "12:00" }]
+      },
+      {
+        "id": "jobtime-id-16-2",
+        "day": "Thứ Năm",
+        "shifts": [{ "start": "13:00", "end": "17:00" }]
+      },
+      {
+        "id": "jobtime-id-16-3",
+        "day": "Thứ Bảy",
+        "shifts": [{ "start": "09:00", "end": "13:00" }]
+      }
+    ]
+  },
+  {
+    "id": "job-id-17",
+    "title": "Nhân viên giao hàng Baemin",
+    "image_url": "https://haenglish.edu.vn/wp-content/uploads/2023/08/Top-10-Highest-Paying-Jobs-in-India-03.jpg",
+    "salary": "6–8 triệu",
+    "type": "part_time",
+    "location": "Long Biên, Hà Nội",
+    "min_sessions_per_week": 2,
+    "requires_experience": false,
+    "holiday_off": false,
+    "job_status": true,
+    "job_agency": "Baemin",
+    "job_agency_image": "https://caodang.fpt.edu.vn/wp-content/uploads/agency-01-1080x675-1.jpg",
+    "job_times": [
+      {
+        "id": "jobtime-id-17-1",
+        "day": "Thứ Hai",
+        "shifts": [{ "start": "10:00", "end": "14:00" }]
+      },
+      {
+        "id": "jobtime-id-17-2",
+        "day": "Thứ Sáu",
+        "shifts": [{ "start": "15:00", "end": "19:00" }]
+      }
+    ]
+  },
+  {
+    "id": "job-id-18",
+    "title": "Nhân viên thu ngân FamilyMart",
+    "image_url": "https://haenglish.edu.vn/wp-content/uploads/2023/08/Top-10-Highest-Paying-Jobs-in-India-03.jpg",
+    "salary": "8 triệu",
+    "type": "full_time",
+    "location": "Tây Hồ, Hà Nội",
+    "min_sessions_per_week": 4,
+    "requires_experience": true,
+    "holiday_off": true,
+    "job_status": true,
+    "job_agency": "FamilyMart",
+    "job_agency_image": "https://caodang.fpt.edu.vn/wp-content/uploads/agency-01-1080x675-1.jpg",
+    "job_times": [
+      {
+        "id": "jobtime-id-18-1",
+        "day": "Thứ Ba",
+        "shifts": [{ "start": "08:00", "end": "12:00" }]
+      },
+      {
+        "id": "jobtime-id-18-2",
+        "day": "Thứ Tư",
+        "shifts": [{ "start": "13:00", "end": "17:00" }]
+      },
+      {
+        "id": "jobtime-id-18-3",
+        "day": "Thứ Sáu",
+        "shifts": [{ "start": "09:00", "end": "13:00" }]
+      },
+      {
+        "id": "jobtime-id-18-4",
+        "day": "Chủ Nhật",
+        "shifts": [{ "start": "15:00", "end": "19:00" }]
+      }
+    ]
+  },
+  {
+    "id": "job-id-19",
+    "title": "Nhân viên pha chế Phúc Long",
+    "image_url": "https://haenglish.edu.vn/wp-content/uploads/2023/08/Top-10-Highest-Paying-Jobs-in-India-03.jpg",
+    "salary": "Thỏa thuận",
+    "type": "part_time",
+    "location": "Hai Bà Trưng, Hà Nội",
+    "min_sessions_per_week": 3,
+    "requires_experience": false,
+    "holiday_off": false,
+    "job_status": true,
+    "job_agency": "Phúc Long",
+    "job_agency_image": "https://caodang.fpt.edu.vn/wp-content/uploads/agency-01-1080x675-1.jpg",
+    "job_times": [
+      {
+        "id": "jobtime-id-19-1",
+        "day": "Thứ Hai",
+        "shifts": [{ "start": "10:00", "end": "14:00" }]
+      },
+      {
+        "id": "jobtime-id-19-2",
+        "day": "Thứ Năm",
+        "shifts": [{ "start": "15:00", "end": "19:00" }]
+      },
+      {
+        "id": "jobtime-id-19-3",
+        "day": "Thứ Bảy",
+        "shifts": [{ "start": "08:00", "end": "12:00" }]
+      }
+    ]
+  },
+  {
+    "id": "job-id-20",
+    "title": "Nhân viên bảo vệ trường học",
+    "image_url": "https://haenglish.edu.vn/wp-content/uploads/2023/08/Top-10-Highest-Paying-Jobs-in-India-03.jpg",
+    "salary": "6 triệu",
+    "type": "full_time",
+    "location": "Hoàng Mai, Hà Nội",
+    "min_sessions_per_week": 5,
+    "requires_experience": true,
+    "holiday_off": false,
+    "job_status": true,
+    "job_agency": "Công ty bảo vệ Trường An",
+    "job_agency_image": "https://caodang.fpt.edu.vn/wp-content/uploads/agency-01-1080x675-1.jpg",
+    "job_times": [
+      {
+        "id": "jobtime-id-20-1",
+        "day": "Thứ Hai",
+        "shifts": [{ "start": "18:00", "end": "22:00" }]
+      },
+      {
+        "id": "jobtime-id-20-2",
+        "day": "Thứ Ba",
+        "shifts": [{ "start": "08:00", "end": "12:00" }]
+      },
+      {
+        "id": "jobtime-id-20-3",
+        "day": "Thứ Tư",
+        "shifts": [{ "start": "13:00", "end": "17:00" }]
+      },
+      {
+        "id": "jobtime-id-20-4",
+        "day": "Thứ Năm",
+        "shifts": [{ "start": "09:00", "end": "13:00" }]
+      },
+      {
+        "id": "jobtime-id-20-5",
+        "day": "Thứ Sáu",
+        "shifts": [{ "start": "15:00", "end": "19:00" }]
+      }
+    ]
+  },
+  {
+    "id": "job-id-21",
+    "title": "Gia sư tiếng Anh cho sinh viên năm nhất",
+    "image_url": "https://haenglish.edu.vn/wp-content/uploads/2023/08/Top-10-Highest-Paying-Jobs-in-India-03.jpg",
+    "salary": "100k/buổi",
+    "type": "part_time",
+    "location": "Cầu Giấy, Hà Nội",
+    "min_sessions_per_week": 3,
+    "requires_experience": false,
+    "holiday_off": true,
+    "job_status": true,
+    "job_agency": "Trung tâm Gia sư Sinh viên",
+    "job_agency_image": "https://caodang.fpt.edu.vn/wp-content/uploads/agency-01-1080x675-1.jpg",
+    "job_times": [
+      {
+        "id": "jobtime-id-21-1",
+        "day": "Thứ Ba",
+        "shifts": [{ "start": "18:00", "end": "20:00" }]
+      },
+      {
+        "id": "jobtime-id-21-2",
+        "day": "Thứ Năm",
+        "shifts": [{ "start": "18:00", "end": "20:00" }]
+      },
+      {
+        "id": "jobtime-id-21-3",
+        "day": "Thứ Bảy",
+        "shifts": [{ "start": "08:00", "end": "10:00" }]
+      }
+    ]
+  },
+  {
+    "id": "job-id-22",
+    "title": "Nhân viên bán hàng part-time tại cửa hàng tiện lợi",
+    "image_url": "https://haenglish.edu.vn/wp-content/uploads/2023/08/Top-10-Highest-Paying-Jobs-in-India-03.jpg",
+    "salary": "25k/giờ",
+    "type": "part_time",
+    "location": "Ba Đình, Hà Nội",
+    "min_sessions_per_week": 4,
+    "requires_experience": false,
+    "holiday_off": false,
+    "job_status": true,
+    "job_agency": "Circle K",
+    "job_agency_image": "https://caodang.fpt.edu.vn/wp-content/uploads/agency-01-1080x675-1.jpg",
+    "job_times": [
+      {
+        "id": "jobtime-id-22-1",
+        "day": "Thứ Hai",
+        "shifts": [{ "start": "17:00", "end": "21:00" }]
+      },
+      {
+        "id": "jobtime-id-22-2",
+        "day": "Thứ Tư",
+        "shifts": [{ "start": "17:00", "end": "21:00" }]
+      },
+      {
+        "id": "jobtime-id-22-3",
+        "day": "Thứ Sáu",
+        "shifts": [{ "start": "17:00", "end": "21:00" }]
+      },
+      {
+        "id": "jobtime-id-22-4",
+        "day": "Chủ Nhật",
+        "shifts": [{ "start": "08:00", "end": "12:00" }]
+      }
+    ]
+  },
+  {
+    "id": "job-id-23",
+    "title": "Thực tập sinh Digital Marketing",
+    "image_url": "https://haenglish.edu.vn/wp-content/uploads/2023/08/Top-10-Highest-Paying-Jobs-in-India-03.jpg",
+    "salary": "2–4 triệu",
+    "type": "intern",
+    "location": "Hai Bà Trưng, Hà Nội",
+    "min_sessions_per_week": 3,
+    "requires_experience": false,
+    "holiday_off": true,
+    "job_status": true,
+    "job_agency": "Công ty Truyền thông ABC",
+    "job_agency_image": "https://caodang.fpt.edu.vn/wp-content/uploads/agency-01-1080x675-1.jpg",
+    "job_times": [
+      {
+        "id": "jobtime-id-23-1",
+        "day": "Thứ Ba",
+        "shifts": [{ "start": "08:00", "end": "12:00" }]
+      },
+      {
+        "id": "jobtime-id-23-2",
+        "day": "Thứ Năm",
+        "shifts": [{ "start": "13:00", "end": "17:00" }]
+      },
+      {
+        "id": "jobtime-id-23-3",
+        "day": "Thứ Bảy",
+        "shifts": [{ "start": "09:00", "end": "13:00" }]
+      }
+    ]
+  },
+  {
+    "id": "job-id-24",
+    "title": "Phục vụ quán trà sữa cho sinh viên",
+    "image_url": "https://haenglish.edu.vn/wp-content/uploads/2023/08/Top-10-Highest-Paying-Jobs-in-India-03.jpg",
+    "salary": "20k/giờ",
+    "type": "part_time",
+    "location": "Đống Đa, Hà Nội",
+    "min_sessions_per_week": 3,
+    "requires_experience": false,
+    "holiday_off": false,
+    "job_status": true,
+    "job_agency": "Trà sữa TocoToco",
+    "job_agency_image": "https://caodang.fpt.edu.vn/wp-content/uploads/agency-01-1080x675-1.jpg",
+    "job_times": [
+      {
+        "id": "jobtime-id-24-1",
+        "day": "Thứ Hai",
+        "shifts": [{ "start": "16:00", "end": "21:00" }]
+      },
+      {
+        "id": "jobtime-id-24-2",
+        "day": "Thứ Tư",
+        "shifts": [{ "start": "16:00", "end": "21:00" }]
+      },
+      {
+        "id": "jobtime-id-24-3",
+        "day": "Thứ Sáu",
+        "shifts": [{ "start": "16:00", "end": "21:00" }]
+      }
+    ]
+  },
+  {
+    "id": "job-id-25",
+    "title": "Trợ giảng tiếng Anh cho trung tâm ngoại ngữ",
+    "image_url": "https://haenglish.edu.vn/wp-content/uploads/2023/08/Top-10-Highest-Paying-Jobs-in-India-03.jpg",
+    "salary": "50k/buổi",
+    "type": "part_time",
+    "location": "Thanh Xuân, Hà Nội",
+    "min_sessions_per_week": 2,
+    "requires_experience": false,
+    "holiday_off": true,
+    "job_status": true,
+    "job_agency": "Trung tâm Anh ngữ Smart",
+    "job_agency_image": "https://caodang.fpt.edu.vn/wp-content/uploads/agency-01-1080x675-1.jpg",
+    "job_times": [
+      {
+        "id": "jobtime-id-25-1",
+        "day": "Thứ Ba",
+        "shifts": [{ "start": "18:00", "end": "20:00" }]
+      },
+      {
+        "id": "jobtime-id-25-2",
+        "day": "Thứ Năm",
+        "shifts": [{ "start": "18:00", "end": "20:00" }]
+      }
+    ]
+  },
+  {
+    "id": "job-id-26",
+    "title": "Nhân viên bán hàng online (phù hợp sinh viên)",
+    "image_url": "https://haenglish.edu.vn/wp-content/uploads/2023/08/Top-10-Highest-Paying-Jobs-in-India-03.jpg",
+    "salary": "5 triệu + thưởng",
+    "type": "part_time",
+    "location": "Hoàng Mai, Hà Nội",
+    "min_sessions_per_week": 3,
+    "requires_experience": false,
+    "holiday_off": true,
+    "job_status": true,
+    "job_agency": "Shop Online 24h",
+    "job_agency_image": "https://caodang.fpt.edu.vn/wp-content/uploads/agency-01-1080x675-1.jpg",
+    "job_times": [
+      {
+        "id": "jobtime-id-26-1",
+        "day": "Thứ Hai",
+        "shifts": [{ "start": "19:00", "end": "22:00" }]
+      },
+      {
+        "id": "jobtime-id-26-2",
+        "day": "Thứ Tư",
+        "shifts": [{ "start": "19:00", "end": "22:00" }]
+      },
+      {
+        "id": "jobtime-id-26-3",
+        "day": "Thứ Sáu",
+        "shifts": [{ "start": "19:00", "end": "22:00" }]
+      }
+    ]
+  },
+  {
+    "id": "job-id-27",
+    "title": "Thực tập sinh IT (Web Developer)",
+    "image_url": "https://haenglish.edu.vn/wp-content/uploads/2023/08/Top-10-Highest-Paying-Jobs-in-India-03.jpg",
+    "salary": "3–6 triệu",
+    "type": "intern",
+    "location": "Nam Từ Liêm, Hà Nội",
+    "min_sessions_per_week": 4,
+    "requires_experience": false,
+    "holiday_off": true,
+    "job_status": true,
+    "job_agency": "Công ty Phần mềm NextGen",
+    "job_agency_image": "https://caodang.fpt.edu.vn/wp-content/uploads/agency-01-1080x675-1.jpg",
+    "job_times": [
+      {
+        "id": "jobtime-id-27-1",
+        "day": "Thứ Hai",
+        "shifts": [{ "start": "08:00", "end": "12:00" }]
+      },
+      {
+        "id": "jobtime-id-27-2",
+        "day": "Thứ Ba",
+        "shifts": [{ "start": "13:00", "end": "17:00" }]
+      },
+      {
+        "id": "jobtime-id-27-3",
+        "day": "Thứ Năm",
+        "shifts": [{ "start": "08:00", "end": "12:00" }]
+      },
+      {
+        "id": "jobtime-id-27-4",
+        "day": "Thứ Sáu",
+        "shifts": [{ "start": "13:00", "end": "17:00" }]
+      }
+    ]
+  },
+  {
+    "id": "job-id-28",
+    "title": "Nhân viên phục vụ nhà hàng Nhật",
+    "image_url": "https://haenglish.edu.vn/wp-content/uploads/2023/08/Top-10-Highest-Paying-Jobs-in-India-03.jpg",
+    "salary": "25k/giờ",
+    "type": "part_time",
+    "location": "Hoàn Kiếm, Hà Nội",
+    "min_sessions_per_week": 3,
+    "requires_experience": false,
+    "holiday_off": false,
+    "job_status": true,
+    "job_agency": "Nhà hàng Sushi Tokyo",
+    "job_agency_image": "https://caodang.fpt.edu.vn/wp-content/uploads/agency-01-1080x675-1.jpg",
+    "job_times": [
+      {
+        "id": "jobtime-id-28-1",
+        "day": "Thứ Ba",
+        "shifts": [{ "start": "17:00", "end": "22:00" }]
+      },
+      {
+        "id": "jobtime-id-28-2",
+        "day": "Thứ Năm",
+        "shifts": [{ "start": "17:00", "end": "22:00" }]
+      },
+      {
+        "id": "jobtime-id-28-3",
+        "day": "Thứ Bảy",
+        "shifts": [{ "start": "17:00", "end": "22:00" }]
+      }
+    ]
+  },
+  {
+    "id": "job-id-29",
+    "title": "Gia sư Toán cấp 2 cho sinh viên",
+    "image_url": "https://haenglish.edu.vn/wp-content/uploads/2023/08/Top-10-Highest-Paying-Jobs-in-India-03.jpg",
+    "salary": "120k/buổi",
+    "type": "part_time",
+    "location": "Long Biên, Hà Nội",
+    "min_sessions_per_week": 2,
+    "requires_experience": false,
+    "holiday_off": true,
+    "job_status": true,
+    "job_agency": "Trung tâm Gia sư Sinh viên",
+    "job_agency_image": "https://caodang.fpt.edu.vn/wp-content/uploads/agency-01-1080x675-1.jpg",
+    "job_times": [
+      {
+        "id": "jobtime-id-29-1",
+        "day": "Thứ Tư",
+        "shifts": [{ "start": "18:00", "end": "20:00" }]
+      },
+      {
+        "id": "jobtime-id-29-2",
+        "day": "Thứ Sáu",
+        "shifts": [{ "start": "18:00", "end": "20:00" }]
+      }
+    ]
+  },
+  {
+    "id": "job-id-30",
+    "title": "Thực tập sinh Kế toán",
+    "image_url": "https://haenglish.edu.vn/wp-content/uploads/2023/08/Top-10-Highest-Paying-Jobs-in-India-03.jpg",
+    "salary": "2–4 triệu",
+    "type": "intern",
+    "location": "Cầu Giấy, Hà Nội",
+    "min_sessions_per_week": 3,
+    "requires_experience": false,
+    "holiday_off": true,
+    "job_status": true,
+    "job_agency": "Công ty Kế toán Minh Tâm",
+    "job_agency_image": "https://caodang.fpt.edu.vn/wp-content/uploads/agency-01-1080x675-1.jpg",
+    "job_times": [
+      {
+        "id": "jobtime-id-30-1",
+        "day": "Thứ Hai",
+        "shifts": [{ "start": "08:00", "end": "12:00" }]
+      },
+      {
+        "id": "jobtime-id-30-2",
+        "day": "Thứ Tư",
+        "shifts": [{ "start": "13:00", "end": "17:00" }]
+      },
+      {
+        "id": "jobtime-id-30-3",
+        "day": "Thứ Sáu",
+        "shifts": [{ "start": "09:00", "end": "13:00" }]
+      }
+    ]
+  },
+  {
+    "id": "job-id-31",
+    "title": "Nhân viên bán hàng thời vụ cho sinh viên",
+    "image_url": "https://haenglish.edu.vn/wp-content/uploads/2023/08/Top-10-Highest-Paying-Jobs-in-India-03.jpg",
+    "salary": "6 triệu",
+    "type": "part_time",
+    "location": "Ba Đình, Hà Nội",
+    "min_sessions_per_week": 3,
+    "requires_experience": false,
+    "holiday_off": true,
+    "job_status": true,
+    "job_agency": "Shop Thời Trang Sinh Viên",
+    "job_agency_image": "https://caodang.fpt.edu.vn/wp-content/uploads/agency-01-1080x675-1.jpg",
+    "job_times": [
+      {
+        "id": "jobtime-id-31-1",
+        "day": "Thứ Ba",
+        "shifts": [{ "start": "17:00", "end": "21:00" }]
+      },
+      {
+        "id": "jobtime-id-31-2",
+        "day": "Thứ Năm",
+        "shifts": [{ "start": "17:00", "end": "21:00" }]
+      },
+      {
+        "id": "jobtime-id-31-3",
+        "day": "Thứ Bảy",
+        "shifts": [{ "start": "08:00", "end": "12:00" }]
+      }
+    ]
+  },
+  {
+    "id": "job-id-32",
+    "title": "Trợ giảng tiếng Nhật",
+    "image_url": "https://haenglish.edu.vn/wp-content/uploads/2023/08/Top-10-Highest-Paying-Jobs-in-India-03.jpg",
+    "salary": "60k/buổi",
+    "type": "part_time",
+    "location": "Hai Bà Trưng, Hà Nội",
+    "min_sessions_per_week": 2,
+    "requires_experience": false,
+    "holiday_off": true,
+    "job_status": true,
+    "job_agency": "Trung tâm Nhật ngữ Sakura",
+    "job_agency_image": "https://caodang.fpt.edu.vn/wp-content/uploads/agency-01-1080x675-1.jpg",
+    "job_times": [
+      {
+        "id": "jobtime-id-32-1",
+        "day": "Thứ Tư",
+        "shifts": [{ "start": "18:00", "end": "20:00" }]
+      },
+      {
+        "id": "jobtime-id-32-2",
+        "day": "Thứ Sáu",
+        "shifts": [{ "start": "18:00", "end": "20:00" }]
+      }
+    ]
+  },
+  {
+    "id": "job-id-33",
+    "title": "Nhân viên phục vụ quán ăn vặt",
+    "image_url": "https://haenglish.edu.vn/wp-content/uploads/2023/08/Top-10-Highest-Paying-Jobs-in-India-03.jpg",
+    "salary": "20k/giờ",
+    "type": "part_time",
+    "location": "Đống Đa, Hà Nội",
+    "min_sessions_per_week": 3,
+    "requires_experience": false,
+    "holiday_off": false,
+    "job_status": true,
+    "job_agency": "Quán Ăn Vặt Sinh Viên",
+    "job_agency_image": "https://caodang.fpt.edu.vn/wp-content/uploads/agency-01-1080x675-1.jpg",
+    "job_times": [
+      {
+        "id": "jobtime-id-33-1",
+        "day": "Thứ Hai",
+        "shifts": [{ "start": "16:00", "end": "21:00" }]
+      },
+      {
+        "id": "jobtime-id-33-2",
+        "day": "Thứ Tư",
+        "shifts": [{ "start": "16:00", "end": "21:00" }]
+      },
+      {
+        "id": "jobtime-id-33-3",
+        "day": "Thứ Sáu",
+        "shifts": [{ "start": "16:00", "end": "21:00" }]
+      }
+    ]
+  },
+  {
+    "id": "job-id-34",
+    "title": "Thực tập sinh Content Writer",
+    "image_url": "https://haenglish.edu.vn/wp-content/uploads/2023/08/Top-10-Highest-Paying-Jobs-in-India-03.jpg",
+    "salary": "2–4 triệu",
+    "type": "intern",
+    "location": "Cầu Giấy, Hà Nội",
+    "min_sessions_per_week": 3,
+    "requires_experience": false,
+    "holiday_off": true,
+    "job_status": true,
+    "job_agency": "Công ty Truyền thông ABC",
+    "job_agency_image": "https://caodang.fpt.edu.vn/wp-content/uploads/agency-01-1080x675-1.jpg",
+    "job_times": [
+      {
+        "id": "jobtime-id-34-1",
+        "day": "Thứ Ba",
+        "shifts": [{ "start": "08:00", "end": "12:00" }]
+      },
+      {
+        "id": "jobtime-id-34-2",
+        "day": "Thứ Năm",
+        "shifts": [{ "start": "13:00", "end": "17:00" }]
+      },
+      {
+        "id": "jobtime-id-34-3",
+        "day": "Thứ Bảy",
+        "shifts": [{ "start": "09:00", "end": "13:00" }]
+      }
+    ]
+  },
+  {
+    "id": "job-id-35",
+    "title": "Nhân viên bán hàng online (phù hợp sinh viên)",
+    "image_url": "https://haenglish.edu.vn/wp-content/uploads/2023/08/Top-10-Highest-Paying-Jobs-in-India-03.jpg",
+    "salary": "5 triệu + thưởng",
+    "type": "part_time",
+    "location": "Hoàng Mai, Hà Nội",
+    "min_sessions_per_week": 3,
+    "requires_experience": false,
+    "holiday_off": true,
+    "job_status": true,
+    "job_agency": "Shop Online 24h",
+    "job_agency_image": "https://caodang.fpt.edu.vn/wp-content/uploads/agency-01-1080x675-1.jpg",
+    "job_times": [
+      {
+        "id": "jobtime-id-35-1",
+        "day": "Thứ Hai",
+        "shifts": [{ "start": "19:00", "end": "22:00" }]
+      },
+      {
+        "id": "jobtime-id-35-2",
+        "day": "Thứ Tư",
+        "shifts": [{ "start": "19:00", "end": "22:00" }]
+      },
+      {
+        "id": "jobtime-id-35-3",
+        "day": "Thứ Sáu",
+        "shifts": [{ "start": "19:00", "end": "22:00" }]
+      }
+    ]
+  },
+  {
+    "id": "job-id-36",
+    "title": "Thực tập sinh IT (Web Developer)",
+    "image_url": "https://haenglish.edu.vn/wp-content/uploads/2023/08/Top-10-Highest-Paying-Jobs-in-India-03.jpg",
+    "salary": "3–6 triệu",
+    "type": "intern",
+    "location": "Nam Từ Liêm, Hà Nội",
+    "min_sessions_per_week": 4,
+    "requires_experience": false,
+    "holiday_off": true,
+    "job_status": true,
+    "job_agency": "Công ty Phần mềm NextGen",
+    "job_agency_image": "https://caodang.fpt.edu.vn/wp-content/uploads/agency-01-1080x675-1.jpg",
+    "job_times": [
+      {
+        "id": "jobtime-id-36-1",
+        "day": "Thứ Hai",
+        "shifts": [{ "start": "08:00", "end": "12:00" }]
+      },
+      {
+        "id": "jobtime-id-36-2",
+        "day": "Thứ Ba",
+        "shifts": [{ "start": "13:00", "end": "17:00" }]
+      },
+      {
+        "id": "jobtime-id-36-3",
+        "day": "Thứ Năm",
+        "shifts": [{ "start": "08:00", "end": "12:00" }]
+      },
+      {
+        "id": "jobtime-id-36-4",
+        "day": "Thứ Sáu",
+        "shifts": [{ "start": "13:00", "end": "17:00" }]
+      }
+    ]
+  },
+  {
+    "id": "job-id-37",
+    "title": "Nhân viên phục vụ nhà hàng Nhật",
+    "image_url": "https://haenglish.edu.vn/wp-content/uploads/2023/08/Top-10-Highest-Paying-Jobs-in-India-03.jpg",
+    "salary": "25k/giờ",
+    "type": "part_time",
+    "location": "Hoàn Kiếm, Hà Nội",
+    "min_sessions_per_week": 3,
+    "requires_experience": false,
+    "holiday_off": false,
+    "job_status": true,
+    "job_agency": "Nhà hàng Sushi Tokyo",
+    "job_agency_image": "https://caodang.fpt.edu.vn/wp-content/uploads/agency-01-1080x675-1.jpg",
+    "job_times": [
+      {
+        "id": "jobtime-id-37-1",
+        "day": "Thứ Ba",
+        "shifts": [{ "start": "17:00", "end": "22:00" }]
+      },
+      {
+        "id": "jobtime-id-37-2",
+        "day": "Thứ Năm",
+        "shifts": [{ "start": "17:00", "end": "22:00" }]
+      },
+      {
+        "id": "jobtime-id-37-3",
+        "day": "Thứ Bảy",
+        "shifts": [{ "start": "17:00", "end": "22:00" }]
+      }
+    ]
+  },
+  {
+    "id": "job-id-38",
+    "title": "Gia sư Toán cấp 2 cho sinh viên",
+    "image_url": "https://haenglish.edu.vn/wp-content/uploads/2023/08/Top-10-Highest-Paying-Jobs-in-India-03.jpg",
+    "salary": "120k/buổi",
+    "type": "part_time",
+    "location": "Long Biên, Hà Nội",
+    "min_sessions_per_week": 2,
+    "requires_experience": false,
+    "holiday_off": true,
+    "job_status": true,
+    "job_agency": "Trung tâm Gia sư Sinh viên",
+    "job_agency_image": "https://caodang.fpt.edu.vn/wp-content/uploads/agency-01-1080x675-1.jpg",
+    "job_times": [
+      {
+        "id": "jobtime-id-38-1",
+        "day": "Thứ Tư",
+        "shifts": [{ "start": "18:00", "end": "20:00" }]
+      },
+      {
+        "id": "jobtime-id-38-2",
+        "day": "Thứ Sáu",
+        "shifts": [{ "start": "18:00", "end": "20:00" }]
+      }
+    ]
+  },
+  {
+    "id": "job-id-39",
+    "title": "Thực tập sinh Kế toán",
+    "image_url": "https://haenglish.edu.vn/wp-content/uploads/2023/08/Top-10-Highest-Paying-Jobs-in-India-03.jpg",
+    "salary": "2–4 triệu",
+    "type": "intern",
+    "location": "Cầu Giấy, Hà Nội",
+    "min_sessions_per_week": 3,
+    "requires_experience": false,
+    "holiday_off": true,
+    "job_status": true,
+    "job_agency": "Công ty Kế toán Minh Tâm",
+    "job_agency_image": "https://caodang.fpt.edu.vn/wp-content/uploads/agency-01-1080x675-1.jpg",
+    "job_times": [
+      {
+        "id": "jobtime-id-39-1",
+        "day": "Thứ Hai",
+        "shifts": [{ "start": "08:00", "end": "12:00" }]
+      },
+      {
+        "id": "jobtime-id-39-2",
+        "day": "Thứ Tư",
+        "shifts": [{ "start": "13:00", "end": "17:00" }]
+      },
+      {
+        "id": "jobtime-id-39-3",
+        "day": "Thứ Sáu",
+        "shifts": [{ "start": "09:00", "end": "13:00" }]
+      }
+    ]
+  },
+  {
+    "id": "job-id-40",
+    "title": "Nhân viên bán hàng thời vụ cho sinh viên",
+    "image_url": "https://haenglish.edu.vn/wp-content/uploads/2023/08/Top-10-Highest-Paying-Jobs-in-India-03.jpg",
+    "salary": "6 triệu",
+    "type": "part_time",
+    "location": "Ba Đình, Hà Nội",
+    "min_sessions_per_week": 3,
+    "requires_experience": false,
+    "holiday_off": true,
+    "job_status": true,
+    "job_agency": "Shop Thời Trang Sinh Viên",
+    "job_agency_image": "https://caodang.fpt.edu.vn/wp-content/uploads/agency-01-1080x675-1.jpg",
+    "job_times": [
+      {
+        "id": "jobtime-id-40-1",
+        "day": "Thứ Ba",
+        "shifts": [{ "start": "17:00", "end": "21:00" }]
+      },
+      {
+        "id": "jobtime-id-40-2",
+        "day": "Thứ Năm",
+        "shifts": [{ "start": "17:00", "end": "21:00" }]
+      },
+      {
+        "id": "jobtime-id-40-3",
+        "day": "Thứ Bảy",
+        "shifts": [{ "start": "08:00", "end": "12:00" }]
+      }
+    ]
+  },
+  {
+    "id": "job-id-41",
+    "title": "Gia sư Lý lớp 10 cho sinh viên",
+    "image_url": "https://haenglish.edu.vn/wp-content/uploads/2023/08/Top-10-Highest-Paying-Jobs-in-India-03.jpg",
+    "salary": "120k/buổi",
+    "type": "part_time",
+    "location": "Cầu Giấy, Hà Nội",
+    "min_sessions_per_week": 2,
+    "requires_experience": false,
+    "holiday_off": true,
+    "job_status": true,
+    "job_agency": "Trung tâm Gia sư Sinh viên",
+    "job_agency_image": "https://caodang.fpt.edu.vn/wp-content/uploads/agency-01-1080x675-1.jpg",
+    "job_times": [
+      {
+        "id": "jobtime-id-41-1",
+        "day": "Thứ Ba",
+        "shifts": [{ "start": "18:00", "end": "20:00" }]
+      },
+      {
+        "id": "jobtime-id-41-2",
+        "day": "Thứ Sáu",
+        "shifts": [{ "start": "18:00", "end": "20:00" }]
+      }
+    ]
+  },
+  {
+    "id": "job-id-42",
+    "title": "Nhân viên bán hàng part-time tại siêu thị mini",
+    "image_url": "https://haenglish.edu.vn/wp-content/uploads/2023/08/Top-10-Highest-Paying-Jobs-in-India-03.jpg",
+    "salary": "25k/giờ",
+    "type": "part_time",
+    "location": "Ba Đình, Hà Nội",
+    "min_sessions_per_week": 3,
+    "requires_experience": false,
+    "holiday_off": false,
+    "job_status": true,
+    "job_agency": "Siêu thị Mini Mart",
+    "job_agency_image": "https://caodang.fpt.edu.vn/wp-content/uploads/agency-01-1080x675-1.jpg",
+    "job_times": [
+      {
+        "id": "jobtime-id-42-1",
+        "day": "Thứ Hai",
+        "shifts": [{ "start": "17:00", "end": "21:00" }]
+      },
+      {
+        "id": "jobtime-id-42-2",
+        "day": "Thứ Tư",
+        "shifts": [{ "start": "17:00", "end": "21:00" }]
+      },
+      {
+        "id": "jobtime-id-42-3",
+        "day": "Thứ Bảy",
+        "shifts": [{ "start": "08:00", "end": "12:00" }]
+      }
+    ]
+  },
+  {
+    "id": "job-id-43",
+    "title": "Thực tập sinh Social Media",
+    "image_url": "https://haenglish.edu.vn/wp-content/uploads/2023/08/Top-10-Highest-Paying-Jobs-in-India-03.jpg",
+    "salary": "2–4 triệu",
+    "type": "intern",
+    "location": "Hai Bà Trưng, Hà Nội",
+    "min_sessions_per_week": 3,
+    "requires_experience": false,
+    "holiday_off": true,
+    "job_status": true,
+    "job_agency": "Công ty Social Media XYZ",
+    "job_agency_image": "https://caodang.fpt.edu.vn/wp-content/uploads/agency-01-1080x675-1.jpg",
+    "job_times": [
+      {
+        "id": "jobtime-id-43-1",
+        "day": "Thứ Ba",
+        "shifts": [{ "start": "08:00", "end": "12:00" }]
+      },
+      {
+        "id": "jobtime-id-43-2",
+        "day": "Thứ Năm",
+        "shifts": [{ "start": "13:00", "end": "17:00" }]
+      },
+      {
+        "id": "jobtime-id-43-3",
+        "day": "Thứ Bảy",
+        "shifts": [{ "start": "09:00", "end": "13:00" }]
+      }
+    ]
+  },
+  {
+    "id": "job-id-44",
+    "title": "Phục vụ quán cà phê sinh viên",
+    "image_url": "https://haenglish.edu.vn/wp-content/uploads/2023/08/Top-10-Highest-Paying-Jobs-in-India-03.jpg",
+    "salary": "20k/giờ",
+    "type": "part_time",
+    "location": "Đống Đa, Hà Nội",
+    "min_sessions_per_week": 3,
+    "requires_experience": false,
+    "holiday_off": false,
+    "job_status": true,
+    "job_agency": "Cà phê Sinh Viên",
+    "job_agency_image": "https://caodang.fpt.edu.vn/wp-content/uploads/agency-01-1080x675-1.jpg",
+    "job_times": [
+      {
+        "id": "jobtime-id-44-1",
+        "day": "Thứ Hai",
+        "shifts": [{ "start": "16:00", "end": "21:00" }]
+      },
+      {
+        "id": "jobtime-id-44-2",
+        "day": "Thứ Tư",
+        "shifts": [{ "start": "16:00", "end": "21:00" }]
+      },
+      {
+        "id": "jobtime-id-44-3",
+        "day": "Thứ Sáu",
+        "shifts": [{ "start": "16:00", "end": "21:00" }]
+      }
+    ]
+  },
+  {
+    "id": "job-id-45",
+    "title": "Trợ giảng tiếng Trung cho trung tâm ngoại ngữ",
+    "image_url": "https://haenglish.edu.vn/wp-content/uploads/2023/08/Top-10-Highest-Paying-Jobs-in-India-03.jpg",
+    "salary": "50k/buổi",
+    "type": "part_time",
+    "location": "Thanh Xuân, Hà Nội",
+    "min_sessions_per_week": 2,
+    "requires_experience": false,
+    "holiday_off": true,
+    "job_status": true,
+    "job_agency": "Trung tâm Hoa ngữ HSK",
+    "job_agency_image": "https://caodang.fpt.edu.vn/wp-content/uploads/agency-01-1080x675-1.jpg",
+    "job_times": [
+      {
+        "id": "jobtime-id-45-1",
+        "day": "Thứ Ba",
+        "shifts": [{ "start": "18:00", "end": "20:00" }]
+      },
+      {
+        "id": "jobtime-id-45-2",
+        "day": "Thứ Năm",
+        "shifts": [{ "start": "18:00", "end": "20:00" }]
+      }
+    ]
+  },
+  {
+    "id": "job-id-46",
+    "title": "Nhân viên bán hàng online (dành cho sinh viên)",
+    "image_url": "https://haenglish.edu.vn/wp-content/uploads/2023/08/Top-10-Highest-Paying-Jobs-in-India-03.jpg",
+    "salary": "5 triệu + thưởng",
+    "type": "part_time",
+    "location": "Hoàng Mai, Hà Nội",
+    "min_sessions_per_week": 3,
+    "requires_experience": false,
+    "holiday_off": true,
+    "job_status": true,
+    "job_agency": "Shop Online Sinh Viên",
+    "job_agency_image": "https://caodang.fpt.edu.vn/wp-content/uploads/agency-01-1080x675-1.jpg",
+    "job_times": [
+      {
+        "id": "jobtime-id-46-1",
+        "day": "Thứ Hai",
+        "shifts": [{ "start": "19:00", "end": "22:00" }]
+      },
+      {
+        "id": "jobtime-id-46-2",
+        "day": "Thứ Tư",
+        "shifts": [{ "start": "19:00", "end": "22:00" }]
+      },
+      {
+        "id": "jobtime-id-46-3",
+        "day": "Thứ Sáu",
+        "shifts": [{ "start": "19:00", "end": "22:00" }]
+      }
+    ]
+  },
+  {
+    "id": "job-id-47",
+    "title": "Thực tập sinh lập trình Python",
+    "image_url": "https://haenglish.edu.vn/wp-content/uploads/2023/08/Top-10-Highest-Paying-Jobs-in-India-03.jpg",
+    "salary": "3–6 triệu",
+    "type": "intern",
+    "location": "Nam Từ Liêm, Hà Nội",
+    "min_sessions_per_week": 4,
+    "requires_experience": false,
+    "holiday_off": true,
+    "job_status": true,
+    "job_agency": "Công ty Phần mềm PythonPro",
+    "job_agency_image": "https://caodang.fpt.edu.vn/wp-content/uploads/agency-01-1080x675-1.jpg",
+    "job_times": [
+      {
+        "id": "jobtime-id-47-1",
+        "day": "Thứ Hai",
+        "shifts": [{ "start": "08:00", "end": "12:00" }]
+      },
+      {
+        "id": "jobtime-id-47-2",
+        "day": "Thứ Ba",
+        "shifts": [{ "start": "13:00", "end": "17:00" }]
+      },
+      {
+        "id": "jobtime-id-47-3",
+        "day": "Thứ Năm",
+        "shifts": [{ "start": "08:00", "end": "12:00" }]
+      },
+      {
+        "id": "jobtime-id-47-4",
+        "day": "Thứ Sáu",
+        "shifts": [{ "start": "13:00", "end": "17:00" }]
+      }
+    ]
+  },
+  {
+    "id": "job-id-48",
+    "title": "Nhân viên phục vụ nhà hàng Hàn Quốc",
+    "image_url": "https://haenglish.edu.vn/wp-content/uploads/2023/08/Top-10-Highest-Paying-Jobs-in-India-03.jpg",
+    "salary": "25k/giờ",
+    "type": "part_time",
+    "location": "Hoàn Kiếm, Hà Nội",
+    "min_sessions_per_week": 3,
+    "requires_experience": false,
+    "holiday_off": false,
+    "job_status": true,
+    "job_agency": "Nhà hàng K-Food",
+    "job_agency_image": "https://caodang.fpt.edu.vn/wp-content/uploads/agency-01-1080x675-1.jpg",
+    "job_times": [
+      {
+        "id": "jobtime-id-48-1",
+        "day": "Thứ Ba",
+        "shifts": [{ "start": "17:00", "end": "22:00" }]
+      },
+      {
+        "id": "jobtime-id-48-2",
+        "day": "Thứ Năm",
+        "shifts": [{ "start": "17:00", "end": "22:00" }]
+      },
+      {
+        "id": "jobtime-id-48-3",
+        "day": "Thứ Bảy",
+        "shifts": [{ "start": "17:00", "end": "22:00" }]
+      }
+    ]
+  },
+  {
+    "id": "job-id-49",
+    "title": "Gia sư Hóa lớp 11 cho sinh viên",
+    "image_url": "https://haenglish.edu.vn/wp-content/uploads/2023/08/Top-10-Highest-Paying-Jobs-in-India-03.jpg",
+    "salary": "120k/buổi",
+    "type": "part_time",
+    "location": "Long Biên, Hà Nội",
+    "min_sessions_per_week": 2,
+    "requires_experience": false,
+    "holiday_off": true,
+    "job_status": true,
+    "job_agency": "Trung tâm Gia sư Sinh viên",
+    "job_agency_image": "https://caodang.fpt.edu.vn/wp-content/uploads/agency-01-1080x675-1.jpg",
+    "job_times": [
+      {
+        "id": "jobtime-id-49-1",
+        "day": "Thứ Tư",
+        "shifts": [{ "start": "18:00", "end": "20:00" }]
+      },
+      {
+        "id": "jobtime-id-49-2",
+        "day": "Thứ Sáu",
+        "shifts": [{ "start": "18:00", "end": "20:00" }]
+      }
+    ]
+  },
+  {
+    "id": "job-id-50",
+    "title": "Thực tập sinh Data Analyst",
+    "image_url": "https://haenglish.edu.vn/wp-content/uploads/2023/08/Top-10-Highest-Paying-Jobs-in-India-03.jpg",
+    "salary": "2–4 triệu",
+    "type": "intern",
+    "location": "Cầu Giấy, Hà Nội",
+    "min_sessions_per_week": 3,
+    "requires_experience": false,
+    "holiday_off": true,
+    "job_status": true,
+    "job_agency": "Công ty Data Insight",
+    "job_agency_image": "https://caodang.fpt.edu.vn/wp-content/uploads/agency-01-1080x675-1.jpg",
+    "job_times": [
+      {
+        "id": "jobtime-id-50-1",
+        "day": "Thứ Hai",
+        "shifts": [{ "start": "08:00", "end": "12:00" }]
+      },
+      {
+        "id": "jobtime-id-50-2",
+        "day": "Thứ Tư",
+        "shifts": [{ "start": "13:00", "end": "17:00" }]
+      },
+      {
+        "id": "jobtime-id-50-3",
+        "day": "Thứ Sáu",
+        "shifts": [{ "start": "09:00", "end": "13:00" }]
+      }
+    ]
+  },
+  {
+    "id": "job-id-51",
+    "title": "Nhân viên bán hàng thời vụ cho sinh viên",
+    "image_url": "https://haenglish.edu.vn/wp-content/uploads/2023/08/Top-10-Highest-Paying-Jobs-in-India-03.jpg",
+    "salary": "6 triệu",
+    "type": "part_time",
+    "location": "Ba Đình, Hà Nội",
+    "min_sessions_per_week": 3,
+    "requires_experience": false,
+    "holiday_off": true,
+    "job_status": true,
+    "job_agency": "Shop Thời Trang Sinh Viên",
+    "job_agency_image": "https://caodang.fpt.edu.vn/wp-content/uploads/agency-01-1080x675-1.jpg",
+    "job_times": [
+      {
+        "id": "jobtime-id-51-1",
+        "day": "Thứ Ba",
+        "shifts": [{ "start": "17:00", "end": "21:00" }]
+      },
+      {
+        "id": "jobtime-id-51-2",
+        "day": "Thứ Năm",
+        "shifts": [{ "start": "17:00", "end": "21:00" }]
+      },
+      {
+        "id": "jobtime-id-51-3",
+        "day": "Thứ Bảy",
+        "shifts": [{ "start": "08:00", "end": "12:00" }]
+      }
+    ]
+  },
+  {
+    "id": "job-id-52",
+    "title": "Trợ giảng tiếng Hàn",
+    "image_url": "https://haenglish.edu.vn/wp-content/uploads/2023/08/Top-10-Highest-Paying-Jobs-in-India-03.jpg",
+    "salary": "60k/buổi",
+    "type": "part_time",
+    "location": "Hai Bà Trưng, Hà Nội",
+    "min_sessions_per_week": 2,
+    "requires_experience": false,
+    "holiday_off": true,
+    "job_status": true,
+    "job_agency": "Trung tâm Hàn ngữ Seoul",
+    "job_agency_image": "https://caodang.fpt.edu.vn/wp-content/uploads/agency-01-1080x675-1.jpg",
+    "job_times": [
+      {
+        "id": "jobtime-id-52-1",
+        "day": "Thứ Tư",
+        "shifts": [{ "start": "18:00", "end": "20:00" }]
+      },
+      {
+        "id": "jobtime-id-52-2",
+        "day": "Thứ Sáu",
+        "shifts": [{ "start": "18:00", "end": "20:00" }]
+      }
+    ]
+  },
+  {
+    "id": "job-id-53",
+    "title": "Nhân viên phục vụ quán ăn vặt",
+    "image_url": "https://haenglish.edu.vn/wp-content/uploads/2023/08/Top-10-Highest-Paying-Jobs-in-India-03.jpg",
+    "salary": "20k/giờ",
+    "type": "part_time",
+    "location": "Đống Đa, Hà Nội",
+    "min_sessions_per_week": 3,
+    "requires_experience": false,
+    "holiday_off": false,
+    "job_status": true,
+    "job_agency": "Quán Ăn Vặt Sinh Viên",
+    "job_agency_image": "https://caodang.fpt.edu.vn/wp-content/uploads/agency-01-1080x675-1.jpg",
+    "job_times": [
+      {
+        "id": "jobtime-id-53-1",
+        "day": "Thứ Hai",
+        "shifts": [{ "start": "16:00", "end": "21:00" }]
+      },
+      {
+        "id": "jobtime-id-53-2",
+        "day": "Thứ Tư",
+        "shifts": [{ "start": "16:00", "end": "21:00" }]
+      },
+      {
+        "id": "jobtime-id-53-3",
+        "day": "Thứ Sáu",
+        "shifts": [{ "start": "16:00", "end": "21:00" }]
+      }
+    ]
+  },
+  {
+    "id": "job-id-54",
+    "title": "Thực tập sinh Content Marketing",
+    "image_url": "https://haenglish.edu.vn/wp-content/uploads/2023/08/Top-10-Highest-Paying-Jobs-in-India-03.jpg",
+    "salary": "2–4 triệu",
+    "type": "intern",
+    "location": "Cầu Giấy, Hà Nội",
+    "min_sessions_per_week": 3,
+    "requires_experience": false,
+    "holiday_off": true,
+    "job_status": true,
+    "job_agency": "Công ty Truyền thông ABC",
+    "job_agency_image": "https://caodang.fpt.edu.vn/wp-content/uploads/agency-01-1080x675-1.jpg",
+    "job_times": [
+      {
+        "id": "jobtime-id-54-1",
+        "day": "Thứ Ba",
+        "shifts": [{ "start": "08:00", "end": "12:00" }]
+      },
+      {
+        "id": "jobtime-id-54-2",
+        "day": "Thứ Năm",
+        "shifts": [{ "start": "13:00", "end": "17:00" }]
+      },
+      {
+        "id": "jobtime-id-54-3",
+        "day": "Thứ Bảy",
+        "shifts": [{ "start": "09:00", "end": "13:00" }]
+      }
+    ]
+  },
+  {
+    "id": "job-id-55",
+    "title": "Nhân viên bán hàng online (dành cho sinh viên)",
+    "image_url": "https://haenglish.edu.vn/wp-content/uploads/2023/08/Top-10-Highest-Paying-Jobs-in-India-03.jpg",
+    "salary": "5 triệu + thưởng",
+    "type": "part_time",
+    "location": "Hoàng Mai, Hà Nội",
+    "min_sessions_per_week": 3,
+    "requires_experience": false,
+    "holiday_off": true,
+    "job_status": true,
+    "job_agency": "Shop Online Sinh Viên",
+    "job_agency_image": "https://caodang.fpt.edu.vn/wp-content/uploads/agency-01-1080x675-1.jpg",
+    "job_times": [
+      {
+        "id": "jobtime-id-55-1",
+        "day": "Thứ Hai",
+        "shifts": [{ "start": "19:00", "end": "22:00" }]
+      },
+      {
+        "id": "jobtime-id-55-2",
+        "day": "Thứ Tư",
+        "shifts": [{ "start": "19:00", "end": "22:00" }]
+      },
+      {
+        "id": "jobtime-id-55-3",
+        "day": "Thứ Sáu",
+        "shifts": [{ "start": "19:00", "end": "22:00" }]
+      }
+    ]
+  },
+  {
+    "id": "job-id-56",
+    "title": "Thực tập sinh lập trình Java",
+    "image_url": "https://haenglish.edu.vn/wp-content/uploads/2023/08/Top-10-Highest-Paying-Jobs-in-India-03.jpg",
+    "salary": "3–6 triệu",
+    "type": "intern",
+    "location": "Nam Từ Liêm, Hà Nội",
+    "min_sessions_per_week": 4,
+    "requires_experience": false,
+    "holiday_off": true,
+    "job_status": true,
+    "job_agency": "Công ty Phần mềm JavaPro",
+    "job_agency_image": "https://caodang.fpt.edu.vn/wp-content/uploads/agency-01-1080x675-1.jpg",
+    "job_times": [
+      {
+        "id": "jobtime-id-56-1",
+        "day": "Thứ Hai",
+        "shifts": [{ "start": "08:00", "end": "12:00" }]
+      },
+      {
+        "id": "jobtime-id-56-2",
+        "day": "Thứ Ba",
+        "shifts": [{ "start": "13:00", "end": "17:00" }]
+      },
+      {
+        "id": "jobtime-id-56-3",
+        "day": "Thứ Năm",
+        "shifts": [{ "start": "08:00", "end": "12:00" }]
+      },
+      {
+        "id": "jobtime-id-56-4",
+        "day": "Thứ Sáu",
+        "shifts": [{ "start": "13:00", "end": "17:00" }]
+      }
+    ]
+  },
+  {
+    "id": "job-id-57",
+    "title": "Nhân viên phục vụ nhà hàng Pháp",
+    "image_url": "https://haenglish.edu.vn/wp-content/uploads/2023/08/Top-10-Highest-Paying-Jobs-in-India-03.jpg",
+    "salary": "25k/giờ",
+    "type": "part_time",
+    "location": "Hoàn Kiếm, Hà Nội",
+    "min_sessions_per_week": 3,
+    "requires_experience": false,
+    "holiday_off": false,
+    "job_status": true,
+    "job_agency": "Nhà hàng Paris Deli",
+    "job_agency_image": "https://caodang.fpt.edu.vn/wp-content/uploads/agency-01-1080x675-1.jpg",
+    "job_times": [
+      {
+        "id": "jobtime-id-57-1",
+        "day": "Thứ Ba",
+        "shifts": [{ "start": "17:00", "end": "22:00" }]
+      },
+      {
+        "id": "jobtime-id-57-2",
+        "day": "Thứ Năm",
+        "shifts": [{ "start": "17:00", "end": "22:00" }]
+      },
+      {
+        "id": "jobtime-id-57-3",
+        "day": "Thứ Bảy",
+        "shifts": [{ "start": "17:00", "end": "22:00" }]
+      }
+    ]
+  },
+  {
+    "id": "job-id-58",
+    "title": "Gia sư Văn lớp 12 cho sinh viên",
+    "image_url": "https://haenglish.edu.vn/wp-content/uploads/2023/08/Top-10-Highest-Paying-Jobs-in-India-03.jpg",
+    "salary": "120k/buổi",
+    "type": "part_time",
+    "location": "Long Biên, Hà Nội",
+    "min_sessions_per_week": 2,
+    "requires_experience": false,
+    "holiday_off": true,
+    "job_status": true,
+    "job_agency": "Trung tâm Gia sư Sinh viên",
+    "job_agency_image": "https://caodang.fpt.edu.vn/wp-content/uploads/agency-01-1080x675-1.jpg",
+    "job_times": [
+      {
+        "id": "jobtime-id-58-1",
+        "day": "Thứ Tư",
+        "shifts": [{ "start": "18:00", "end": "20:00" }]
+      },
+      {
+        "id": "jobtime-id-58-2",
+        "day": "Thứ Sáu",
+        "shifts": [{ "start": "18:00", "end": "20:00" }]
+      }
+    ]
+  },
+  {
+    "id": "job-id-59",
+    "title": "Thực tập sinh Business Analyst",
+    "image_url": "https://haenglish.edu.vn/wp-content/uploads/2023/08/Top-10-Highest-Paying-Jobs-in-India-03.jpg",
+    "salary": "2–4 triệu",
+    "type": "intern",
+    "location": "Cầu Giấy, Hà Nội",
+    "min_sessions_per_week": 3,
+    "requires_experience": false,
+    "holiday_off": true,
+    "job_status": true,
+    "job_agency": "Công ty BA Solutions",
+    "job_agency_image": "https://caodang.fpt.edu.vn/wp-content/uploads/agency-01-1080x675-1.jpg",
+    "job_times": [
+      {
+        "id": "jobtime-id-59-1",
+        "day": "Thứ Hai",
+        "shifts": [{ "start": "08:00", "end": "12:00" }]
+      },
+      {
+        "id": "jobtime-id-59-2",
+        "day": "Thứ Tư",
+        "shifts": [{ "start": "13:00", "end": "17:00" }]
+      },
+      {
+        "id": "jobtime-id-59-3",
+        "day": "Thứ Sáu",
+        "shifts": [{ "start": "09:00", "end": "13:00" }]
+      }
+    ]
+  },
+  {
+    "id": "job-id-60",
+    "title": "Nhân viên bán hàng thời vụ cho sinh viên",
+    "image_url": "https://haenglish.edu.vn/wp-content/uploads/2023/08/Top-10-Highest-Paying-Jobs-in-India-03.jpg",
+    "salary": "6 triệu",
+    "type": "part_time",
+    "location": "Ba Đình, Hà Nội",
+    "min_sessions_per_week": 3,
+    "requires_experience": false,
+    "holiday_off": true,
+    "job_status": true,
+    "job_agency": "Shop Thời Trang Sinh Viên",
+    "job_agency_image": "https://caodang.fpt.edu.vn/wp-content/uploads/agency-01-1080x675-1.jpg",
+    "job_times": [
+      {
+        "id": "jobtime-id-60-1",
+        "day": "Thứ Ba",
+        "shifts": [{ "start": "17:00", "end": "21:00" }]
+      },
+      {
+        "id": "jobtime-id-60-2",
+        "day": "Thứ Năm",
+        "shifts": [{ "start": "17:00", "end": "21:00" }]
+      },
+      {
+        "id": "jobtime-id-60-3",
+        "day": "Thứ Bảy",
+        "shifts": [{ "start": "08:00", "end": "12:00" }]
+      }
+    ]
+  }
+]

@@ -45,9 +45,10 @@ DB_NAME=jobtime_fit<br>
 Lưu ý: Đảm bảo thay your_root_password bằng mật khẩu thật của tài khoản root mà bạn đã thiết lập trong MySQL.<br>
 
 Tạo database: npx sequelize-cli db:create<br>
+Xóa database: npx sequelize-cli db:drop <br>
 Tạo các bảng trong database: npx sequelize-cli db:migrate<br>
+Thêm dữ liệu vào bảng: npx sequelize-cli db:seed:all <br>
 Chạy ứng dụng backend: npm start<br>
 Kiểm tra backend: Sau khi chạy lệnh trên, ứng dụng backend sẽ được chạy tại http://localhost:5000.<br>
-Truy cập: http://localhost:5000/api/v1/calendar<br>
-
-Phản hồi sẽ là: {"message":"Backend is working!"}
+Truy cập api liên quan đến lịch: http://localhost:5000/api/v1/calendar<br>
+Truy cập api liên quan đến công việc: http://localhost:5000/api/v1/jobs<br>
