@@ -1,4 +1,4 @@
-const { createACalendar,getAllCalendars,updateCalendar} = require("../queries/calendarQuery");
+const { createACalendar,getAllCalendars,deleteCalendar} = require("../queries/calendarQuery");
 
 const postCalendar = async (req, res) => {
   try {
@@ -20,15 +20,14 @@ const getCalendarController = async (req, res) => {
 };
 
 
-const updateCalendarController = async (req, res) => {
+const deleteCalendarById = async (req, res) => {
   const { id } = req.params;
-  const updatedData = req.body;
 
   try {
-    const updatedCalendar = await updateCalendar(id, updatedData);
-    res.status(200).json(updatedCalendar);
+    const result = await deleteCalendar(id);
+    res.status(200).json(result);
   } catch (error) {
-    res.status(500).json({ error: error.message });
+    res.status(404).json({ message: error.message });
   }
-}
-module.exports = { postCalendar,getCalendarController,updateCalendarController};
+};
+module.exports = { postCalendar,getCalendarController,deleteCalendarById};

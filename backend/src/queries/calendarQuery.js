@@ -9,14 +9,14 @@ const getAllCalendars = async () => {
   const calendars = await db.Calendar.findAll();
   return calendars;
 }
-const updateCalendar = async (id, updatedData) => {
+const deleteCalendar = async (id) => {
   const calendar = await db.Calendar.findByPk(id);
   if (!calendar) {
     throw new Error("Lịch không tồn tại");
   }
 
-  await calendar.update(updatedData);
-  return calendar;
+  await calendar.destroy(); // Xóa bản ghi khỏi DB
+  return { message: "Xóa lịch thành công", id };
 };
 
-module.exports = { createACalendar,getAllCalendars,updateCalendar};
+module.exports = { createACalendar,getAllCalendars,deleteCalendar};
