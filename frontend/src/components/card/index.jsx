@@ -39,19 +39,17 @@ function JobCard({ listJob = [] }) {
 
   const datasource = listJob.map((job, index) => {
     return (
-      <Card key={index} sx={{ width: "100%", height: "54vh" }}>
+      <Card key={index} sx={{ width: "100%", height: "100%" }}>
         <Box sx={{ position: "relative" }}>
           <CardMedia
             component="img"
-            sx={{ height: 210 }}
+            sx={{ height: 250 }}
             image={
-              job.images_url?.[0] ||
+              job.image_url ||
               "https://via.placeholder.com/400x200?text=No+Image"
             }
           />
-          <Button
-            variant="contained"
-            color="primary"
+          <Box
             sx={{
               position: "absolute",
               top: 10,
@@ -59,13 +57,19 @@ function JobCard({ listJob = [] }) {
               backgroundColor: job.job_status ? "#4caf4f" : "#f44336",
               color: "#fff",
               borderRadius: "20px",
+              padding: "6px 16px",
+              fontSize: "0.875rem",
+              fontWeight: 500,
+              textAlign: "center",
+              cursor: "default", // giữ mặc định như text, có thể là 'pointer' nếu cần click
             }}
           >
             {job.job_status ? "Đang tuyển" : "Không tuyển"}
-          </Button>
+          </Box>
+
         </Box>
 
-        <CardContent sx={{ height: "25%" }}>
+        <CardContent sx={{ height: "50%" }}>
           <Box
             sx={{
               display: "flex",
@@ -82,7 +86,6 @@ function JobCard({ listJob = [] }) {
                   >
                     {job.salary}
                   </Box>{" "}
-                  triệu/tháng
                 </>
               ) : (
                 "Chưa có mức lương"
@@ -107,42 +110,50 @@ function JobCard({ listJob = [] }) {
           <Box
             sx={{
               display: "flex",
-              alignItems: "center",
               justifyContent: "space-between",
+              alignItems: "flex-start", // Đảm bảo căn theo đỉnh cho đúng dòng
+              marginTop: "10px",
             }}
           >
             <Typography
               gutterBottom
-              variant="h5"
+              variant="h6"
               component={Link}
               to="#"
               sx={{
-                marginTop: "5px",
                 marginBottom: "10px",
                 textDecoration: "none",
                 color: "inherit",
                 display: "-webkit-box",
-                WebkitLineClamp: 1,
+                WebkitLineClamp: 2,
                 WebkitBoxOrient: "vertical",
                 overflow: "hidden",
                 textOverflow: "ellipsis",
+                width: "60%",
+
+                "&:hover": {
+                  color: "inherit", // Không đổi màu khi hover
+                  textDecoration: "none", // Ngăn gạch chân khi hover
+                },
               }}
             >
               {job.title || "Không có tiêu đề"}
-            </Typography>
-            <Typography
-              variant="body1"
-              sx={{
-                display: "-webkit-box",
-                WebkitLineClamp: 1,
-                WebkitBoxOrient: "vertical",
-                overflow: "hidden",
-                textOverflow: "ellipsis",
-              }}
-            >
-              {job.location || "Không có địa chỉ"}
-            </Typography>
-          </Box>
+        </Typography>
+          <Typography
+            variant="body1"
+            sx={{
+              display: "-webkit-box",
+              WebkitLineClamp: 2,
+              WebkitBoxOrient: "vertical",
+              overflow: "hidden",
+              textOverflow: "ellipsis",
+              width: "35%", // Đảm bảo không đè lên tiêu đề
+            }}
+          >
+            {job.location || "Không có địa chỉ"}
+          </Typography>
+        </Box>
+
           <Box sx={{ width: "100%", display: "flex" }}>
             <Typography
               sx={{
@@ -180,15 +191,21 @@ function JobCard({ listJob = [] }) {
           </Box>
         </CardContent>
 
-        <Divider sx={{ marginTop: "40px", marginBottom: "20px" }} />
+        <Divider sx={{ marginTop: "20px", marginBottom: "20px" }} />
 
         <CardHeader
-          sx={{ height: "8%", marginTop: "5px" }}
+          sx={{ height: "5%", marginTop: "5px", marginBottom: "5px" }}
           avatar={
-            <Avatar sx={{ bgcolor: "red" }}>{job.job_agency_image}</Avatar>
+            <Avatar
+              src={job.job_agency_image} // Nếu là URL ảnh
+            >
+              {/* Nếu src không có, fallback text có thể là chữ đầu của tên */}
+              {job.job_agency ? job.job_agency.charAt(0) : "?"}
+            </Avatar>
           }
           title={job.job_agency || "Không rõ người đăng"}
         />
+
       </Card>
     );
   });
@@ -242,6 +259,7 @@ function JobCard({ listJob = [] }) {
             padding: "20px 20px",
             width: "95%",
             maxWidth: "1300px",
+            maxHeight:"60vh",
           }}
         />
       </Stack>

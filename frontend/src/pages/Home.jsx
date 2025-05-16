@@ -73,7 +73,7 @@ const Home = () => {
       try {
         const response = await jobApi.getJobList();
         console.log("Job list fetched successfully:", response);
-        setJobListInformation(response.data);
+        setJobListInformation(response.data.data);
       } catch (error) {
         console.error("Error fetching job list:", error);
       }
