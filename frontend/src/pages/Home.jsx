@@ -1,7 +1,6 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState, useEffect } from "react";
 import WorkCalendar from "../components/WorkCalendar";
-import calendarApi from "../services/api";
+import {calendarApi, jobApi} from "../services/api";
 import { ToastContainer, toast } from "react-toastify";
 import joblogo from "../assets/joblogo.jpg";
 import job from "../assets/job.png";
@@ -67,77 +66,23 @@ const Home = () => {
   const onChange = e => {
     console.log(`checked = ${e.target.checked}`);
   };
-  const [jobList, setJobList] = useState([
-    {
-      "id": "job-id-1",
-      "title": "Gia sư học sinh lớp 5",
-      "image_url": "https://via.placeholder.com/400x200?text=Job+Image",
-      "salary": "10–15",
-      "type": "part_time",
-      "location": "Đống Đa, Hà Nội",
-      "min_sessions_per_week": 2,
-      "requires_experience": true,
-      "holiday_off": true,
-      "job_status": true,
-      "job_agency": "aaa",
-      "job_times": [
-        {
-          "id": "jobtime-id-1",
-          "day": "Thứ Hai",
-          "shifts": [
-            { "start": "08:00", "end": "11:00" }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "job-id-2",
-      "title": "Giảng viên Toán học",
-      "image_url": "https://via.placeholder.com/400x200?text=Job+Image",
-      "salary": "12–18",
-      "type": "full_time",
-      "location": "Cầu Giấy, Hà Nội",
-      "min_sessions_per_week": 3,
-      "requires_experience": false,
-      "holiday_off": false,
-      "job_status": false,
-      "job_agency": "bbb",
-      "job_agency_image": "https://via.placeholder.com/400x200?text=Agency+Image",
-      "job_times": [
-        {
-          "id": "jobtime-id-2",
-          "day": "Thứ Ba",
-          "shifts": [
-            { "start": "09:00", "end": "12:00" },
-            { "start": "13:00", "end": "16:00" }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "job-id-2",
-      "title": "Giảng viên Toán học",
-      "image_url": "https://via.placeholder.com/400x200?text=Job+Image",
-      "salary": "12–18",
-      "type": "full_time",
-      "location": "Cầu Giấy, Hà Nội",
-      "min_sessions_per_week": 3,
-      "requires_experience": true,
-      "holiday_off": false,
-      "job_status": false,
-      "job_agency": "bbb",
-      "job_times": [
-        {
-          "id": "jobtime-id-2",
-          "day": "Thứ Ba",
-          "shifts": [
-            { "start": "09:00", "end": "12:00" },
-            { "start": "13:00", "end": "16:00" }
-          ]
-        }
-      ]
-    }
-  ]);
+  
+  const [jobListInformation, setJobListInformation] = useState();
+  useEffect(() => {
+    const fetchJobList = async () => {
+      try {
+        const response = await jobApi.getJobList();
+        console.log("Job list fetched successfully:", response);
+        setJobListInformation(response.data);
+      } catch (error) {
+        console.error("Error fetching job list:", error);
+      }
+    };
+    fetchJobList();
+  }
+  , []);
+
+
 
   return (
     <div>
@@ -217,14 +162,11 @@ const Home = () => {
             <h1 className="text-2xl font-semibold"> Danh sách công việc</h1>
              <div>
              <Checkbox onChange={onChange}>
-           <span className="text-lg">Nghỉ ngày lễ</span> 
+           <span className="text-xl font-semibold">Nghỉ ngày lễ</span> 
           </Checkbox>
-              <button className="bg-green-500 text-white font-semibold py-2 px-4 rounded hover:bg-green-600 ml-10">
-                Thêm công việc
-              </button>
              </div>
           </div>
-        <JobCard listJob={jobList} />
+        <JobCard listJob={jobListInformation} />
         </div>
     </div>
   );
