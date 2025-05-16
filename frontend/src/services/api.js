@@ -5,6 +5,11 @@ const calendarApi = {
     const url = "/calendar";
     return axiosClient.post(url, params);
   },
+
+  getCalendar: () => {
+    const url = "/calendar/allCalendar";
+    return axiosClient.get(url);
+  },
 };
 
 const jobApi = {
@@ -16,6 +21,6 @@ const jobApi = {
   //   const url = `/job/${id}`;
   //   return axiosClient.get(url);
   // },
-}
+};
 
 export { calendarApi, jobApi };

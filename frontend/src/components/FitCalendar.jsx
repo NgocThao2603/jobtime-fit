@@ -1,9 +1,10 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import FullCalendar from "@fullcalendar/react";
 import timeGridPlugin from "@fullcalendar/timegrid";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import interactionPlugin from "@fullcalendar/interaction";
 import moment from "moment";
+import { calendarApi } from "../services/api";
 
 const weekDaysMap = {
   "Chủ Nhật": 0,
@@ -15,8 +16,9 @@ const weekDaysMap = {
   "Thứ Bảy": 6,
 };
 
-const FitCalendar = ({ jobTimes = [], userTimes = [] }) => {
+const FitCalendar = ({ jobTimes = [] }) => {
   const calendarRef = useRef(null);
+  const [userTimes, setUserTimes] = useState([]);
 
   useEffect(() => {
     const style = document.createElement("style");
@@ -43,26 +45,41 @@ const FitCalendar = ({ jobTimes = [], userTimes = [] }) => {
     };
   }, []);
 
+  useEffect(() => {
+    calendarApi
+      .getCalendar()
+      .then((res) => {
+        setUserTimes(res.data);
+      })
+      .catch((err) => {
+        console.error("Lỗi khi lấy calendar từ API:", err);
+      });
+  }, []);
+
   const convertJobTimesToEvents = () => {
     const events = [];
 
-    jobTimes.forEach((item) => {
-      const dayNumber = weekDaysMap[item.day];
+    jobTimes.forEach((jobItem) => {
+      const dayNumber = weekDaysMap[jobItem.day];
       if (dayNumber === undefined) return;
 
       const date = moment().day(dayNumber).format("YYYY-MM-DD");
 
-      item.shifts.forEach((shift) => {
+      let jobFitCount = 0;
+      const shiftEvents = [];
+
+      jobItem.shifts.forEach((shift) => {
         const shiftStart = moment(`${date}T${shift.start}`);
         const shiftEnd = moment(`${date}T${shift.end}`);
 
         let fitSlots = [];
+
         userTimes.forEach((userItem) => {
           if (weekDaysMap[userItem.day] !== dayNumber) return;
 
-          userItem.slots.forEach((slot) => {
-            const slotStart = moment(`${date}T${slot.start}`);
-            const slotEnd = moment(`${date}T${slot.end}`);
+          userItem.time.forEach((slot) => {
+            const slotStart = moment(slot.start);
+            const slotEnd = moment(slot.end);
 
             const latestStart = moment.max(shiftStart, slotStart);
             const earliestEnd = moment.min(shiftEnd, slotEnd);
@@ -73,22 +90,28 @@ const FitCalendar = ({ jobTimes = [], userTimes = [] }) => {
           });
         });
 
-        // Tạo Fit Time
-        fitSlots.forEach((fit) => {
-          events.push({
-            title: "Fit Time",
-            start: fit.start.toISOString(),
-            end: fit.end.toISOString(),
-            className: "fit",
-          });
-        });
+        if (fitSlots.length > 0) {
+          // Nếu có fit slots → tăng tổng fit count
+          jobFitCount += fitSlots.length;
 
-        // Tạo phần còn lại là Unfit nếu có
+          fitSlots.forEach((fit) => {
+            shiftEvents.push({
+              title: "Fit Time",
+              start: fit.start.toISOString(),
+              end: fit.end.toISOString(),
+              className: "fit",
+            });
+          });
+        }
+
+        // Dù có fit hay không → vẫn phải render phần còn lại (Required) nếu chưa đủ min_sessions
         let current = shiftStart;
+
+        // Sắp xếp các fit để tính phần còn lại
         fitSlots.sort((a, b) => a.start - b.start);
         fitSlots.forEach((fit) => {
           if (current.isBefore(fit.start)) {
-            events.push({
+            shiftEvents.push({
               title: "Required Time",
               start: current.toISOString(),
               end: fit.start.toISOString(),
@@ -97,8 +120,9 @@ const FitCalendar = ({ jobTimes = [], userTimes = [] }) => {
           }
           current = moment.max(current, fit.end);
         });
+
         if (current.isBefore(shiftEnd)) {
-          events.push({
+          shiftEvents.push({
             title: "Required Time",
             start: current.toISOString(),
             end: shiftEnd.toISOString(),
@@ -106,6 +130,14 @@ const FitCalendar = ({ jobTimes = [], userTimes = [] }) => {
           });
         }
       });
+
+      // Nếu đã đủ min_sessions_per_week, thì loại bỏ hết các event "unfit"
+      if (jobFitCount >= jobItem.min_sessions_per_week) {
+        const filtered = shiftEvents.filter((e) => e.className !== "unfit");
+        events.push(...filtered);
+      } else {
+        events.push(...shiftEvents);
+      }
     });
 
     return events;
@@ -118,11 +150,9 @@ const FitCalendar = ({ jobTimes = [], userTimes = [] }) => {
       const dayNumber = weekDaysMap[item.day];
       if (dayNumber === undefined) return;
 
-      const date = moment().day(dayNumber).format("YYYY-MM-DD");
-
-      item.slots.forEach((slot) => {
-        const slotStart = moment(`${date}T${slot.start}`);
-        const slotEnd = moment(`${date}T${slot.end}`);
+      item.time.forEach((slot) => {
+        const slotStart = moment(slot.start);
+        const slotEnd = moment(slot.end);
 
         let fitSlots = [];
 
@@ -130,8 +160,12 @@ const FitCalendar = ({ jobTimes = [], userTimes = [] }) => {
           if (weekDaysMap[jobItem.day] !== dayNumber) return;
 
           jobItem.shifts.forEach((shift) => {
-            const shiftStart = moment(`${date}T${shift.start}`);
-            const shiftEnd = moment(`${date}T${shift.end}`);
+            const shiftStart = moment(
+              `${moment(slot.start).format("YYYY-MM-DD")}T${shift.start}`
+            );
+            const shiftEnd = moment(
+              `${moment(slot.start).format("YYYY-MM-DD")}T${shift.end}`
+            );
 
             const latestStart = moment.max(shiftStart, slotStart);
             const earliestEnd = moment.min(shiftEnd, slotEnd);
@@ -176,22 +210,28 @@ const FitCalendar = ({ jobTimes = [], userTimes = [] }) => {
   ];
 
   const renderEventContent = (eventInfo) => {
+    const start = new Date(eventInfo.event.start);
+    const end = new Date(eventInfo.event.end);
+    const durationInMinutes = (end - start) / (1000 * 60); // milliseconds → minutes
+
     return (
       <div className="flex flex-col h-full w-full text-black">
         <div className="flex justify-between items-center p-1 font-semibold">
           <div className="text-sm truncate">{eventInfo.event.title}</div>
         </div>
-        <div className="text-xs px-1">
-          {new Date(eventInfo.event.start).toLocaleTimeString([], {
-            hour: "2-digit",
-            minute: "2-digit",
-          })}{" "}
-          -{" "}
-          {new Date(eventInfo.event.end).toLocaleTimeString([], {
-            hour: "2-digit",
-            minute: "2-digit",
-          })}
-        </div>
+        {durationInMinutes > 30 && (
+          <div className="text-xs px-1">
+            {start.toLocaleTimeString([], {
+              hour: "2-digit",
+              minute: "2-digit",
+            })}{" "}
+            -{" "}
+            {end.toLocaleTimeString([], {
+              hour: "2-digit",
+              minute: "2-digit",
+            })}
+          </div>
+        )}
       </div>
     );
   };
