@@ -22,7 +22,28 @@ import { Link } from "react-router-dom";
 
 import { List } from "antd";
 import FitCalendar from "../FitCalendar";
-
+import { calculateFitPercentage } from "../../utils/calculateFitPercentage";
+  // Data user free time
+  const mockUserTimes = [
+    {
+      day: "Thứ Hai",
+      slots: [
+        { start: "08:00", end: "10:00" },
+        { start: "14:00", end: "16:00" },
+      ],
+    },
+    {
+      day: "Thứ Ba",
+      slots: [
+        { start: "08:00", end: "13:00" },
+        { start: "14:00", end: "16:00" },
+      ],
+    },
+    {
+      day: "Thứ Tư",
+      slots: [{ start: "13:00", end: "17:00" }],
+    },
+  ];
 function JobCard({ listJob = [] }) {
   const [open, setOpen] = useState(false);
   const [selectedJob, setSelectedJob] = useState(null);
@@ -38,6 +59,7 @@ function JobCard({ listJob = [] }) {
   };
 
   const datasource = listJob.map((job, index) => {
+    const fitPercent = calculateFitPercentage(job.job_times, mockUserTimes);
     return (
       <Card key={index} sx={{ width: "100%", height: "100%" }}>
         <Box sx={{ position: "relative" }}>
@@ -103,7 +125,7 @@ function JobCard({ listJob = [] }) {
               }}
               onClick={() => handleOpenDialog(job)}
             >
-              Tương thích: 80%
+              Tương thích: {fitPercent}%
             </Button>
           </Box>
 
@@ -210,27 +232,6 @@ function JobCard({ listJob = [] }) {
     );
   });
 
-  // Data user free time
-  const mockUserTimes = [
-    {
-      day: "Thứ Hai",
-      slots: [
-        { start: "08:00", end: "10:00" },
-        { start: "14:00", end: "16:00" },
-      ],
-    },
-    {
-      day: "Thứ Ba",
-      slots: [
-        { start: "08:00", end: "13:00" },
-        { start: "14:00", end: "16:00" },
-      ],
-    },
-    {
-      day: "Thứ Tư",
-      slots: [{ start: "13:00", end: "17:00" }],
-    },
-  ];
 
   return (
     <>
