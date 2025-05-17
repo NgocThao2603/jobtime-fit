@@ -16,7 +16,7 @@ const weekDaysMap = {
   "Thứ Bảy": 6,
 };
 
-const FitCalendar = ({ jobTimes = [] }) => {
+const FitCalendar = ({ jobTimes = [], minSessionsPerWeek = 2 }) => {
   const calendarRef = useRef(null);
   const [userTimes, setUserTimes] = useState([]);
 
@@ -58,20 +58,20 @@ const FitCalendar = ({ jobTimes = [] }) => {
 
   const convertJobTimesToEvents = () => {
     const events = [];
+    const tempEventsPerJob = [];
+    const fitDaySet = new Set(); // chứa các ngày phù hợp hoàn toàn
 
     jobTimes.forEach((jobItem) => {
       const dayNumber = weekDaysMap[jobItem.day];
       if (dayNumber === undefined) return;
 
       const date = moment().day(dayNumber).format("YYYY-MM-DD");
-
-      let jobFitCount = 0;
-      const shiftEvents = [];
+      let allShiftEvents = [];
+      let isAllShiftsFit = true;
 
       jobItem.shifts.forEach((shift) => {
         const shiftStart = moment(`${date}T${shift.start}`);
         const shiftEnd = moment(`${date}T${shift.end}`);
-
         let fitSlots = [];
 
         userTimes.forEach((userItem) => {
@@ -90,53 +90,59 @@ const FitCalendar = ({ jobTimes = [] }) => {
           });
         });
 
-        if (fitSlots.length > 0) {
-          // Nếu có fit slots → tăng tổng fit count
-          jobFitCount += fitSlots.length;
-
-          fitSlots.forEach((fit) => {
-            shiftEvents.push({
-              title: "Fit Time",
-              start: fit.start.toISOString(),
-              end: fit.end.toISOString(),
-              className: "fit",
-            });
+        // Tạo event "Fit Time"
+        fitSlots.forEach((fit) => {
+          allShiftEvents.push({
+            title: "Fit Time",
+            start: fit.start.toISOString(),
+            end: fit.end.toISOString(),
+            className: "fit",
           });
-        }
+        });
 
-        // Dù có fit hay không → vẫn phải render phần còn lại (Required) nếu chưa đủ min_sessions
+        // Tạo "Required Time" nếu có khoảng trống không được lấp
         let current = shiftStart;
-
-        // Sắp xếp các fit để tính phần còn lại
         fitSlots.sort((a, b) => a.start - b.start);
         fitSlots.forEach((fit) => {
           if (current.isBefore(fit.start)) {
-            shiftEvents.push({
+            allShiftEvents.push({
               title: "Required Time",
               start: current.toISOString(),
               end: fit.start.toISOString(),
               className: "unfit",
             });
+            isAllShiftsFit = false;
           }
           current = moment.max(current, fit.end);
         });
 
         if (current.isBefore(shiftEnd)) {
-          shiftEvents.push({
+          allShiftEvents.push({
             title: "Required Time",
             start: current.toISOString(),
             end: shiftEnd.toISOString(),
             className: "unfit",
           });
+          isAllShiftsFit = false;
         }
       });
 
-      // Nếu đã đủ min_sessions_per_week, thì loại bỏ hết các event "unfit"
-      if (jobFitCount >= jobItem.min_sessions_per_week) {
-        const filtered = shiftEvents.filter((e) => e.className !== "unfit");
+      if (isAllShiftsFit) {
+        fitDaySet.add(jobItem.day); // ngày này tất cả ca đều phù hợp
+      }
+
+      tempEventsPerJob.push(allShiftEvents);
+    });
+
+    const jobFitCount = fitDaySet.size;
+
+    // Áp dụng logic hiển thị
+    tempEventsPerJob.forEach((eventList) => {
+      if (jobFitCount >= minSessionsPerWeek) {
+        const filtered = eventList.filter((e) => e.className !== "unfit");
         events.push(...filtered);
       } else {
-        events.push(...shiftEvents);
+        events.push(...eventList);
       }
     });
 
