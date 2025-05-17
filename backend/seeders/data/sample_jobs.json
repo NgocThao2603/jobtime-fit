@@ -747,16 +747,31 @@
     "job_times": [
       {
         "id": "jobtime-id-23-1",
-        "day": "Thứ Ba",
+        "day": "Thứ Hai",
         "shifts": [{ "start": "08:00", "end": "12:00" }]
       },
       {
         "id": "jobtime-id-23-2",
-        "day": "Thứ Năm",
+        "day": "Thứ Ba",
         "shifts": [{ "start": "13:00", "end": "17:00" }]
       },
       {
         "id": "jobtime-id-23-3",
+        "day": "Thứ Tư",
+        "shifts": [{ "start": "09:00", "end": "13:00" }]
+      },
+      {
+        "id": "jobtime-id-23-4",
+        "day": "Thứ Năm",
+        "shifts": [{ "start": "08:00", "end": "12:00" }]
+      },
+      {
+        "id": "jobtime-id-23-5",
+        "day": "Thứ Sáu",
+        "shifts": [{ "start": "13:00", "end": "17:00" }]
+      },
+      {
+        "id": "jobtime-id-23-6",
         "day": "Thứ Bảy",
         "shifts": [{ "start": "09:00", "end": "13:00" }]
       }

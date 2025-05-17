@@ -241,7 +241,12 @@ function JobCard({ listJob = [] }) {
       </Stack>
 
       {/* Dialog hiện chi tiết tương thích */}
-      <Dialog open={open} onClose={handleCloseDialog} maxWidth="md" fullWidth>
+      <Dialog 
+        open={open} 
+        onClose={handleCloseDialog} 
+        maxWidth={false} fullWidth 
+        sx={{ width: "90%", left: "5%", right: "5%" }}
+      >
         <DialogTitle
           sx={{ textAlign: "center", color: "green", fontSize: "1.25rem" }}
         >
