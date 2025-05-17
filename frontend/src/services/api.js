@@ -10,6 +10,10 @@ const calendarApi = {
     const url = "/calendar/allCalendar";
     return axiosClient.get(url);
   },
+  deleteCalendar: (id) => {
+    const url = `/calendar/delete/${id}`;
+    return axiosClient.delete(url);
+  },
 };
 
 const jobApi = {
