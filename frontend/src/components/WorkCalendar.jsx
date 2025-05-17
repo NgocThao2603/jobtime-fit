@@ -2,6 +2,7 @@ import React, { useRef, useCallback, useEffect } from "react";
 import FullCalendar from "@fullcalendar/react";
 import timeGridPlugin from "@fullcalendar/timegrid";
 import interactionPlugin from "@fullcalendar/interaction";
+import { calendarApi } from "../services/api";
 
 export default function WorkCalendar({ events, setEvents }) {
   const calendarRef = useRef(null);
@@ -68,11 +69,19 @@ export default function WorkCalendar({ events, setEvents }) {
   };
 
   const handleEventRemove = useCallback(
-    (eventId) => {
-      setEvents((prevEvents) =>
-        prevEvents.filter((event) => event.id !== eventId)
-      );
-      console.log("Removing event with ID:", eventId);
+    async (eventId) => {
+      try {
+        await calendarApi.deleteCalendar(eventId);
+  
+        setEvents((prevEvents) =>
+          prevEvents.filter((event) => event.id !== eventId)
+        );
+  
+        console.log("Xoá lịch thành công với ID:", eventId);
+      } catch (error) {
+        console.error("Xoá lịch thất bại:", error?.response?.data?.message || error.message);
+        alert("Xoá lịch thất bại. Vui lòng thử lại.");
+      }
     },
     [setEvents]
   );
