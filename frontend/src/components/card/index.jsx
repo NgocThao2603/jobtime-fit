@@ -22,6 +22,7 @@ import { Link } from "react-router-dom";
 
 import { List } from "antd";
 import FitCalendar from "../FitCalendar";
+import { calculateFitPercentage } from "../../utils/calculateFitPercentage";
 
 function JobCard({ listJob = [] }) {
   const [open, setOpen] = useState(false);
@@ -38,7 +39,7 @@ function JobCard({ listJob = [] }) {
   };
 
   const datasource = listJob.map((job, index) => {
-    // console.log("jobCard: ", job.min_sessions_per_week);
+    const fitPercent = calculateFitPercentage(job.job_times);
     return (
       <Card key={index} sx={{ width: "100%", height: "100%" }}>
         <Box sx={{ position: "relative" }}>
@@ -103,7 +104,7 @@ function JobCard({ listJob = [] }) {
               }}
               onClick={() => handleOpenDialog(job)}
             >
-              Tương thích: 80%
+              Tương thích: {fitPercent}%
             </Button>
           </Box>
 
@@ -242,11 +243,10 @@ function JobCard({ listJob = [] }) {
       </Stack>
 
       {/* Dialog hiện chi tiết tương thích */}
-      <Dialog
-        open={open}
-        onClose={handleCloseDialog}
-        maxWidth={false}
-        fullWidth
+      <Dialog 
+        open={open} 
+        onClose={handleCloseDialog} 
+        maxWidth={false} fullWidth 
         sx={{ width: "90%", left: "5%", right: "5%" }}
       >
         <DialogTitle
@@ -263,10 +263,7 @@ function JobCard({ listJob = [] }) {
         </DialogTitle>
         <DialogContent>
           {selectedJob ? (
-            <FitCalendar
-              jobTimes={selectedJob.jobTimes}
-              minSessionsPerWeek={selectedJob.min_sessions_per_week}
-            />
+            <FitCalendar jobTimes={selectedJob.jobTimes} />
           ) : (
             <Typography variant="body1">Đang tải dữ liệu...</Typography>
           )}
