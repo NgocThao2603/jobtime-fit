@@ -23,27 +23,7 @@ import { Link } from "react-router-dom";
 import { List } from "antd";
 import FitCalendar from "../FitCalendar";
 import { calculateFitPercentage } from "../../utils/calculateFitPercentage";
-  // Data user free time
-  const mockUserTimes = [
-    {
-      day: "Thứ Hai",
-      slots: [
-        { start: "08:00", end: "10:00" },
-        { start: "14:00", end: "16:00" },
-      ],
-    },
-    {
-      day: "Thứ Ba",
-      slots: [
-        { start: "08:00", end: "13:00" },
-        { start: "14:00", end: "16:00" },
-      ],
-    },
-    {
-      day: "Thứ Tư",
-      slots: [{ start: "13:00", end: "17:00" }],
-    },
-  ];
+
 function JobCard({ listJob = [] }) {
   const [open, setOpen] = useState(false);
   const [selectedJob, setSelectedJob] = useState(null);
@@ -59,7 +39,7 @@ function JobCard({ listJob = [] }) {
   };
 
   const datasource = listJob.map((job, index) => {
-    const fitPercent = calculateFitPercentage(job.job_times, mockUserTimes);
+    const fitPercent = calculateFitPercentage(job.job_times);
     return (
       <Card key={index} sx={{ width: "100%", height: "100%" }}>
         <Box sx={{ position: "relative" }}>
@@ -88,7 +68,6 @@ function JobCard({ listJob = [] }) {
           >
             {job.job_status ? "Đang tuyển" : "Không tuyển"}
           </Box>
-
         </Box>
 
         <CardContent sx={{ height: "50%" }}>
@@ -160,21 +139,21 @@ function JobCard({ listJob = [] }) {
               }}
             >
               {job.title || "Không có tiêu đề"}
-        </Typography>
-          <Typography
-            variant="body1"
-            sx={{
-              display: "-webkit-box",
-              WebkitLineClamp: 2,
-              WebkitBoxOrient: "vertical",
-              overflow: "hidden",
-              textOverflow: "ellipsis",
-              width: "35%", // Đảm bảo không đè lên tiêu đề
-            }}
-          >
-            {job.location || "Không có địa chỉ"}
-          </Typography>
-        </Box>
+            </Typography>
+            <Typography
+              variant="body1"
+              sx={{
+                display: "-webkit-box",
+                WebkitLineClamp: 2,
+                WebkitBoxOrient: "vertical",
+                overflow: "hidden",
+                textOverflow: "ellipsis",
+                width: "35%", // Đảm bảo không đè lên tiêu đề
+              }}
+            >
+              {job.location || "Không có địa chỉ"}
+            </Typography>
+          </Box>
 
           <Box sx={{ width: "100%", display: "flex" }}>
             <Typography
@@ -227,11 +206,9 @@ function JobCard({ listJob = [] }) {
           }
           title={job.job_agency || "Không rõ người đăng"}
         />
-
       </Card>
     );
   });
-
 
   return (
     <>
@@ -260,17 +237,22 @@ function JobCard({ listJob = [] }) {
             padding: "20px 20px",
             width: "95%",
             maxWidth: "1300px",
-            maxHeight:"60vh",
+            maxHeight: "60vh",
           }}
         />
       </Stack>
 
       {/* Dialog hiện chi tiết tương thích */}
-      <Dialog open={open} onClose={handleCloseDialog} maxWidth="md" fullWidth>
-        <DialogTitle>
-          <h2 className="text-xl text-center mb-3 text-green-500">
-            Chi tiết mức độ tương thích
-          </h2>
+      <Dialog 
+        open={open} 
+        onClose={handleCloseDialog} 
+        maxWidth={false} fullWidth 
+        sx={{ width: "90%", left: "5%", right: "5%" }}
+      >
+        <DialogTitle
+          sx={{ textAlign: "center", color: "green", fontSize: "1.25rem" }}
+        >
+          Chi tiết mức độ tương thích
           <IconButton
             aria-label="close"
             onClick={handleCloseDialog}
@@ -281,12 +263,9 @@ function JobCard({ listJob = [] }) {
         </DialogTitle>
         <DialogContent>
           {selectedJob ? (
-            <FitCalendar
-              jobTimes={selectedJob.job_times}
-              userTimes={mockUserTimes}
-            />
+            <FitCalendar jobTimes={selectedJob.jobTimes} />
           ) : (
-            <Typography>Không có dữ liệu để hiển thị.</Typography>
+            <Typography variant="body1">Đang tải dữ liệu...</Typography>
           )}
         </DialogContent>
       </Dialog>
