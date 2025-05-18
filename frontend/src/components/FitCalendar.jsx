@@ -65,7 +65,12 @@ const FitCalendar = ({ jobTimes = [], minSessionsPerWeek = 2 }) => {
       const dayNumber = weekDaysMap[jobItem.day];
       if (dayNumber === undefined) return;
 
-      const date = moment().day(dayNumber).format("YYYY-MM-DD");
+      const today = moment();
+      const startOfWeek = moment().startOf("isoWeek"); // Monday
+      const date = moment(startOfWeek)
+        .add(dayNumber - 1, "days")
+        .format("YYYY-MM-DD");
+
       let allShiftEvents = [];
       let isAllShiftsFit = true;
 
@@ -248,6 +253,7 @@ const FitCalendar = ({ jobTimes = [], minSessionsPerWeek = 2 }) => {
         ref={calendarRef}
         plugins={[timeGridPlugin, dayGridPlugin, interactionPlugin]}
         initialView="timeGridWeek"
+        timeZone="local"
         headerToolbar={false}
         slotDuration="00:30:00"
         slotLabelInterval="02:00:00"
