@@ -1,5 +1,5 @@
 import * as React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
@@ -19,14 +19,21 @@ import Box from "@mui/material/Box";
 import { LocationOn } from "@mui/icons-material";
 import { Close } from "@mui/icons-material";
 import { Link } from "react-router-dom";
-
+import { calendarApi } from "../../services/api"
+import { calculateFitPercentage } from "../../utils/calculateFitPercentage";
 import { List } from "antd";
 import FitCalendar from "../FitCalendar";
-import { calculateFitPercentage } from "../../utils/calculateFitPercentage";
 
 function JobCard({ listJob = [] }) {
   const [open, setOpen] = useState(false);
   const [selectedJob, setSelectedJob] = useState(null);
+  const [userTimes, setUserTimes] = useState([]);
+
+  useEffect(() => {
+    calendarApi.getCalendar()
+      .then(res => setUserTimes(res.data))
+      .catch(err => console.error("Lỗi lấy userTimes:", err));
+  }, []);
 
   const handleOpenDialog = (job) => {
     setSelectedJob(job);
@@ -37,9 +44,14 @@ function JobCard({ listJob = [] }) {
     setOpen(false);
     setSelectedJob(null);
   };
+  // Hàm lấy % tương thích cho từng job
+  const getFitPercent = (job) => {
+    if (!job || !userTimes.length) return 0;
+    return calculateFitPercentage(job.jobTimes, userTimes);
+  };
 
   const datasource = listJob.map((job, index) => {
-    const fitPercent = calculateFitPercentage(job.job_times);
+    // console.log("jobCard: ", job.min_sessions_per_week);
     return (
       <Card key={index} sx={{ width: "100%", height: "100%" }}>
         <Box sx={{ position: "relative" }}>
@@ -92,20 +104,29 @@ function JobCard({ listJob = [] }) {
                 "Chưa có mức lương"
               )}
             </Typography>
-            <Button
-              sx={{
-                backgroundColor: "#4CAF4F",
-                color: "#fff",
-                borderRadius: "16px",
-                padding: "4px 12px",
-                display: "inline-block",
-                fontSize: "0.875rem",
-                fontWeight: 500,
-              }}
-              onClick={() => handleOpenDialog(job)}
-            >
-              Tương thích: {fitPercent}%
-            </Button>
+          <Button
+            sx={{
+              backgroundColor: () => {
+                const percent = getFitPercent(job);
+                if (percent >= 70) return "#4CAF4F";  // xanh
+                else if (percent >= 50) return "#FFC107"; // vàng
+                else return "#F44336";  // đỏ
+              },
+              color: () => {
+                const percent = getFitPercent(job);
+                if (percent >= 50 && percent < 70) return "#000";
+                else return "#fff"; 
+              },
+              borderRadius: "16px",
+              padding: "4px 12px",
+              display: "inline-block",
+              fontSize: "0.875rem",
+              fontWeight: 500,
+            }}
+            onClick={() => handleOpenDialog(job)}
+          >
+            Tương thích: {getFitPercent(job)}%
+          </Button>
           </Box>
 
           <Box
@@ -243,10 +264,11 @@ function JobCard({ listJob = [] }) {
       </Stack>
 
       {/* Dialog hiện chi tiết tương thích */}
-      <Dialog 
-        open={open} 
-        onClose={handleCloseDialog} 
-        maxWidth={false} fullWidth 
+      <Dialog
+        open={open}
+        onClose={handleCloseDialog}
+        maxWidth={false}
+        fullWidth
         sx={{ width: "90%", left: "5%", right: "5%" }}
       >
         <DialogTitle
@@ -263,9 +285,9 @@ function JobCard({ listJob = [] }) {
         </DialogTitle>
         <DialogContent>
           {selectedJob ? (
-            <FitCalendar 
-            jobTimes={selectedJob.jobTimes}
-            minSessionsPerWeek={selectedJob.min_sessions_per_week}
+            <FitCalendar
+              jobTimes={selectedJob.jobTimes}
+              minSessionsPerWeek={selectedJob.min_sessions_per_week}
             />
           ) : (
             <Typography variant="body1">Đang tải dữ liệu...</Typography>
