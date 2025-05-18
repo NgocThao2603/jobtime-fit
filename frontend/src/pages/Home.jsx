@@ -138,6 +138,9 @@ const handleUpdate = async () => {
     toast.error("Cập nhật thất bại");
   }
 };
+const handleClearAllEvents = () => {
+  setEvents([]);
+};
 
 
   return (
@@ -198,14 +201,19 @@ const handleUpdate = async () => {
               </div>
             </div>
 
-            <div className="flex justify-end">
-            <button
-              className="bg-green-500 text-white font-semibold py-2 px-4 rounded hover:bg-green-600"
-              onClick={hasCalendar ? handleUpdate : handleSave}
-            >
-              {hasCalendar ? "Cập nhật" : "Lưu"}
-            </button>
-
+            <div className="flex justify-end gap-3">
+              <button
+                className="bg-red-500 text-white font-semibold py-2 px-4 rounded hover:bg-red-600"
+                onClick={handleClearAllEvents}
+              >
+                Xóa tất cả
+              </button>
+              <button
+                className="bg-green-500 text-white font-semibold py-2 px-4 rounded hover:bg-green-600"
+                onClick={hasCalendar ? handleUpdate : handleSave}
+              >
+                {hasCalendar ? "Cập nhật" : "Lưu"}
+              </button>
             </div>
           </div>
           <ToastContainer />
