@@ -50,8 +50,13 @@ function JobCard({ listJob = [] }) {
     return calculateFitPercentage(job.jobTimes, userTimes);
   };
 
-  const datasource = listJob.map((job, index) => {
-    // console.log("jobCard: ", job.min_sessions_per_week);
+  const datasource = [...listJob]
+  .map((job) => ({
+    ...job,
+    fitPercent: getFitPercent(job), 
+  }))
+  .sort((a, b) => b.fitPercent - a.fitPercent) 
+  .map((job, index) => {
     return (
       <Card key={index} sx={{ width: "100%", height: "100%" }}>
         <Box sx={{ position: "relative" }}>
@@ -177,17 +182,25 @@ function JobCard({ listJob = [] }) {
           </Box>
 
           <Box sx={{ width: "100%", display: "flex" }}>
-            <Typography
+          <Typography
               sx={{
                 fontSize: "1rem",
                 color: "#636364",
                 width: "30%",
-                borderRight: "1px solid #ddd", // Gạch dọc bên phải
+                borderRight: "1px solid #ddd",
                 marginRight: "10px",
               }}
             >
-              {job.type || "PartTime"}
+              {job.type === "part_time"
+                  ? "Part Time"
+                  : job.type === "full_time"
+                  ? "Full Time"
+                  : job.type === "intern"
+                  ? "Thực tập"
+                  : job.type || "PartTime"}
+
             </Typography>
+
             <Typography
               sx={{
                 fontSize: "1rem",

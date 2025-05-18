@@ -11,6 +11,7 @@ const Home = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [events, setEvents] = useState([]);
 const [hasCalendar, setHasCalendar] = useState(false);
+const [showHolidayOff, setShowHolidayOff] = useState(false);
 
 const toggleModal = async () => {
   const newState = !isModalOpen;
@@ -96,7 +97,7 @@ const toggleModal = async () => {
     }
   };
   const onChange = e => {
-    console.log(`checked = ${e.target.checked}`);
+    setShowHolidayOff(e.target.checked);
   };
   
   const [jobListInformation, setJobListInformation] = useState();
@@ -113,6 +114,9 @@ const toggleModal = async () => {
     fetchJobList();
   }
   , []);
+  const filteredJobList = showHolidayOff
+  ? jobListInformation?.filter(job => job.holiday_off === true)
+  : jobListInformation;
 
 const handleUpdate = async () => {
   try {
@@ -231,7 +235,7 @@ const handleClearAllEvents = () => {
           </Checkbox>
              </div>
           </div>
-        <JobCard listJob={jobListInformation} />
+        <JobCard listJob={filteredJobList} />
         </div>
     </div>
   );
