@@ -56,7 +56,10 @@ const Home = () => {
       console.log("All calendars created:", results);
       toast.success("Tạo lịch thành công!", {
         autoClose: 2000,
-        onClose: () => toggleModal(),
+        onClose: () => {
+        toggleModal();
+        window.location.reload();  // reload trang
+      },
       });
     } catch (error) {
       toast.error("Failed to create calendars");
