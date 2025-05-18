@@ -10,10 +10,39 @@ import  JobCard from "../components/card/index"
 const Home = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [events, setEvents] = useState([]);
+const [hasCalendar, setHasCalendar] = useState(false);
 
-  const toggleModal = () => {
-    setIsModalOpen(!isModalOpen);
-  };
+const toggleModal = async () => {
+  const newState = !isModalOpen;
+  setIsModalOpen(newState);
+
+  if (!isModalOpen) {
+    try {
+      const res = await calendarApi.getCalendar(); // gọi API lấy lịch
+      if (res?.data?.length > 0) {
+          setHasCalendar(true);
+        setEvents(() => {
+          return res.data.flatMap((item, index) => {
+            return item.time.map((time, idx) => ({
+              id: `${index}-${idx}`,
+              title: "Free for work",
+              start: time.start,
+              end: time.end,
+              allDay: false,
+              dayOfWeek: item.day
+            }));
+          });
+        });
+      } else {
+          setHasCalendar(false);
+        setEvents([]); // nếu chưa có thì để trống
+      }
+    } catch (err) {
+      console.error("Lỗi lấy lịch:", err);
+    }
+  }
+};
+
 
   const groupByDay = (data) => {
     const grouped = {};
@@ -85,6 +114,30 @@ const Home = () => {
   }
   , []);
 
+const handleUpdate = async () => {
+  try {
+    // 1. Xóa toàn bộ lịch hiện tại trong DB
+    const allCalendars = await calendarApi.getCalendar();
+    const deletePromises = allCalendars.data.map(item => calendarApi.deleteCalendar(item.id));
+    await Promise.all(deletePromises);
+
+    // 2. Gửi dữ liệu mới
+    const data = groupByDay(events);
+    const createPromises = data.map(item => createCalendar(item));
+    await Promise.all(createPromises);
+
+    toast.success("Cập nhật lịch thành công!", {
+      autoClose: 2000,
+      onClose: () => {
+        toggleModal();
+        window.location.reload();
+      },
+    });
+  } catch (error) {
+    console.error("Lỗi cập nhật lịch:", error);
+    toast.error("Cập nhật thất bại");
+  }
+};
 
 
   return (
@@ -146,12 +199,13 @@ const Home = () => {
             </div>
 
             <div className="flex justify-end">
-              <button
-                className="bg-green-500 text-white font-semibold py-2 px-4 rounded hover:bg-green-600"
-                onClick={handleSave}
-              >
-                Lưu
-              </button>
+            <button
+              className="bg-green-500 text-white font-semibold py-2 px-4 rounded hover:bg-green-600"
+              onClick={hasCalendar ? handleUpdate : handleSave}
+            >
+              {hasCalendar ? "Cập nhật" : "Lưu"}
+            </button>
+
             </div>
           </div>
           <ToastContainer />
