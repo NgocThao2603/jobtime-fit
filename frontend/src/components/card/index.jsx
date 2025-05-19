@@ -314,10 +314,17 @@ function JobCard({ listJob = [] }) {
         </DialogTitle>
         <DialogContent>
           {selectedJob ? (
-            <FitCalendar
-              jobTimes={selectedJob.jobTimes}
-              minSessionsPerWeek={selectedJob.min_sessions_per_week}
-            />
+            <div className="-mt-5 mb-3">
+              <DialogTitle
+                sx={{ textAlign: "left", color: "#0369A1", fontSize: "1rem", fontWeight: 500 }}
+              >
+                Yêu cầu tối thiểu: <span className="font-bold text-xl">{selectedJob.min_sessions_per_week || "2"}</span> buổi/tuần
+              </DialogTitle>
+              <FitCalendar
+                jobTimes={selectedJob.jobTimes}
+                minSessionsPerWeek={selectedJob.min_sessions_per_week}
+              />
+            </div>
           ) : (
             <Typography variant="body1">Đang tải dữ liệu...</Typography>
           )}
