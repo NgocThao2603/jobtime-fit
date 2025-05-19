@@ -112,7 +112,7 @@ export default function WorkCalendar({ events, setEvents }) {
   };
 
   return (
-    <div className="w-full h-[600px]">
+    <div className="w-full h-[68vh]">
       <FullCalendar
         ref={calendarRef}
         plugins={[timeGridPlugin, interactionPlugin]}
