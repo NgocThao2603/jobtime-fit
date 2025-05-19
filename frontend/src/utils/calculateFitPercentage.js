@@ -83,4 +83,3 @@ export function calculateFitPercentage(jobTimes = [], userTimes = []) {
 
   return Math.round((totalFitMinutes / (totalFitMinutes + totalUnfitMinutes)) * 100);
 }
-
