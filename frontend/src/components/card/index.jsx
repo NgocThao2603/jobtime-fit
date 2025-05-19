@@ -47,8 +47,8 @@ function JobCard({ listJob = [] }) {
   // Hàm lấy % tương thích cho từng job
   const getFitPercent = (job) => {
     if (!job || !userTimes.length) return 0;
-    return calculateFitPercentage(job.jobTimes, userTimes);
-  };
+    return calculateFitPercentage(job.jobTimes, userTimes, job.min_sessions_per_week);
+  };  
 
   const datasource = [...listJob]
     .map((job) => ({
@@ -175,7 +175,6 @@ function JobCard({ listJob = [] }) {
                 textOverflow: "ellipsis",
                 width: "60%",
                 minHeight: "64px", // Đảm bảo chiều cao tối thiểu
-                color: "#00528D",
                 fontWeight: 600,
                 "&:hover": {
                   color: "#00528D", // Không đổi màu khi hover

@@ -1,6 +1,5 @@
 import moment from "moment";
 
-// Nếu bạn chưa có file constants, copy map này vào cùng file hoặc import từ FitCalendar
 const weekDaysMap = {
   "Chủ Nhật": 0,
   "Thứ Hai": 1,
@@ -13,15 +12,11 @@ const weekDaysMap = {
 
 function mergeTimeSlots(slots) {
   if (!slots.length) return [];
-
-  // Sort theo thời gian bắt đầu
   slots.sort((a, b) => a.start - b.start);
-
   const merged = [slots[0]];
   for (let i = 1; i < slots.length; i++) {
     const last = merged[merged.length - 1];
     if (slots[i].start <= last.end) {
-      // Nếu trùng hoặc chồng lên nhau, gộp lại
       last.end = moment.max(last.end, slots[i].end);
     } else {
       merged.push(slots[i]);
@@ -30,22 +25,30 @@ function mergeTimeSlots(slots) {
   return merged;
 }
 
-export function calculateFitPercentage(jobTimes = [], userTimes = []) {
+export function calculateFitPercentage(jobTimes = [], userTimes = [], minSessionsPerWeek = []) {
   let totalFitMinutes = 0;
-  let totalUnfitMinutes = 0;
+  let totalJobMinutes = 0;
+
+  const fitDaySet = new Set();
+  let totalShiftCount = 0;
 
   jobTimes.forEach((jobItem) => {
     const dayNumber = weekDaysMap[jobItem.day];
     if (dayNumber === undefined) return;
 
-    const startOfWeek = moment().startOf("isoWeek"); // Monday
+    const startOfWeek = moment().startOf("isoWeek");
     const date = moment(startOfWeek).add(dayNumber - 1, "days").format("YYYY-MM-DD");
+
+    let isAllShiftsFit = true;
 
     jobItem.shifts.forEach((shift) => {
       const shiftStart = moment(`${date}T${shift.start}`);
       const shiftEnd = moment(`${date}T${shift.end}`);
+      const shiftDuration = shiftEnd.diff(shiftStart, "minutes");
 
-      // Tìm khoảng fit
+      totalJobMinutes += shiftDuration;
+      totalShiftCount++;
+
       let fitSlots = [];
 
       userTimes.forEach((userItem) => {
@@ -64,22 +67,38 @@ export function calculateFitPercentage(jobTimes = [], userTimes = []) {
         });
       });
 
-      // Merge các khoảng thời gian fit
       const mergedFitSlots = mergeTimeSlots(fitSlots);
+      const fitDuration = mergedFitSlots.reduce(
+        (acc, { start, end }) => acc + end.diff(start, "minutes"),
+        0
+      );
 
-      // Tổng fit time trong ca làm việc
-      mergedFitSlots.forEach(({ start, end }) => {
-        totalFitMinutes += end.diff(start, "minutes");
-      });
+      if (fitDuration < shiftDuration) {
+        isAllShiftsFit = false;
+      }
 
-      const shiftDuration = shiftEnd.diff(shiftStart, "minutes");
-      const fitDuration = mergedFitSlots.reduce((acc, { start, end }) => acc + end.diff(start, "minutes"), 0);
-
-      totalUnfitMinutes += shiftDuration - fitDuration;
+      totalFitMinutes += fitDuration;
     });
+
+    if (isAllShiftsFit) {
+      fitDaySet.add(jobItem.day);
+    }
   });
 
-  if (totalFitMinutes + totalUnfitMinutes === 0) return 0;
+  const fitFullDayCount = fitDaySet.size;
 
-  return Math.round((totalFitMinutes / (totalFitMinutes + totalUnfitMinutes)) * 100);
+  // ✅ Nếu đủ buổi full fit
+  if (fitFullDayCount >= minSessionsPerWeek) {
+    return 100;
+  }
+
+  // ✅ Nếu không đủ buổi, dùng công thức: fit / (averageJobTimePerShift * minSessionsPerWeek)
+  if (totalShiftCount === 0) return 0;
+
+  const averageJobTimePerShift = totalJobMinutes / totalShiftCount;
+  const requiredFitTime = averageJobTimePerShift * minSessionsPerWeek;
+
+  const fitRatio = totalFitMinutes / requiredFitTime;
+
+  return Math.min(100, Math.round(fitRatio * 100));
 }
