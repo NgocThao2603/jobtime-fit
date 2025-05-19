@@ -87,12 +87,10 @@ export function calculateFitPercentage(jobTimes = [], userTimes = [], minSession
 
   const fitFullDayCount = fitDaySet.size;
 
-  // ✅ Nếu đủ buổi full fit
   if (fitFullDayCount >= minSessionsPerWeek) {
     return 100;
   }
 
-  // ✅ Nếu không đủ buổi, dùng công thức: fit / (averageJobTimePerShift * minSessionsPerWeek)
   if (totalShiftCount === 0) return 0;
 
   const averageJobTimePerShift = totalJobMinutes / totalShiftCount;
