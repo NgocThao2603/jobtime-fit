@@ -5,6 +5,8 @@
   "main": "index.js",
   "scripts": {
     "migrate": "sequelize-cli db:migrate",
+    "undo-migrate": "sequelize-cli db:migrate:undo",
+    "undo-seed": "sequelize-cli db:seed:undo:all",
     "seed": "sequelize-cli db:seed:all",
     "setup-db": "npm run migrate && npm run seed",
     "test": "echo \"Error: no test specified\" && exit 1",
