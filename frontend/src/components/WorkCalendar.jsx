@@ -70,19 +70,11 @@ export default function WorkCalendar({ events, setEvents }) {
   };
 
   const handleEventRemove = useCallback(
-    async (eventId) => {
-      try {
-        await calendarApi.deleteCalendar(eventId);
-  
-        setEvents((prevEvents) =>
-          prevEvents.filter((event) => event.id !== eventId)
-        );
-  
-        console.log("Xoá lịch thành công với ID:", eventId);
-      } catch (error) {
-        console.error("Xoá lịch thất bại:", error?.response?.data?.message || error.message);
-        alert("Xoá lịch thất bại. Vui lòng thử lại.");
-      }
+    (eventId) => {
+      setEvents((prevEvents) =>
+        prevEvents.filter((event) => event.id !== eventId)
+      );
+      console.log("Removing event with ID:", eventId);
     },
     [setEvents]
   );
