@@ -225,8 +225,15 @@ const FitCalendar = ({ jobTimes = [], minSessionsPerWeek = 2 }) => {
     const end = new Date(eventInfo.event.end);
     const durationInMinutes = (end - start) / (1000 * 60); // milliseconds → minutes
 
+    let color = "#000";
+    const className = eventInfo.event.classNames[0];
+
+    if (className === "fit") color = "#00528D";
+    else if (className === "unfit") color = "#BE123C";
+    else if (className === "free") color = "#0369A1";
+
     return (
-      <div className="flex flex-col h-full w-full text-black">
+      <div className="flex flex-col h-full w-full" style={{ color }}>
         <div className="flex justify-between items-center p-1 font-semibold">
           <div className="text-sm truncate">{eventInfo.event.title}</div>
         </div>
@@ -274,6 +281,7 @@ const FitCalendar = ({ jobTimes = [], minSessionsPerWeek = 2 }) => {
         slotMaxTime="24:00:00"
         nowIndicator={true}
         events={allEvents}
+        eventBorderColor="#fff"
         eventContent={renderEventContent}
       />
     </div>

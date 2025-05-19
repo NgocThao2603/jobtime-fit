@@ -50,10 +50,16 @@ function JobCard({ listJob = [] }) {
     return calculateFitPercentage(job.jobTimes, userTimes);
   };
 
-  const datasource = listJob.map((job, index) => {
+  const datasource = [...listJob]
+    .map((job) => ({
+      ...job,
+      fitPercent: getFitPercent(job), 
+    }))
+    .sort((a, b) => b.fitPercent - a.fitPercent) 
+    .map((job, index) => {
     // console.log("jobCard: ", job.min_sessions_per_week);
     return (
-      <Card key={index} sx={{ width: "100%", height: "100%" }}>
+      <Card key={index} sx={{ width: "100%", height: "100%", boxShadow: 3, borderRadius: 3, marginBottom: 2 }}>
         <Box sx={{ position: "relative" }}>
           <CardMedia
             component="img"
@@ -66,9 +72,24 @@ function JobCard({ listJob = [] }) {
           <Box
             sx={{
               position: "absolute",
+              top: 0,
+              right: 0,
+              width: 250,
+              height: 250,
+              background: "linear-gradient(to left bottom, rgba(255,255,255,0.6), transparent)",
+              clipPath: "polygon(100% 0, 0 0, 100% 70%)",
+              filter: "blur(20px)",
+              pointerEvents: "none",
+              zIndex: 1,
+            }}
+          />
+          <Box
+            sx={{
+              position: "absolute",
               top: 10,
               right: 10,
-              backgroundColor: job.job_status ? "#4caf4f" : "#f44336",
+              backgroundColor: job.job_status ? "#4caf4f" : "#000",
+              border: "2px solid #fff",
               color: "#fff",
               borderRadius: "20px",
               padding: "6px 16px",
@@ -76,6 +97,7 @@ function JobCard({ listJob = [] }) {
               fontWeight: 500,
               textAlign: "center",
               cursor: "default", // giữ mặc định như text, có thể là 'pointer' nếu cần click
+              zIndex: 2,
             }}
           >
             {job.job_status ? "Đang tuyển" : "Không tuyển"}
@@ -90,7 +112,7 @@ function JobCard({ listJob = [] }) {
               justifyContent: "space-between",
             }}
           >
-            <Typography sx={{ fontSize: "1rem", color: "#636364" }}>
+            <Typography sx={{ fontSize: "1.2rem", color: "#636364" }}>
               {job.salary ? (
                 <>
                   <Box
@@ -125,7 +147,7 @@ function JobCard({ listJob = [] }) {
             }}
             onClick={() => handleOpenDialog(job)}
           >
-            Tương thích: {getFitPercent(job)}%
+            Tương thích: <span className="font-bold text-xl">{getFitPercent(job)}%</span>
           </Button>
           </Box>
 
@@ -152,9 +174,11 @@ function JobCard({ listJob = [] }) {
                 overflow: "hidden",
                 textOverflow: "ellipsis",
                 width: "60%",
-
+                minHeight: "64px", // Đảm bảo chiều cao tối thiểu
+                color: "#00528D",
+                fontWeight: 600,
                 "&:hover": {
-                  color: "inherit", // Không đổi màu khi hover
+                  color: "#00528D", // Không đổi màu khi hover
                   textDecoration: "none", // Ngăn gạch chân khi hover
                 },
               }}
@@ -182,11 +206,17 @@ function JobCard({ listJob = [] }) {
                 fontSize: "1rem",
                 color: "#636364",
                 width: "30%",
-                borderRight: "1px solid #ddd", // Gạch dọc bên phải
+                borderRight: "1px solid #ddd",
                 marginRight: "10px",
               }}
             >
-              {job.type || "PartTime"}
+              {job.type === "part_time"
+                  ? "Part Time"
+                  : job.type === "full_time"
+                  ? "Full Time"
+                  : job.type === "intern"
+                  ? "Thực tập"
+                  : job.type || "PartTime"}
             </Typography>
             <Typography
               sx={{
@@ -213,7 +243,7 @@ function JobCard({ listJob = [] }) {
           </Box>
         </CardContent>
 
-        <Divider sx={{ marginTop: "20px", marginBottom: "20px" }} />
+        <Divider />
 
         <CardHeader
           sx={{ height: "5%", marginTop: "5px", marginBottom: "5px" }}
@@ -258,7 +288,7 @@ function JobCard({ listJob = [] }) {
             padding: "20px 20px",
             width: "95%",
             maxWidth: "1300px",
-            maxHeight: "60vh",
+            // maxHeight: "60vh",
           }}
         />
       </Stack>
@@ -272,7 +302,7 @@ function JobCard({ listJob = [] }) {
         sx={{ width: "90%", left: "5%", right: "5%" }}
       >
         <DialogTitle
-          sx={{ textAlign: "center", color: "green", fontSize: "1.25rem" }}
+          sx={{ textAlign: "center", color: "green", fontSize: "1.25rem", fontWeight: 900 }}
         >
           Chi tiết mức độ tương thích
           <IconButton

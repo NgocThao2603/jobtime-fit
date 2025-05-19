@@ -2,7 +2,7 @@
   {
     "id": "job-id-1",
     "title": "Gia sư Toán lớp 6",
-    "image_url": "https://haenglish.edu.vn/wp-content/uploads/2023/10/cq5dam.web_.1280.1280.png",
+    "image_url": "https://images.glints.com/unsafe/glints-dashboard.oss-ap-southeast-1.aliyuncs.com/company-photos/878b14bb09fea82eb7d0b2c02112b3b6.jpeg",
     "salary": "10–15 triệu",
     "type": "part_time",
     "location": "Đống Đa, Hà Nội",
@@ -11,7 +11,7 @@
     "holiday_off": true,
     "job_status": true,
     "job_agency": "Trung tâm Gia sư Hà Nội",
-    "job_agency_image": "https://www.pace.edu.vn/uploads/news/2023/07/1-khai-niem-agency.jpg",
+    "job_agency_image": "https://ketnoigiasu.vn/storage/1061/loHaXRZqLItuwu7LK5G5xOvrejnnvDgyXIa8cX8z.jpg",
     "job_times": [
       {
         "id": "jobtime-id-1-1",
@@ -33,7 +33,7 @@
   {
     "id": "job-id-2",
     "title": "Phục vụ quán cà phê Highlands",
-    "image_url": "https://haenglish.edu.vn/wp-content/uploads/2023/10/cq5dam.web_.1280.1280.png",
+    "image_url": "https://www.highlandscoffee.com.vn/vnt_upload/about/Highlands_5557_R3_-_Copy.jpg",
     "salary": "Thỏa thuận",
     "type": "part_time",
     "location": "Cầu Giấy, Hà Nội",
@@ -42,7 +42,7 @@
     "holiday_off": false,
     "job_status": true,
     "job_agency": "Highlands Coffee",
-    "job_agency_image": "https://www.pace.edu.vn/uploads/news/2023/07/1-khai-niem-agency.jpg",
+    "job_agency_image": "https://statics.tititada.com/ImagesLib/BLOG/Thumbnail/20240511/4996f434-210b-41c1-8f23-1090f0ec3d51_105613",
     "job_times": [
       {
         "id": "jobtime-id-2-1",
@@ -69,7 +69,7 @@
   {
     "id": "job-id-3",
     "title": "Thực tập sinh Marketing Online",
-    "image_url": "https://haenglish.edu.vn/wp-content/uploads/2023/10/cq5dam.web_.1280.1280.png",
+    "image_url": "https://kiennghiepgroup.com/wp-content/uploads/2022/07/giai-ma-vi-tri-thuc-tap-sinh-marketing-kien-nghiep-group.png",
     "salary": "3–5 triệu",
     "type": "intern",
     "location": "Hai Bà Trưng, Hà Nội",
@@ -77,8 +77,8 @@
     "requires_experience": false,
     "holiday_off": true,
     "job_status": false,
-    "job_agency": "Công ty Marketing 123",
-    "job_agency_image": "https://www.pace.edu.vn/uploads/news/2023/07/1-khai-niem-agency.jpg",
+    "job_agency": "VTV Go",
+    "job_agency_image": "https://yt3.googleusercontent.com/DXUUGVlzyojqNXEqkYSzOL9E2MoDUxCd-9OwYzkgxIQyCYl6mGC-JU_DVfvjoQ97O-6ONehLqA=s900-c-k-c0x00ffffff-no-rj",
     "job_times": [
       {
         "id": "jobtime-id-3-1",
@@ -95,7 +95,7 @@
   {
     "id": "job-id-4",
     "title": "Chăm sóc khách hàng Shopee",
-    "image_url": "https://haenglish.edu.vn/wp-content/uploads/2023/10/cq5dam.web_.1280.1280.png",
+    "image_url": "https://hoanghoc.vn/wp-content/uploads/2022/05/Shopee-tuyen-dung-cham-soc-khach-hang-1.jpg",
     "salary": "8–12 triệu",
     "type": "full_time",
     "location": "Thanh Xuân, Hà Nội",
@@ -104,7 +104,7 @@
     "holiday_off": true,
     "job_status": true,
     "job_agency": "Shopee Việt Nam",
-    "job_agency_image": "https://www.pace.edu.vn/uploads/news/2023/07/1-khai-niem-agency.jpg",
+    "job_agency_image": "https://vectordohoa.com/wp-content/uploads/2023/10/logo-shopee-vectordohoa.com-3-01.jpg",
     "job_times": [
       {
         "id": "jobtime-id-4-1",
@@ -167,7 +167,7 @@
   {
     "id": "job-id-6",
     "title": "Nhân viên bán hàng siêu thị Vinmart",
-    "image_url": "https://haenglish.edu.vn/wp-content/uploads/2023/10/cq5dam.web_.1280.1280.png",
+    "image_url": "https://blogcdn.muaban.net/wp-content/uploads/2022/07/06214322/luong-nhan-vien-ban-hang-vinmart-4.jpg",
     "salary": "7–9 triệu",
     "type": "full_time",
     "location": "Long Biên, Hà Nội",
@@ -176,7 +176,7 @@
     "holiday_off": false,
     "job_status": true,
     "job_agency": "Vinmart",
-    "job_agency_image": "https://www.pace.edu.vn/uploads/news/2023/07/1-khai-niem-agency.jpg",
+    "job_agency_image": "https://vietads.net.vn/image/news/6-5-2019/368767252821031790031385082650833363927040n-32.jpg",
     "job_times": [
       {
         "id": "jobtime-id-6-1",
@@ -203,7 +203,7 @@
   {
     "id": "job-id-7",
     "title": "Nhân viên giao hàng Giao Hàng Nhanh",
-    "image_url": "https://haenglish.edu.vn/wp-content/uploads/2023/10/cq5dam.web_.1280.1280.png",
+    "image_url": "https://file.hstatic.net/1000376681/file/5_2965b472d3f7438eb7f1074f96417147.jpg",
     "salary": "6–8 triệu",
     "type": "part_time",
     "location": "Tây Hồ, Hà Nội",
@@ -212,7 +212,7 @@
     "holiday_off": false,
     "job_status": false,
     "job_agency": "Giao Hàng Nhanh",
-    "job_agency_image": "https://www.pace.edu.vn/uploads/news/2023/07/1-khai-niem-agency.jpg",
+    "job_agency_image": "https://cdn.haitrieu.com/wp-content/uploads/2022/05/Logo-GHN-Text.png",
     "job_times": [
       {
         "id": "jobtime-id-7-1",
@@ -229,7 +229,7 @@
   {
     "id": "job-id-8",
     "title": "Nhân viên thu ngân Circle K",
-    "image_url": "https://haenglish.edu.vn/wp-content/uploads/2023/10/cq5dam.web_.1280.1280.png",
+    "image_url": "https://hires.vn/cdn-cgi/imagedelivery/1m1rJdJLBoJbXbtIvke6Fg/1594b981-e9b1-4372-22d1-7bb7e9067e01/public",
     "salary": "8 triệu",
     "type": "full_time",
     "location": "Hoàn Kiếm, Hà Nội",
@@ -238,7 +238,7 @@
     "holiday_off": true,
     "job_status": true,
     "job_agency": "Circle K",
-    "job_agency_image": "https://www.pace.edu.vn/uploads/news/2023/07/1-khai-niem-agency.jpg",
+    "job_agency_image": "https://play-lh.googleusercontent.com/dVqeymkuNphCVrGgl4FNR_EIzvfz3oXaZMGyPtAGzgrsfVD8k5ec-gHCyHeSfY1iWw",
     "job_times": [
       {
         "id": "jobtime-id-8-1",
@@ -296,7 +296,7 @@
   {
     "id": "job-id-10",
     "title": "Nhân viên bảo vệ tòa nhà",
-    "image_url": "https://haenglish.edu.vn/wp-content/uploads/2023/08/Top-10-Highest-Paying-Jobs-in-India-03.jpg",
+    "image_url": "https://baovenhankiet.vn/wp-content/uploads/2023/03/daotao.jpg",
     "salary": "6 triệu",
     "type": "full_time",
     "location": "Nam Từ Liêm, Hà Nội",
@@ -305,7 +305,7 @@
     "holiday_off": false,
     "job_status": true,
     "job_agency": "Công ty bảo vệ An Ninh",
-    "job_agency_image": "https://caodang.fpt.edu.vn/wp-content/uploads/agency-01-1080x675-1.jpg",
+    "job_agency_image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpTcLn7O9U1sKYzrYdpur3Olzl5pQa0CGsPA&s",
     "job_times": [
       {
         "id": "jobtime-id-10-1",
@@ -368,7 +368,7 @@
   {
     "id": "job-id-12",
     "title": "Nhân viên giao hàng Now",
-    "image_url": "https://haenglish.edu.vn/wp-content/uploads/2023/08/Top-10-Highest-Paying-Jobs-in-India-03.jpg",
+    "image_url": "https://blog.viecngay.vn/wp-content/uploads/2018/04/delivery-tuyen-dung.png",
     "salary": "6–8 triệu",
     "type": "part_time",
     "location": "Tây Hồ, Hà Nội",
@@ -377,7 +377,7 @@
     "holiday_off": false,
     "job_status": true,
     "job_agency": "Now Delivery",
-    "job_agency_image": "https://caodang.fpt.edu.vn/wp-content/uploads/agency-01-1080x675-1.jpg",
+    "job_agency_image": "https://static.ybox.vn/2018/12/5/1545359420929-1537369651378-1526310441772-Untitled%20(1).jpg",
     "job_times": [
       {
         "id": "jobtime-id-12-1",
@@ -394,7 +394,7 @@
   {
     "id": "job-id-13",
     "title": "Nhân viên thu ngân Lotte Mart",
-    "image_url": "https://haenglish.edu.vn/wp-content/uploads/2023/08/Top-10-Highest-Paying-Jobs-in-India-03.jpg",
+    "image_url": "https://studentjob.vn/uploads/2024/1/10/moi-truong-lam-viec-tai-lotte-martjpg638404798110156580.jpg",
     "salary": "8 triệu",
     "type": "full_time",
     "location": "Ba Đình, Hà Nội",
@@ -403,7 +403,7 @@
     "holiday_off": true,
     "job_status": true,
     "job_agency": "Lotte Mart",
-    "job_agency_image": "https://caodang.fpt.edu.vn/wp-content/uploads/agency-01-1080x675-1.jpg",
+    "job_agency_image": "https://cdn-new.topcv.vn/unsafe/https://static.topcv.vn/company_logos/ptaDgh9mP0wOuDOXGLZZDU31ShBsp7b5_1718088935____4fd9dc4561b6639ea4f091cbf995b431.png",
     "job_times": [
       {
         "id": "jobtime-id-13-1",
@@ -461,7 +461,7 @@
   {
     "id": "job-id-15",
     "title": "Nhân viên bảo vệ chung cư",
-    "image_url": "https://haenglish.edu.vn/wp-content/uploads/2023/08/Top-10-Highest-Paying-Jobs-in-India-03.jpg",
+    "image_url": "https://visaho.vn/upload_images/images/2022/03/25/bao-ve-toa-nha-chung-cu-1-min.jpg",
     "salary": "6 triệu",
     "type": "full_time",
     "location": "Nam Từ Liêm, Hà Nội",
@@ -470,7 +470,7 @@
     "holiday_off": false,
     "job_status": true,
     "job_agency": "Công ty bảo vệ Hòa Bình",
-    "job_agency_image": "https://caodang.fpt.edu.vn/wp-content/uploads/agency-01-1080x675-1.jpg",
+    "job_agency_image": "https://pic.trangvangvietnam.com/220632/logo.png",
     "job_times": [
       {
         "id": "jobtime-id-15-1",
@@ -533,7 +533,7 @@
   {
     "id": "job-id-17",
     "title": "Nhân viên giao hàng Baemin",
-    "image_url": "https://haenglish.edu.vn/wp-content/uploads/2023/08/Top-10-Highest-Paying-Jobs-in-India-03.jpg",
+    "image_url": "https://dddn.1cdn.vn/2024/01/06/diendandoanhnghiep.vn-media-uploaded-344-2024-01-05-_baemin1.jpg",
     "salary": "6–8 triệu",
     "type": "part_time",
     "location": "Long Biên, Hà Nội",
@@ -542,7 +542,7 @@
     "holiday_off": false,
     "job_status": true,
     "job_agency": "Baemin",
-    "job_agency_image": "https://caodang.fpt.edu.vn/wp-content/uploads/agency-01-1080x675-1.jpg",
+    "job_agency_image": "https://cdn.tgdd.vn/GameApp/2/223095/Screentshots/beamin-ung-dung-dat-do-an-nhanh-re-223095-logo-20-05-2020.png",
     "job_times": [
       {
         "id": "jobtime-id-17-1",
@@ -559,7 +559,7 @@
   {
     "id": "job-id-18",
     "title": "Nhân viên thu ngân FamilyMart",
-    "image_url": "https://haenglish.edu.vn/wp-content/uploads/2023/08/Top-10-Highest-Paying-Jobs-in-India-03.jpg",
+    "image_url": "https://hiu.vn/wp-content/uploads/2020/12/daihocquoctehongbang.jpg",
     "salary": "8 triệu",
     "type": "full_time",
     "location": "Tây Hồ, Hà Nội",
@@ -568,7 +568,7 @@
     "holiday_off": true,
     "job_status": true,
     "job_agency": "FamilyMart",
-    "job_agency_image": "https://caodang.fpt.edu.vn/wp-content/uploads/agency-01-1080x675-1.jpg",
+    "job_agency_image": "https://images.glints.com/unsafe/1200x0/glints-dashboard.oss-ap-southeast-1.aliyuncs.com/company-logo/934bd13330a25a0a8c2376acd35e1c58.jpg",
     "job_times": [
       {
         "id": "jobtime-id-18-1",
@@ -626,7 +626,7 @@
   {
     "id": "job-id-20",
     "title": "Nhân viên bảo vệ trường học",
-    "image_url": "https://haenglish.edu.vn/wp-content/uploads/2023/08/Top-10-Highest-Paying-Jobs-in-India-03.jpg",
+    "image_url": "https://www.baoanvietnam.com/wp-content/uploads/2024/06/nhiem-vu-cua-bao-ve-truong-hoc-3.png",
     "salary": "6 triệu",
     "type": "full_time",
     "location": "Hoàng Mai, Hà Nội",
@@ -635,7 +635,7 @@
     "holiday_off": false,
     "job_status": true,
     "job_agency": "Công ty bảo vệ Trường An",
-    "job_agency_image": "https://caodang.fpt.edu.vn/wp-content/uploads/agency-01-1080x675-1.jpg",
+    "job_agency_image": "https://baovebinhtruongan.com/wp-content/uploads/2020/04/Layer-53.png",
     "job_times": [
       {
         "id": "jobtime-id-20-1",
@@ -698,7 +698,7 @@
   {
     "id": "job-id-22",
     "title": "Nhân viên bán hàng part-time tại cửa hàng tiện lợi",
-    "image_url": "https://haenglish.edu.vn/wp-content/uploads/2023/08/Top-10-Highest-Paying-Jobs-in-India-03.jpg",
+    "image_url": "https://hiu.vn/wp-content/uploads/2020/10/kfc-tuyen-dung-hiu.jpg",
     "salary": "25k/giờ",
     "type": "part_time",
     "location": "Ba Đình, Hà Nội",
@@ -734,7 +734,7 @@
   {
     "id": "job-id-23",
     "title": "Thực tập sinh Digital Marketing",
-    "image_url": "https://haenglish.edu.vn/wp-content/uploads/2023/08/Top-10-Highest-Paying-Jobs-in-India-03.jpg",
+    "image_url": "https://hiu.vn/wp-content/uploads/2020/10/kfc-tuyen-dung-hiu.jpg",
     "salary": "2–4 triệu",
     "type": "intern",
     "location": "Hai Bà Trưng, Hà Nội",
@@ -780,7 +780,7 @@
   {
     "id": "job-id-24",
     "title": "Phục vụ quán trà sữa cho sinh viên",
-    "image_url": "https://haenglish.edu.vn/wp-content/uploads/2023/08/Top-10-Highest-Paying-Jobs-in-India-03.jpg",
+    "image_url": "https://hiu.vn/wp-content/uploads/2020/10/kfc-tuyen-dung-hiu.jpg",
     "salary": "20k/giờ",
     "type": "part_time",
     "location": "Đống Đa, Hà Nội",
@@ -811,7 +811,7 @@
   {
     "id": "job-id-25",
     "title": "Trợ giảng tiếng Anh cho trung tâm ngoại ngữ",
-    "image_url": "https://haenglish.edu.vn/wp-content/uploads/2023/08/Top-10-Highest-Paying-Jobs-in-India-03.jpg",
+    "image_url": "https://hiu.vn/wp-content/uploads/2020/10/kfc-tuyen-dung-hiu.jpg",
     "salary": "50k/buổi",
     "type": "part_time",
     "location": "Thanh Xuân, Hà Nội",
@@ -837,7 +837,7 @@
   {
     "id": "job-id-26",
     "title": "Nhân viên bán hàng online (phù hợp sinh viên)",
-    "image_url": "https://haenglish.edu.vn/wp-content/uploads/2023/08/Top-10-Highest-Paying-Jobs-in-India-03.jpg",
+    "image_url": "https://hiu.vn/wp-content/uploads/2020/10/kfc-tuyen-dung-hiu.jpg",
     "salary": "5 triệu + thưởng",
     "type": "part_time",
     "location": "Hoàng Mai, Hà Nội",
@@ -868,7 +868,7 @@
   {
     "id": "job-id-27",
     "title": "Thực tập sinh IT (Web Developer)",
-    "image_url": "https://haenglish.edu.vn/wp-content/uploads/2023/08/Top-10-Highest-Paying-Jobs-in-India-03.jpg",
+    "image_url": "https://coffeehr.com.vn/wp-content/uploads/2021/07/Thuc-Tap-Sinh-CNTT-CHR.jpg",
     "salary": "3–6 triệu",
     "type": "intern",
     "location": "Nam Từ Liêm, Hà Nội",
@@ -877,7 +877,7 @@
     "holiday_off": true,
     "job_status": true,
     "job_agency": "Công ty Phần mềm NextGen",
-    "job_agency_image": "https://caodang.fpt.edu.vn/wp-content/uploads/agency-01-1080x675-1.jpg",
+    "job_agency_image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUa2I11419s7inY5_Ug43HMk5YU_ZW7mvJUA&s",
     "job_times": [
       {
         "id": "jobtime-id-27-1",
@@ -904,7 +904,7 @@
   {
     "id": "job-id-28",
     "title": "Nhân viên phục vụ nhà hàng Nhật",
-    "image_url": "https://haenglish.edu.vn/wp-content/uploads/2023/08/Top-10-Highest-Paying-Jobs-in-India-03.jpg",
+    "image_url": "https://hiu.vn/wp-content/uploads/2020/10/kfc-tuyen-dung-hiu.jpg",
     "salary": "25k/giờ",
     "type": "part_time",
     "location": "Hoàn Kiếm, Hà Nội",
@@ -960,8 +960,8 @@
   },
   {
     "id": "job-id-30",
-    "title": "Thực tập sinh Kế toán",
-    "image_url": "https://haenglish.edu.vn/wp-content/uploads/2023/08/Top-10-Highest-Paying-Jobs-in-India-03.jpg",
+    "title": "Thực tập sinh Kiểm toán",
+    "image_url": "https://kiemtoanas.com.vn/thumb/520x300/1/upload/news/66008728/tuyen-dung-thuc-tap-sinh-tro-ly-kiem-toan-2024-2025.png",
     "salary": "2–4 triệu",
     "type": "intern",
     "location": "Cầu Giấy, Hà Nội",
@@ -970,7 +970,7 @@
     "holiday_off": true,
     "job_status": true,
     "job_agency": "Công ty Kế toán Minh Tâm",
-    "job_agency_image": "https://caodang.fpt.edu.vn/wp-content/uploads/agency-01-1080x675-1.jpg",
+    "job_agency_image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSo6f7oFMWfrS5uKTQJJymXccn6fJELwhIEuw&s",
     "job_times": [
       {
         "id": "jobtime-id-30-1",
@@ -1080,7 +1080,7 @@
   {
     "id": "job-id-34",
     "title": "Thực tập sinh Content Writer",
-    "image_url": "https://haenglish.edu.vn/wp-content/uploads/2023/08/Top-10-Highest-Paying-Jobs-in-India-03.jpg",
+    "image_url": "https://giasudantri.vn/wp-content/uploads/2020/04/Trung-tam-gia-su-uy-tin-tai-ha-noi-32.jpg",
     "salary": "2–4 triệu",
     "type": "intern",
     "location": "Cầu Giấy, Hà Nội",
@@ -1111,7 +1111,7 @@
   {
     "id": "job-id-35",
     "title": "Nhân viên bán hàng online (phù hợp sinh viên)",
-    "image_url": "https://haenglish.edu.vn/wp-content/uploads/2023/08/Top-10-Highest-Paying-Jobs-in-India-03.jpg",
+    "image_url": "https://giasudantri.vn/wp-content/uploads/2020/04/Trung-tam-gia-su-uy-tin-tai-ha-noi-32.jpg",
     "salary": "5 triệu + thưởng",
     "type": "part_time",
     "location": "Hoàng Mai, Hà Nội",
@@ -1142,7 +1142,7 @@
   {
     "id": "job-id-36",
     "title": "Thực tập sinh IT (Web Developer)",
-    "image_url": "https://haenglish.edu.vn/wp-content/uploads/2023/08/Top-10-Highest-Paying-Jobs-in-India-03.jpg",
+    "image_url": "https://giasudantri.vn/wp-content/uploads/2020/04/Trung-tam-gia-su-uy-tin-tai-ha-noi-32.jpg",
     "salary": "3–6 triệu",
     "type": "intern",
     "location": "Nam Từ Liêm, Hà Nội",
@@ -1178,7 +1178,7 @@
   {
     "id": "job-id-37",
     "title": "Nhân viên phục vụ nhà hàng Nhật",
-    "image_url": "https://haenglish.edu.vn/wp-content/uploads/2023/08/Top-10-Highest-Paying-Jobs-in-India-03.jpg",
+    "image_url": "https://giasudantri.vn/wp-content/uploads/2020/04/Trung-tam-gia-su-uy-tin-tai-ha-noi-32.jpg",
     "salary": "25k/giờ",
     "type": "part_time",
     "location": "Hoàn Kiếm, Hà Nội",
@@ -1209,7 +1209,7 @@
   {
     "id": "job-id-38",
     "title": "Gia sư Toán cấp 2 cho sinh viên",
-    "image_url": "https://haenglish.edu.vn/wp-content/uploads/2023/08/Top-10-Highest-Paying-Jobs-in-India-03.jpg",
+    "image_url": "https://giasudantri.vn/wp-content/uploads/2020/04/Trung-tam-gia-su-uy-tin-tai-ha-noi-32.jpg",
     "salary": "120k/buổi",
     "type": "part_time",
     "location": "Long Biên, Hà Nội",
@@ -1235,7 +1235,7 @@
   {
     "id": "job-id-39",
     "title": "Thực tập sinh Kế toán",
-    "image_url": "https://haenglish.edu.vn/wp-content/uploads/2023/08/Top-10-Highest-Paying-Jobs-in-India-03.jpg",
+    "image_url": "https://www.rongviettafs.com.vn/wp-content/uploads/2020/07/ke-toan-la-gi.jpg",
     "salary": "2–4 triệu",
     "type": "intern",
     "location": "Cầu Giấy, Hà Nội",
@@ -1244,7 +1244,7 @@
     "holiday_off": true,
     "job_status": true,
     "job_agency": "Công ty Kế toán Minh Tâm",
-    "job_agency_image": "https://caodang.fpt.edu.vn/wp-content/uploads/agency-01-1080x675-1.jpg",
+    "job_agency_image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSo6f7oFMWfrS5uKTQJJymXccn6fJELwhIEuw&s",
     "job_times": [
       {
         "id": "jobtime-id-39-1",
@@ -1266,7 +1266,7 @@
   {
     "id": "job-id-40",
     "title": "Nhân viên bán hàng thời vụ cho sinh viên",
-    "image_url": "https://haenglish.edu.vn/wp-content/uploads/2023/08/Top-10-Highest-Paying-Jobs-in-India-03.jpg",
+    "image_url": "https://giasudantri.vn/wp-content/uploads/2020/04/Trung-tam-gia-su-uy-tin-tai-ha-noi-32.jpg",
     "salary": "6 triệu",
     "type": "part_time",
     "location": "Ba Đình, Hà Nội",
@@ -1323,7 +1323,7 @@
   {
     "id": "job-id-42",
     "title": "Nhân viên bán hàng part-time tại siêu thị mini",
-    "image_url": "https://haenglish.edu.vn/wp-content/uploads/2023/08/Top-10-Highest-Paying-Jobs-in-India-03.jpg",
+    "image_url": "https://jobs.kidsplaza.vn/wp-content/uploads/2023/03/Untitled.png",
     "salary": "25k/giờ",
     "type": "part_time",
     "location": "Ba Đình, Hà Nội",
@@ -1354,7 +1354,7 @@
   {
     "id": "job-id-43",
     "title": "Thực tập sinh Social Media",
-    "image_url": "https://haenglish.edu.vn/wp-content/uploads/2023/08/Top-10-Highest-Paying-Jobs-in-India-03.jpg",
+    "image_url": "https://jobs.kidsplaza.vn/wp-content/uploads/2023/03/Untitled.png",
     "salary": "2–4 triệu",
     "type": "intern",
     "location": "Hai Bà Trưng, Hà Nội",
@@ -1385,7 +1385,7 @@
   {
     "id": "job-id-44",
     "title": "Phục vụ quán cà phê sinh viên",
-    "image_url": "https://haenglish.edu.vn/wp-content/uploads/2023/08/Top-10-Highest-Paying-Jobs-in-India-03.jpg",
+    "image_url": "https://jobs.kidsplaza.vn/wp-content/uploads/2023/03/Untitled.png",
     "salary": "20k/giờ",
     "type": "part_time",
     "location": "Đống Đa, Hà Nội",
@@ -1416,7 +1416,7 @@
   {
     "id": "job-id-45",
     "title": "Trợ giảng tiếng Trung cho trung tâm ngoại ngữ",
-    "image_url": "https://haenglish.edu.vn/wp-content/uploads/2023/08/Top-10-Highest-Paying-Jobs-in-India-03.jpg",
+    "image_url": "https://jobs.kidsplaza.vn/wp-content/uploads/2023/03/Untitled.png",
     "salary": "50k/buổi",
     "type": "part_time",
     "location": "Thanh Xuân, Hà Nội",
@@ -1442,7 +1442,7 @@
   {
     "id": "job-id-46",
     "title": "Nhân viên bán hàng online (dành cho sinh viên)",
-    "image_url": "https://haenglish.edu.vn/wp-content/uploads/2023/08/Top-10-Highest-Paying-Jobs-in-India-03.jpg",
+    "image_url": "https://jobs.kidsplaza.vn/wp-content/uploads/2023/03/Untitled.png",
     "salary": "5 triệu + thưởng",
     "type": "part_time",
     "location": "Hoàng Mai, Hà Nội",
@@ -1473,7 +1473,7 @@
   {
     "id": "job-id-47",
     "title": "Thực tập sinh lập trình Python",
-    "image_url": "https://haenglish.edu.vn/wp-content/uploads/2023/08/Top-10-Highest-Paying-Jobs-in-India-03.jpg",
+    "image_url": "https://aptechsaigon.edu.vn/gw-content/images/1517913834-D6I1gVK.jpg",
     "salary": "3–6 triệu",
     "type": "intern",
     "location": "Nam Từ Liêm, Hà Nội",
@@ -1482,7 +1482,7 @@
     "holiday_off": true,
     "job_status": true,
     "job_agency": "Công ty Phần mềm PythonPro",
-    "job_agency_image": "https://caodang.fpt.edu.vn/wp-content/uploads/agency-01-1080x675-1.jpg",
+    "job_agency_image": "https://play-lh.googleusercontent.com/_7caH3QwAA5eRTdeHO-qTFXawW2PXrPLhqSluDtbNIzlaukvM2-o6EDVORF7kemF5g",
     "job_times": [
       {
         "id": "jobtime-id-47-1",
@@ -1509,7 +1509,7 @@
   {
     "id": "job-id-48",
     "title": "Nhân viên phục vụ nhà hàng Hàn Quốc",
-    "image_url": "https://haenglish.edu.vn/wp-content/uploads/2023/08/Top-10-Highest-Paying-Jobs-in-India-03.jpg",
+    "image_url": "https://jobs.kidsplaza.vn/wp-content/uploads/2023/03/Untitled.png",
     "salary": "25k/giờ",
     "type": "part_time",
     "location": "Hoàn Kiếm, Hà Nội",
@@ -1566,7 +1566,7 @@
   {
     "id": "job-id-50",
     "title": "Thực tập sinh Data Analyst",
-    "image_url": "https://haenglish.edu.vn/wp-content/uploads/2023/08/Top-10-Highest-Paying-Jobs-in-India-03.jpg",
+    "image_url": "https://mikiways.com/wp-content/uploads/2024/09/TT-Data-Analyst.png",
     "salary": "2–4 triệu",
     "type": "intern",
     "location": "Cầu Giấy, Hà Nội",
@@ -1575,7 +1575,7 @@
     "holiday_off": true,
     "job_status": true,
     "job_agency": "Công ty Data Insight",
-    "job_agency_image": "https://caodang.fpt.edu.vn/wp-content/uploads/agency-01-1080x675-1.jpg",
+    "job_agency_image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvUc1XRYxamD5UH1ZSdbrLRoGcJNra-nGEnA&s",
     "job_times": [
       {
         "id": "jobtime-id-50-1",
@@ -1628,7 +1628,7 @@
   {
     "id": "job-id-52",
     "title": "Trợ giảng tiếng Hàn",
-    "image_url": "https://haenglish.edu.vn/wp-content/uploads/2023/08/Top-10-Highest-Paying-Jobs-in-India-03.jpg",
+    "image_url": "https://cdn4.vieclam24h.vn/nhan_vien_phuc_vu_nha_hang_3_dd0c780513.webp",
     "salary": "60k/buổi",
     "type": "part_time",
     "location": "Hai Bà Trưng, Hà Nội",
@@ -1654,7 +1654,7 @@
   {
     "id": "job-id-53",
     "title": "Nhân viên phục vụ quán ăn vặt",
-    "image_url": "https://haenglish.edu.vn/wp-content/uploads/2023/08/Top-10-Highest-Paying-Jobs-in-India-03.jpg",
+    "image_url": "https://cdn4.vieclam24h.vn/nhan_vien_phuc_vu_nha_hang_3_dd0c780513.webp",
     "salary": "20k/giờ",
     "type": "part_time",
     "location": "Đống Đa, Hà Nội",
@@ -1685,7 +1685,7 @@
   {
     "id": "job-id-54",
     "title": "Thực tập sinh Content Marketing",
-    "image_url": "https://haenglish.edu.vn/wp-content/uploads/2023/08/Top-10-Highest-Paying-Jobs-in-India-03.jpg",
+    "image_url": "https://cdn4.vieclam24h.vn/nhan_vien_phuc_vu_nha_hang_3_dd0c780513.webp",
     "salary": "2–4 triệu",
     "type": "intern",
     "location": "Cầu Giấy, Hà Nội",
@@ -1716,7 +1716,7 @@
   {
     "id": "job-id-55",
     "title": "Nhân viên bán hàng online (dành cho sinh viên)",
-    "image_url": "https://haenglish.edu.vn/wp-content/uploads/2023/08/Top-10-Highest-Paying-Jobs-in-India-03.jpg",
+    "image_url": "https://cdn4.vieclam24h.vn/nhan_vien_phuc_vu_nha_hang_3_dd0c780513.webp",
     "salary": "5 triệu + thưởng",
     "type": "part_time",
     "location": "Hoàng Mai, Hà Nội",
@@ -1747,7 +1747,7 @@
   {
     "id": "job-id-56",
     "title": "Thực tập sinh lập trình Java",
-    "image_url": "https://haenglish.edu.vn/wp-content/uploads/2023/08/Top-10-Highest-Paying-Jobs-in-India-03.jpg",
+    "image_url": "https://s3-iconicjob-vn.imgix.net/prod/system/blog_articles/11624-thumbnail-image-622eb14221b38.jpg?w=750",
     "salary": "3–6 triệu",
     "type": "intern",
     "location": "Nam Từ Liêm, Hà Nội",
@@ -1756,7 +1756,7 @@
     "holiday_off": true,
     "job_status": true,
     "job_agency": "Công ty Phần mềm JavaPro",
-    "job_agency_image": "https://caodang.fpt.edu.vn/wp-content/uploads/agency-01-1080x675-1.jpg",
+    "job_agency_image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSItpCvob_DAdl7GVXG-mkhTJwKAMCB7DBAw&s",
     "job_times": [
       {
         "id": "jobtime-id-56-1",
@@ -1783,7 +1783,7 @@
   {
     "id": "job-id-57",
     "title": "Nhân viên phục vụ nhà hàng Pháp",
-    "image_url": "https://haenglish.edu.vn/wp-content/uploads/2023/08/Top-10-Highest-Paying-Jobs-in-India-03.jpg",
+    "image_url": "https://cdn4.vieclam24h.vn/nhan_vien_phuc_vu_nha_hang_3_dd0c780513.webp",
     "salary": "25k/giờ",
     "type": "part_time",
     "location": "Hoàn Kiếm, Hà Nội",
@@ -1840,7 +1840,7 @@
   {
     "id": "job-id-59",
     "title": "Thực tập sinh Business Analyst",
-    "image_url": "https://haenglish.edu.vn/wp-content/uploads/2023/08/Top-10-Highest-Paying-Jobs-in-India-03.jpg",
+    "image_url": "https://rtc.edu.vn/wp-content/uploads/2024/03/Business-analyst.png",
     "salary": "2–4 triệu",
     "type": "intern",
     "location": "Cầu Giấy, Hà Nội",
@@ -1849,7 +1849,7 @@
     "holiday_off": true,
     "job_status": true,
     "job_agency": "Công ty BA Solutions",
-    "job_agency_image": "https://caodang.fpt.edu.vn/wp-content/uploads/agency-01-1080x675-1.jpg",
+    "job_agency_image": "https://s3-media0.fl.yelpcdn.com/bphoto/Iq8dMjx3Yb6b8TEvDGCbsg/348s.jpg",
     "job_times": [
       {
         "id": "jobtime-id-59-1",
