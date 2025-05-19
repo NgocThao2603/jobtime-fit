@@ -47,8 +47,8 @@ function JobCard({ listJob = [] }) {
   // Hàm lấy % tương thích cho từng job
   const getFitPercent = (job) => {
     if (!job || !userTimes.length) return 0;
-    return calculateFitPercentage(job.jobTimes, userTimes);
-  };
+    return calculateFitPercentage(job.jobTimes, userTimes, job.min_sessions_per_week);
+  };  
 
   const datasource = [...listJob]
     .map((job) => ({
@@ -175,7 +175,6 @@ function JobCard({ listJob = [] }) {
                 textOverflow: "ellipsis",
                 width: "60%",
                 minHeight: "64px", // Đảm bảo chiều cao tối thiểu
-                color: "#00528D",
                 fontWeight: 600,
                 "&:hover": {
                   color: "#00528D", // Không đổi màu khi hover
@@ -315,10 +314,17 @@ function JobCard({ listJob = [] }) {
         </DialogTitle>
         <DialogContent>
           {selectedJob ? (
-            <FitCalendar
-              jobTimes={selectedJob.jobTimes}
-              minSessionsPerWeek={selectedJob.min_sessions_per_week}
-            />
+            <div className="-mt-5 mb-3">
+              <DialogTitle
+                sx={{ textAlign: "left", color: "#0369A1", fontSize: "1rem", fontWeight: 500 }}
+              >
+                Yêu cầu tối thiểu: <span className="font-bold text-xl">{selectedJob.min_sessions_per_week || "2"}</span> buổi/tuần
+              </DialogTitle>
+              <FitCalendar
+                jobTimes={selectedJob.jobTimes}
+                minSessionsPerWeek={selectedJob.min_sessions_per_week}
+              />
+            </div>
           ) : (
             <Typography variant="body1">Đang tải dữ liệu...</Typography>
           )}

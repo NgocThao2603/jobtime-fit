@@ -255,7 +255,7 @@ const FitCalendar = ({ jobTimes = [], minSessionsPerWeek = 2 }) => {
   };
 
   return (
-    <div className="w-full h-[700px]">
+    <div className="w-full h-[72vh]">
       <FullCalendar
         ref={calendarRef}
         plugins={[timeGridPlugin, dayGridPlugin, interactionPlugin]}
