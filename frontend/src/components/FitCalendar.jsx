@@ -4,7 +4,6 @@ import timeGridPlugin from "@fullcalendar/timegrid";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import interactionPlugin from "@fullcalendar/interaction";
 import moment from "moment";
-import { calendarApi } from "../services/api";
 
 const weekDaysMap = {
   "Chủ Nhật": 0,
@@ -46,14 +45,18 @@ const FitCalendar = ({ jobTimes = [], minSessionsPerWeek = 2 }) => {
   }, []);
 
   useEffect(() => {
-    calendarApi
-      .getCalendar()
-      .then((res) => {
-        setUserTimes(res.data);
-      })
-      .catch((err) => {
-        console.error("Lỗi khi lấy calendar từ API:", err);
-      });
+    try {
+      const localData = localStorage.getItem("calendarData");
+      if (localData) {
+        const parsedData = JSON.parse(localData);
+        setUserTimes(parsedData);
+      } else {
+        console.warn("Không có dữ liệu calendar trong localStorage.");
+        setUserTimes([]);
+      }
+    } catch (error) {
+      console.error("Lỗi khi đọc dữ liệu calendar từ localStorage:", error);
+    }
   }, []);
 
   const convertJobTimesToEvents = () => {

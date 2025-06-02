@@ -3,7 +3,6 @@ import FullCalendar from "@fullcalendar/react";
 import timeGridPlugin from "@fullcalendar/timegrid";
 import interactionPlugin from "@fullcalendar/interaction";
 import CancelIcon from "@mui/icons-material/Cancel";
-import { calendarApi } from "../services/api";
 
 export default function WorkCalendar({ events, setEvents }) {
   const calendarRef = useRef(null);

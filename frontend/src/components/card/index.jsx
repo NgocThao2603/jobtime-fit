@@ -16,10 +16,8 @@ import {
 } from "@mui/material";
 import Divider from "@mui/material/Divider";
 import Box from "@mui/material/Box";
-import { LocationOn } from "@mui/icons-material";
 import { Close } from "@mui/icons-material";
 import { Link } from "react-router-dom";
-import { calendarApi } from "../../services/api"
 import { calculateFitPercentage } from "../../utils/calculateFitPercentage";
 import { List } from "antd";
 import FitCalendar from "../FitCalendar";
@@ -30,9 +28,18 @@ function JobCard({ listJob = [] }) {
   const [userTimes, setUserTimes] = useState([]);
 
   useEffect(() => {
-    calendarApi.getCalendar()
-      .then(res => setUserTimes(res.data))
-      .catch(err => console.error("Lỗi lấy userTimes:", err));
+    try {
+      const localData = localStorage.getItem("calendarData");
+      if (localData) {
+        const parsedData = JSON.parse(localData);
+        setUserTimes(parsedData);
+      } else {
+        console.warn("Không có dữ liệu calendar trong localStorage.");
+        setUserTimes([]);
+      }
+    } catch (err) {
+      console.error("Lỗi lấy userTimes từ localStorage:", err);
+    }
   }, []);
 
   const handleOpenDialog = (job) => {
@@ -47,218 +54,233 @@ function JobCard({ listJob = [] }) {
   // Hàm lấy % tương thích cho từng job
   const getFitPercent = (job) => {
     if (!job || !userTimes.length) return 0;
-    return calculateFitPercentage(job.jobTimes, userTimes, job.min_sessions_per_week);
-  };  
+    return calculateFitPercentage(
+      job.jobTimes,
+      userTimes,
+      job.min_sessions_per_week
+    );
+  };
 
   const datasource = [...listJob]
     .map((job) => ({
       ...job,
-      fitPercent: getFitPercent(job), 
+      fitPercent: getFitPercent(job),
     }))
-    .sort((a, b) => b.fitPercent - a.fitPercent) 
+    .sort((a, b) => b.fitPercent - a.fitPercent)
     .map((job, index) => {
-    // console.log("jobCard: ", job.min_sessions_per_week);
-    return (
-      <Card key={index} sx={{ width: "100%", height: "100%", boxShadow: 3, borderRadius: 3, marginBottom: 2 }}>
-        <Box sx={{ position: "relative" }}>
-          <CardMedia
-            component="img"
-            sx={{ height: 250 }}
-            image={
-              job.image_url ||
-              "https://via.placeholder.com/400x200?text=No+Image"
-            }
-          />
-          <Box
-            sx={{
-              position: "absolute",
-              top: 0,
-              right: 0,
-              width: 250,
-              height: 250,
-              background: "linear-gradient(to left bottom, rgba(255,255,255,0.6), transparent)",
-              clipPath: "polygon(100% 0, 0 0, 100% 70%)",
-              filter: "blur(20px)",
-              pointerEvents: "none",
-              zIndex: 1,
-            }}
-          />
-          <Box
-            sx={{
-              position: "absolute",
-              top: 10,
-              right: 10,
-              backgroundColor: job.job_status ? "#4caf4f" : "#000",
-              border: "2px solid #fff",
-              color: "#fff",
-              borderRadius: "20px",
-              padding: "6px 16px",
-              fontSize: "0.875rem",
-              fontWeight: 500,
-              textAlign: "center",
-              cursor: "default", // giữ mặc định như text, có thể là 'pointer' nếu cần click
-              zIndex: 2,
-            }}
-          >
-            {job.job_status ? "Đang tuyển" : "Không tuyển"}
-          </Box>
-        </Box>
-
-        <CardContent sx={{ height: "50%" }}>
-          <Box
-            sx={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "space-between",
-            }}
-          >
-            <Typography sx={{ fontSize: "1.2rem", color: "#636364" }}>
-              {job.salary ? (
-                <>
-                  <Box
-                    component="span"
-                    sx={{ color: "#c62828", fontWeight: 500 }}
-                  >
-                    {job.salary}
-                  </Box>{" "}
-                </>
-              ) : (
-                "Chưa có mức lương"
-              )}
-            </Typography>
-          <Button
-            sx={{
-              backgroundColor: () => {
-                const percent = getFitPercent(job);
-                if (percent >= 70) return "#4CAF4F";  // xanh
-                else if (percent >= 50) return "#FFC107"; // vàng
-                else return "#F44336";  // đỏ
-              },
-              color: () => {
-                const percent = getFitPercent(job);
-                if (percent >= 50 && percent < 70) return "#000";
-                else return "#fff"; 
-              },
-              borderRadius: "16px",
-              padding: "4px 12px",
-              display: "inline-block",
-              fontSize: "0.875rem",
-              fontWeight: 500,
-            }}
-            onClick={() => handleOpenDialog(job)}
-          >
-            Tương thích: <span className="font-bold text-xl">{getFitPercent(job)}%</span>
-          </Button>
-          </Box>
-
-          <Box
-            sx={{
-              display: "flex",
-              justifyContent: "space-between",
-              alignItems: "flex-start", // Đảm bảo căn theo đỉnh cho đúng dòng
-              marginTop: "10px",
-            }}
-          >
-            <Typography
-              gutterBottom
-              variant="h6"
-              component={Link}
-              to="#"
+      // console.log("jobCard: ", job.min_sessions_per_week);
+      return (
+        <Card
+          key={index}
+          sx={{
+            width: "100%",
+            height: "100%",
+            boxShadow: 3,
+            borderRadius: 3,
+            marginBottom: 2,
+          }}
+        >
+          <Box sx={{ position: "relative" }}>
+            <CardMedia
+              component="img"
+              sx={{ height: 250 }}
+              image={
+                job.image_url ||
+                "https://via.placeholder.com/400x200?text=No+Image"
+              }
+            />
+            <Box
               sx={{
-                marginBottom: "10px",
-                textDecoration: "none",
-                color: "inherit",
-                display: "-webkit-box",
-                WebkitLineClamp: 2,
-                WebkitBoxOrient: "vertical",
-                overflow: "hidden",
-                textOverflow: "ellipsis",
-                width: "60%",
-                minHeight: "64px", // Đảm bảo chiều cao tối thiểu
-                fontWeight: 600,
-                "&:hover": {
-                  color: "#00528D", // Không đổi màu khi hover
-                  textDecoration: "none", // Ngăn gạch chân khi hover
-                },
+                position: "absolute",
+                top: 0,
+                right: 0,
+                width: 250,
+                height: 250,
+                background:
+                  "linear-gradient(to left bottom, rgba(255,255,255,0.6), transparent)",
+                clipPath: "polygon(100% 0, 0 0, 100% 70%)",
+                filter: "blur(20px)",
+                pointerEvents: "none",
+                zIndex: 1,
+              }}
+            />
+            <Box
+              sx={{
+                position: "absolute",
+                top: 10,
+                right: 10,
+                backgroundColor: job.job_status ? "#4caf4f" : "#000",
+                border: "2px solid #fff",
+                color: "#fff",
+                borderRadius: "20px",
+                padding: "6px 16px",
+                fontSize: "0.875rem",
+                fontWeight: 500,
+                textAlign: "center",
+                cursor: "default", // giữ mặc định như text, có thể là 'pointer' nếu cần click
+                zIndex: 2,
               }}
             >
-              {job.title || "Không có tiêu đề"}
-            </Typography>
-            <Typography
-              variant="body1"
-              sx={{
-                display: "-webkit-box",
-                WebkitLineClamp: 2,
-                WebkitBoxOrient: "vertical",
-                overflow: "hidden",
-                textOverflow: "ellipsis",
-                width: "35%", // Đảm bảo không đè lên tiêu đề
-              }}
-            >
-              {job.location || "Không có địa chỉ"}
-            </Typography>
+              {job.job_status ? "Đang tuyển" : "Không tuyển"}
+            </Box>
           </Box>
 
-          <Box sx={{ width: "100%", display: "flex" }}>
-            <Typography
+          <CardContent sx={{ height: "50%" }}>
+            <Box
               sx={{
-                fontSize: "1rem",
-                color: "#636364",
-                width: "30%",
-                borderRight: "1px solid #ddd",
-                marginRight: "10px",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "space-between",
               }}
             >
-              {job.type === "part_time"
+              <Typography sx={{ fontSize: "1.2rem", color: "#636364" }}>
+                {job.salary ? (
+                  <>
+                    <Box
+                      component="span"
+                      sx={{ color: "#c62828", fontWeight: 500 }}
+                    >
+                      {job.salary}
+                    </Box>{" "}
+                  </>
+                ) : (
+                  "Chưa có mức lương"
+                )}
+              </Typography>
+              <Button
+                sx={{
+                  backgroundColor: () => {
+                    const percent = getFitPercent(job);
+                    if (percent >= 70) return "#4CAF4F"; // xanh
+                    else if (percent >= 50) return "#FFC107"; // vàng
+                    else return "#F44336"; // đỏ
+                  },
+                  color: () => {
+                    const percent = getFitPercent(job);
+                    if (percent >= 50 && percent < 70) return "#000";
+                    else return "#fff";
+                  },
+                  borderRadius: "16px",
+                  padding: "4px 12px",
+                  display: "inline-block",
+                  fontSize: "0.875rem",
+                  fontWeight: 500,
+                }}
+                onClick={() => handleOpenDialog(job)}
+              >
+                Tương thích:{" "}
+                <span className="font-bold text-xl">{getFitPercent(job)}%</span>
+              </Button>
+            </Box>
+
+            <Box
+              sx={{
+                display: "flex",
+                justifyContent: "space-between",
+                alignItems: "flex-start", // Đảm bảo căn theo đỉnh cho đúng dòng
+                marginTop: "10px",
+              }}
+            >
+              <Typography
+                gutterBottom
+                variant="h6"
+                component={Link}
+                to="#"
+                sx={{
+                  marginBottom: "10px",
+                  textDecoration: "none",
+                  color: "inherit",
+                  display: "-webkit-box",
+                  WebkitLineClamp: 2,
+                  WebkitBoxOrient: "vertical",
+                  overflow: "hidden",
+                  textOverflow: "ellipsis",
+                  width: "60%",
+                  minHeight: "64px", // Đảm bảo chiều cao tối thiểu
+                  fontWeight: 600,
+                  "&:hover": {
+                    color: "#00528D", // Không đổi màu khi hover
+                    textDecoration: "none", // Ngăn gạch chân khi hover
+                  },
+                }}
+              >
+                {job.title || "Không có tiêu đề"}
+              </Typography>
+              <Typography
+                variant="body1"
+                sx={{
+                  display: "-webkit-box",
+                  WebkitLineClamp: 2,
+                  WebkitBoxOrient: "vertical",
+                  overflow: "hidden",
+                  textOverflow: "ellipsis",
+                  width: "35%", // Đảm bảo không đè lên tiêu đề
+                }}
+              >
+                {job.location || "Không có địa chỉ"}
+              </Typography>
+            </Box>
+
+            <Box sx={{ width: "100%", display: "flex" }}>
+              <Typography
+                sx={{
+                  fontSize: "1rem",
+                  color: "#636364",
+                  width: "30%",
+                  borderRight: "1px solid #ddd",
+                  marginRight: "10px",
+                }}
+              >
+                {job.type === "part_time"
                   ? "Part Time"
                   : job.type === "full_time"
                   ? "Full Time"
                   : job.type === "intern"
                   ? "Thực tập"
                   : job.type || "PartTime"}
-            </Typography>
-            <Typography
-              sx={{
-                fontSize: "1rem",
-                color: "#636364",
-                width: "30%",
-                borderRight: "1px solid #ddd", // Gạch dọc bên phải
-                marginRight: "10px",
-              }}
-            >
-              {job.min_sessions_per_week || "2"} buổi/tuần
-            </Typography>
-            <Typography
-              sx={{
-                fontSize: "1rem",
-                color: "#636364",
-                width: "40%",
-              }}
-            >
-              {job.requires_experience
-                ? "Yêu cầu kinh nghiệm"
-                : "Không yêu cầu kinh nghiệm"}
-            </Typography>
-          </Box>
-        </CardContent>
+              </Typography>
+              <Typography
+                sx={{
+                  fontSize: "1rem",
+                  color: "#636364",
+                  width: "30%",
+                  borderRight: "1px solid #ddd", // Gạch dọc bên phải
+                  marginRight: "10px",
+                }}
+              >
+                {job.min_sessions_per_week || "2"} buổi/tuần
+              </Typography>
+              <Typography
+                sx={{
+                  fontSize: "1rem",
+                  color: "#636364",
+                  width: "40%",
+                }}
+              >
+                {job.requires_experience
+                  ? "Yêu cầu kinh nghiệm"
+                  : "Không yêu cầu kinh nghiệm"}
+              </Typography>
+            </Box>
+          </CardContent>
 
-        <Divider />
+          <Divider />
 
-        <CardHeader
-          sx={{ height: "5%", marginTop: "5px", marginBottom: "5px" }}
-          avatar={
-            <Avatar
-              src={job.job_agency_image} // Nếu là URL ảnh
-            >
-              {/* Nếu src không có, fallback text có thể là chữ đầu của tên */}
-              {job.job_agency ? job.job_agency.charAt(0) : "?"}
-            </Avatar>
-          }
-          title={job.job_agency || "Không rõ người đăng"}
-        />
-      </Card>
-    );
-  });
+          <CardHeader
+            sx={{ height: "5%", marginTop: "5px", marginBottom: "5px" }}
+            avatar={
+              <Avatar
+                src={job.job_agency_image} // Nếu là URL ảnh
+              >
+                {/* Nếu src không có, fallback text có thể là chữ đầu của tên */}
+                {job.job_agency ? job.job_agency.charAt(0) : "?"}
+              </Avatar>
+            }
+            title={job.job_agency || "Không rõ người đăng"}
+          />
+        </Card>
+      );
+    });
 
   return (
     <>
@@ -301,7 +323,12 @@ function JobCard({ listJob = [] }) {
         sx={{ width: "90%", left: "5%", right: "5%" }}
       >
         <DialogTitle
-          sx={{ textAlign: "center", color: "green", fontSize: "1.25rem", fontWeight: 900 }}
+          sx={{
+            textAlign: "center",
+            color: "green",
+            fontSize: "1.25rem",
+            fontWeight: 900,
+          }}
         >
           Chi tiết mức độ tương thích
           <IconButton
@@ -316,9 +343,18 @@ function JobCard({ listJob = [] }) {
           {selectedJob ? (
             <div className="-mt-5 mb-3">
               <DialogTitle
-                sx={{ textAlign: "left", color: "#0369A1", fontSize: "1rem", fontWeight: 500 }}
+                sx={{
+                  textAlign: "left",
+                  color: "#0369A1",
+                  fontSize: "1rem",
+                  fontWeight: 500,
+                }}
               >
-                Yêu cầu tối thiểu: <span className="font-bold text-xl">{selectedJob.min_sessions_per_week || "2"}</span> buổi/tuần
+                Yêu cầu tối thiểu:{" "}
+                <span className="font-bold text-xl">
+                  {selectedJob.min_sessions_per_week || "2"}
+                </span>{" "}
+                buổi/tuần
               </DialogTitle>
               <FitCalendar
                 jobTimes={selectedJob.jobTimes}

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import WorkCalendar from "../components/WorkCalendar";
-import {calendarApi, jobApi} from "../services/api";
+import { jobApi } from "../services/api";
 import { ToastContainer, toast } from "react-toastify";
 import joblogo from "../assets/joblogo.jpg";
 import job1 from "../assets/job1.png";
@@ -8,7 +8,7 @@ import job2 from "../assets/job2.png";
 import hust from "../assets/hust.png";
 import find_job from "../assets/find_job.jpg";
 import { Checkbox } from "antd";
-import  JobCard from "../components/card/index";
+import JobCard from "../components/card/index";
 import { IconButton } from "@mui/material";
 import { Close } from "@mui/icons-material";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -17,44 +17,43 @@ import "swiper/css";
 
 const images = [find_job, hust, job2, job1]; // mảng import hình ảnh của bạn
 
-
 const Home = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [events, setEvents] = useState([]);
   const [hasCalendar, setHasCalendar] = useState(false);
   const [showHolidayOff, setShowHolidayOff] = useState(false);
 
-const toggleModal = async () => {
-  const newState = !isModalOpen;
-  setIsModalOpen(newState);
+  const toggleModal = async () => {
+    const newState = !isModalOpen;
+    setIsModalOpen(newState);
 
-  if (!isModalOpen) {
-    try {
-      const res = await calendarApi.getCalendar(); // gọi API lấy lịch
-      if (res?.data?.length > 0) {
+    if (!isModalOpen) {
+      try {
+        const calendarData =
+          JSON.parse(localStorage.getItem("calendarData")) || [];
+        if (calendarData?.length > 0) {
           setHasCalendar(true);
-        setEvents(() => {
-          return res.data.flatMap((item, index) => {
-            return item.time.map((time, idx) => ({
-              id: `${index}-${idx}`,
-              title: "Free for work",
-              start: time.start,
-              end: time.end,
-              allDay: false,
-              dayOfWeek: item.day
-            }));
+          setEvents(() => {
+            return calendarData.flatMap((item, index) => {
+              return item.time.map((time, idx) => ({
+                id: `${index}-${idx}`,
+                title: "Free for work",
+                start: time.start,
+                end: time.end,
+                allDay: false,
+                dayOfWeek: item.day,
+              }));
+            });
           });
-        });
-      } else {
+        } else {
           setHasCalendar(false);
-        setEvents([]); // nếu chưa có thì để trống
+          setEvents([]);
+        }
+      } catch (err) {
+        console.error("Lỗi lấy lịch:", err);
       }
-    } catch (err) {
-      console.error("Lỗi lấy lịch:", err);
     }
-  }
-};
-
+  };
 
   const groupByDay = (data) => {
     const grouped = {};
@@ -79,41 +78,30 @@ const toggleModal = async () => {
     return result;
   };
 
-  const createCalendar = async (data) => {
-    try {
-      const response = await calendarApi.createCalendar(data);
-      console.log("Calendar created successfully:", response);
-    } catch (error) {
-      console.error("Error creating calendar:", error);
-    }
-  };
-
   const handleSave = async () => {
     try {
       const data = groupByDay(events);
-      const results = await Promise.all(
-        data.map(async (item) => await createCalendar(item))
-      );
-      console.log("All calendars created:", results);
+
+      localStorage.setItem("calendarData", JSON.stringify(data));
       toast.success("Tạo lịch thành công!", {
         autoClose: 2000,
         onClose: () => {
-        toggleModal();
-        window.location.reload();  // reload trang
-      },
+          toggleModal();
+          window.location.reload();
+        },
       });
     } catch (error) {
       toast.error("Failed to create calendars");
       console.error("Failed to create one or more calendars:", error);
     }
   };
-  const onChange = e => {
+  const onChange = (e) => {
     setShowHolidayOff(e.target.checked);
   };
-  
+
   const [jobListInformation, setJobListInformation] = useState();
   const filteredJobList = showHolidayOff
-    ? jobListInformation?.filter(job => job.holiday_off === true)
+    ? jobListInformation?.filter((job) => job.holiday_off === true)
     : jobListInformation;
   useEffect(() => {
     const fetchJobList = async () => {
@@ -126,20 +114,14 @@ const toggleModal = async () => {
       }
     };
     fetchJobList();
-  }
-  , []);
+  }, []);
 
   const handleUpdate = async () => {
     try {
-      // 1. Xóa toàn bộ lịch hiện tại trong DB
-      const allCalendars = await calendarApi.getCalendar();
-      const deletePromises = allCalendars.data.map(item => calendarApi.deleteCalendar(item.id));
-      await Promise.all(deletePromises);
+      localStorage.removeItem("calendarData");
 
-      // 2. Gửi dữ liệu mới
       const data = groupByDay(events);
-      const createPromises = data.map(item => createCalendar(item));
-      await Promise.all(createPromises);
+      localStorage.setItem("calendarData", JSON.stringify(data));
 
       toast.success("Cập nhật lịch thành công!", {
         autoClose: 2000,
@@ -162,9 +144,13 @@ const toggleModal = async () => {
       <div className="flex justify-between w-full bg-[#E8F5E9]">
         <div className="py-2 flex">
           <div className="h-12 w-12 ml-20 overflow-hidden rounded-full">
-          <img src={joblogo} alt="JobTime Fit Logo" className="w-full h-full object-cover" />
+            <img
+              src={joblogo}
+              alt="JobTime Fit Logo"
+              className="w-full h-full object-cover"
+            />
           </div>
-          <div className ="ml-10 flex items-center text-[#00528D] text-xl font-semibold">
+          <div className="ml-10 flex items-center text-[#00528D] text-xl font-semibold">
             Trang chủ
           </div>
         </div>
@@ -217,32 +203,40 @@ const toggleModal = async () => {
           <ToastContainer />
         </div>
       )}
-        <div className="w-full mt-2 max-w-[80%] mx-auto">
-          <Swiper
-            modules={[Autoplay]}
-            autoplay={{ delay: 2500, disableOnInteraction: false }}
-            loop={true}
-            spaceBetween={10}
-            slidesPerView={1}
-          >
-            {images.map((img, index) => (
-              <SwiperSlide key={index}>
-                <img src={img} alt={`Slide ${index}`} className="w-full max-h-[80vh] object-cover" />
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        </div>
-        <div className="w-[80%] mx-auto mt-10">
-          <div className ="flex mt-7 justify-between">
-            <h1 className="text-2xl text-[#00528D] font-semibold">Danh sách công việc</h1>
-             <div>
-              <Checkbox onChange={onChange}>
-                <span className="text-xl text-[#00528D] font-semibold">Nghỉ ngày lễ</span> 
-              </Checkbox>
-             </div>
+      <div className="w-full mt-2 max-w-[80%] mx-auto">
+        <Swiper
+          modules={[Autoplay]}
+          autoplay={{ delay: 2500, disableOnInteraction: false }}
+          loop={true}
+          spaceBetween={10}
+          slidesPerView={1}
+        >
+          {images.map((img, index) => (
+            <SwiperSlide key={index}>
+              <img
+                src={img}
+                alt={`Slide ${index}`}
+                className="w-full max-h-[80vh] object-cover"
+              />
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
+      <div className="w-[80%] mx-auto mt-10">
+        <div className="flex mt-7 justify-between">
+          <h1 className="text-2xl text-[#00528D] font-semibold">
+            Danh sách công việc
+          </h1>
+          <div>
+            <Checkbox onChange={onChange}>
+              <span className="text-xl text-[#00528D] font-semibold">
+                Nghỉ ngày lễ
+              </span>
+            </Checkbox>
           </div>
-          <JobCard listJob={filteredJobList} />
         </div>
+        <JobCard listJob={filteredJobList} />
+      </div>
     </div>
   );
 };
