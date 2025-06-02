@@ -98,5 +98,6 @@ export function calculateFitPercentage(jobTimes = [], userTimes = [], minSession
 
   const fitRatio = totalFitMinutes / requiredFitTime;
 
-  return Math.min(100, Math.round(fitRatio * 100));
+  const fitPercentage = Math.round(fitRatio * 100);
+  return Math.min(fitPercentage, 97);
 }
