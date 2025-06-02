@@ -141,8 +141,8 @@ const Home = () => {
 
   return (
     <div>
-      <div className="flex justify-between w-full bg-[#E8F5E9]">
-        <div className="py-2 flex">
+      <div className="fixed top-0 left-0 z-50 w-full flex justify-between bg-[#E8F5E9] shadow-md">
+       <div className="py-2 flex">
           <div className="h-12 w-12 ml-20 overflow-hidden rounded-full">
             <img
               src={joblogo}
@@ -204,23 +204,24 @@ const Home = () => {
         </div>
       )}
       <div className="w-full mt-2 max-w-[80%] mx-auto">
-        <Swiper
-          modules={[Autoplay]}
-          autoplay={{ delay: 2500, disableOnInteraction: false }}
-          loop={true}
-          spaceBetween={10}
-          slidesPerView={1}
-        >
-          {images.map((img, index) => (
-            <SwiperSlide key={index}>
-              <img
-                src={img}
-                alt={`Slide ${index}`}
-                className="w-full max-h-[80vh] object-cover"
-              />
-            </SwiperSlide>
-          ))}
-        </Swiper>
+      <Swiper
+        modules={[Autoplay]}
+        autoplay={{ delay: 2500, disableOnInteraction: false }}
+        loop={true}
+        spaceBetween={10}
+        slidesPerView={1}
+      >
+        {images.slice(2).map((img, index) => (
+          <SwiperSlide key={index}>
+            <img
+              src={img}
+              alt={`Slide ${index + 2}`}
+              className="w-full max-h-[80vh] object-cover"
+            />
+          </SwiperSlide>
+        ))}
+      </Swiper>
+
       </div>
       <div className="w-[80%] mx-auto mt-10">
         <div className="flex mt-7 justify-between">
