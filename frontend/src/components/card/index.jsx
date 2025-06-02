@@ -61,7 +61,7 @@ function JobCard({ listJob = [] }) {
     );
   };
 
-  const datasource = [...listJob]
+  const datasource = [...listJob.filter((job) => job.job_status)]
     .map((job) => ({
       ...job,
       fitPercent: getFitPercent(job),
