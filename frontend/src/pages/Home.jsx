@@ -203,7 +203,7 @@ const Home = () => {
           <ToastContainer />
         </div>
       )}
-      <div className="w-full mt-2 max-w-[80%] mx-auto">
+      <div className="w-full pt-16 max-w-[80%] mx-auto">
       <Swiper
         modules={[Autoplay]}
         autoplay={{ delay: 2500, disableOnInteraction: false }}
