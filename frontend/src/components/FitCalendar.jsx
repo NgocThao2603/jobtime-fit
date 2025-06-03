@@ -4,6 +4,7 @@ import timeGridPlugin from "@fullcalendar/timegrid";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import interactionPlugin from "@fullcalendar/interaction";
 import moment from "moment";
+import viLocale from "@fullcalendar/core/locales/vi";
 
 const weekDaysMap = {
   "Chủ Nhật": 0,
@@ -277,6 +278,7 @@ const FitCalendar = ({ jobTimes = [], minSessionsPerWeek = 2 }) => {
         }}
         allDaySlot={false}
         dayCount={7}
+        locale={viLocale}
         firstDay={1}
         height="100%"
         expandRows={true}

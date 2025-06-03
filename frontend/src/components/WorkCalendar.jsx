@@ -3,6 +3,7 @@ import FullCalendar from "@fullcalendar/react";
 import timeGridPlugin from "@fullcalendar/timegrid";
 import interactionPlugin from "@fullcalendar/interaction";
 import CancelIcon from "@mui/icons-material/Cancel";
+import viLocale from "@fullcalendar/core/locales/vi";
 
 export default function WorkCalendar({ events, setEvents }) {
   const calendarRef = useRef(null);
@@ -130,6 +131,7 @@ export default function WorkCalendar({ events, setEvents }) {
         }}
         allDaySlot={false}
         nowIndicator={true}
+        locale={viLocale}
         editable={true}
         selectable={true}
         selectMirror={true}
